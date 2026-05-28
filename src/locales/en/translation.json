@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "home": "Home",
+    "privacy": "Privacy Policy"
+  },
+  "home": {
+    "welcome": "Welcome",
+    "subtitle": "Games by BrothersInGames",
+    "description": "Independent game development studio."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "game": "Def the Base",
+    "lastUpdated": "Last updated: May 2026",
+    "intro": "Def the Base does not collect personal data directly. The following third-party services are used in the game and may collect data under their own terms.",
+    "thirdPartyTitle": "Third-party services",
+    "unityAds": {
+      "name": "Unity Ads",
+      "desc": "Collects your device's advertising ID to serve ads.",
+      "policy": "Privacy policy"
+    },
+    "googlePlay": {
+      "name": "Google Play Games Services",
+      "desc": "Links your save data to your Google account for cloud sync.",
+      "policy": "Privacy policy"
+    },
+    "saveDataTitle": "Save data",
+    "saveDataDesc": "Your game progress is saved locally on your device. If you use Google Play Games, it can optionally sync to Google's cloud storage.",
+    "advertisingTitle": "Advertising",
+    "advertisingDesc": "Unity Ads uses your advertising ID to show ads. To opt out, go to Settings → Google → Ads on your device.",
+    "purchasesTitle": "In-app purchases",
+    "purchasesDesc": "Purchases go through Google Play. Google may retain your purchase history.",
+    "deletionTitle": "Deleting your data",
+    "deletionIntro": "To delete cloud save data:",
+    "deletionStep1": "Open the Google Play Games app",
+    "deletionStep2": "Find Def the Base",
+    "deletionStep3": "Tap the three-dot menu → \"Delete Play Games data\"",
+    "deletionOutcome": "That removes all cloud-synced progress, scores, and upgrades permanently. Local data is deleted when you uninstall. Advertising data resets under Settings → Google → Ads.",
+    "deletionContact": "To request data deletion:",
+    "contactTitle": "Contact"
+  }
+}
