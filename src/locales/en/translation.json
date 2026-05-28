@@ -10,9 +10,8 @@
   },
   "privacy": {
     "title": "Privacy Policy",
-    "game": "Def the Base",
     "lastUpdated": "Last updated: May 2026",
-    "intro": "Def the Base does not collect personal data directly. The following third-party services are used in the game and may collect data under their own terms.",
+    "intro": "{{gameName}} does not collect personal data directly. The following third-party services are used in the game and may collect data under their own terms.",
     "thirdPartyTitle": "Third-party services",
     "unityAds": {
       "name": "Unity Ads",
@@ -33,10 +32,15 @@
     "deletionTitle": "Deleting your data",
     "deletionIntro": "To delete cloud save data:",
     "deletionStep1": "Open the Google Play Games app",
-    "deletionStep2": "Find Def the Base",
+    "deletionStep2": "Find {{gameName}}",
     "deletionStep3": "Tap the three-dot menu → \"Delete Play Games data\"",
     "deletionOutcome": "That removes all cloud-synced progress, scores, and upgrades permanently. Local data is deleted when you uninstall. Advertising data resets under Settings → Google → Ads.",
     "deletionContact": "To request data deletion:",
-    "contactTitle": "Contact"
+    "contactTitle": "Contact",
+    "selectGame": "Select a game to view its privacy policy",
+    "games": {
+      "defTheBase": "Def the Base",
+      "jumpingJello": "Jumping Jello"
+    }
   }
 }

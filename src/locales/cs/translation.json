@@ -10,9 +10,8 @@
   },
   "privacy": {
     "title": "Zásady ochrany osobních údajů",
-    "game": "Def the Base",
     "lastUpdated": "Poslední aktualizace: květen 2026",
-    "intro": "Def the Base přímo neshromažďuje osobní údaje. Níže jsou uvedeny služby třetích stran používané ve hře, které mohou shromažďovat data podle vlastních podmínek.",
+    "intro": "{{gameName}} přímo neshromažďuje osobní údaje. Níže jsou uvedeny služby třetích stran používané ve hře, které mohou shromažďovat data podle vlastních podmínek.",
     "thirdPartyTitle": "Služby třetích stran",
     "unityAds": {
       "name": "Unity Ads",
@@ -33,10 +32,15 @@
     "deletionTitle": "Smazání vašich dat",
     "deletionIntro": "Jak smazat cloudové zálohy:",
     "deletionStep1": "Otevřete aplikaci Herní služby Google Play",
-    "deletionStep2": "Najděte hru Def the Base",
+    "deletionStep2": "Najděte hru {{gameName}}",
     "deletionStep3": "Klepněte na menu se třemi tečkami → \"Smazat data z Herních služeb Google Play\"",
     "deletionOutcome": "Tím trvale odstraníte veškerý cloudový postup, skóre a vylepšení. Lokální data jsou smazána po odinstalování hry. Reklamní data lze resetovat v části Nastavení → Google → Reklamy.",
     "deletionContact": "Žádosti o smazání dat zasílejte na:",
-    "contactTitle": "Kontakt"
+    "contactTitle": "Kontakt",
+    "selectGame": "Vyberte hru pro zobrazení zásad ochrany osobních údajů",
+    "games": {
+      "defTheBase": "Def the Base",
+      "jumpingJello": "Jumping Jello"
+    }
   }
 }

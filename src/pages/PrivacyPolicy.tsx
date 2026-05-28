@@ -1,30 +1,40 @@
+import { useParams, Navigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
+const GAME_CONFIGS = {
+  'def-the-base': { nameKey: 'privacy.games.defTheBase' as const, hasIAP: false },
+  'jumping-jello': { nameKey: 'privacy.games.jumpingJello' as const, hasIAP: true },
+}
+
+type GameSlug = keyof typeof GAME_CONFIGS
+
 export default function PrivacyPolicy() {
+  const { game } = useParams<{ game: string }>()
   const { t } = useTranslation()
+
+  if (!game || !(game in GAME_CONFIGS)) {
+    return <Navigate to="/privacy" replace />
+  }
+
+  const config = GAME_CONFIGS[game as GameSlug]
+  const gameName = t(config.nameKey)
 
   return (
     <article className="mx-auto max-w-2xl">
       <h1 className="mb-1 text-2xl font-bold text-slate-100">
-        {t('privacy.title')} — {t('privacy.game')}
+        {t('privacy.title')} — {gameName}
       </h1>
       <p className="mb-8 text-sm text-slate-500">{t('privacy.lastUpdated')}</p>
 
-      <p className="mb-8 text-slate-300">{t('privacy.intro')}</p>
+      <p className="mb-8 text-slate-300">{t('privacy.intro', { gameName })}</p>
 
       <section className="mb-8">
         <h2 className="mb-4 text-lg font-semibold text-slate-100">{t('privacy.thirdPartyTitle')}</h2>
         <div className="space-y-3">
           {(
             [
-              {
-                key: 'unityAds',
-                href: 'https://unity.com/legal/privacy-policy',
-              },
-              {
-                key: 'googlePlay',
-                href: 'https://policies.google.com/privacy',
-              },
+              { key: 'unityAds', href: 'https://unity.com/legal/privacy-policy' },
+              { key: 'googlePlay', href: 'https://policies.google.com/privacy' },
             ] as const
           ).map(({ key, href }) => (
             <div key={key} className="rounded-lg border border-slate-800 bg-slate-900 p-4">
@@ -51,23 +61,25 @@ export default function PrivacyPolicy() {
         <p className="text-slate-400">{t('privacy.advertisingDesc')}</p>
       </Section>
 
-      <Section title={t('privacy.purchasesTitle')}>
-        <p className="text-slate-400">{t('privacy.purchasesDesc')}</p>
-        <a
-          href="https://policies.google.com/privacy"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-1 inline-block text-sm text-indigo-400 hover:underline"
-        >
-          {t('privacy.googlePlay.policy')} →
-        </a>
-      </Section>
+      {config.hasIAP && (
+        <Section title={t('privacy.purchasesTitle')}>
+          <p className="text-slate-400">{t('privacy.purchasesDesc')}</p>
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 inline-block text-sm text-indigo-400 hover:underline"
+          >
+            {t('privacy.googlePlay.policy')} →
+          </a>
+        </Section>
+      )}
 
       <Section title={t('privacy.deletionTitle')}>
         <p className="mb-3 text-slate-400">{t('privacy.deletionIntro')}</p>
         <ol className="mb-3 list-decimal space-y-1 pl-5 text-slate-400">
           <li>{t('privacy.deletionStep1')}</li>
-          <li>{t('privacy.deletionStep2')}</li>
+          <li>{t('privacy.deletionStep2', { gameName })}</li>
           <li>{t('privacy.deletionStep3')}</li>
         </ol>
         <p className="mb-3 text-slate-400">{t('privacy.deletionOutcome')}</p>
