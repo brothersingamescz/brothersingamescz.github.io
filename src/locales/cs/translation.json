@@ -6,7 +6,13 @@
   "home": {
     "welcome": "Vítejte",
     "subtitle": "Hry od BrothersInGames",
-    "description": "Nezávislé herní studio."
+    "description": "Nezávislé herní studio.",
+    "gamesTitle": "Hry",
+    "comingSoon": "Brzy"
+  },
+  "games": {
+    "defTheBase": "Def the Base",
+    "jumpingJello": "Jumping Jello"
   },
   "privacy": {
     "title": "Zásady ochrany osobních údajů",
@@ -37,10 +43,6 @@
     "deletionOutcome": "Tím trvale odstraníte veškerý cloudový postup, skóre a vylepšení. Lokální data jsou smazána po odinstalování hry. Reklamní data lze resetovat v části Nastavení → Google → Reklamy.",
     "deletionContact": "Žádosti o smazání dat zasílejte na:",
     "contactTitle": "Kontakt",
-    "selectGame": "Vyberte hru pro zobrazení zásad ochrany osobních údajů",
-    "games": {
-      "defTheBase": "Def the Base",
-      "jumpingJello": "Jumping Jello"
-    }
+    "selectGame": "Vyberte hru pro zobrazení zásad ochrany osobních údajů"
   }
 }

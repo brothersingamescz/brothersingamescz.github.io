@@ -1,6 +1,7 @@
 import { Outlet, NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import LangSwitcher from './LangSwitcher'
+import Footer from './Footer'
 
 export default function Layout() {
   const { t } = useTranslation()
@@ -37,6 +38,7 @@ export default function Layout() {
       <main className="mx-auto max-w-5xl px-4 py-12">
         <Outlet />
       </main>
+      <Footer />
     </div>
   )
 }

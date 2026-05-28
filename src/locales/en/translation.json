@@ -6,7 +6,13 @@
   "home": {
     "welcome": "Welcome",
     "subtitle": "Games by BrothersInGames",
-    "description": "Independent game development studio."
+    "description": "Independent game development studio.",
+    "gamesTitle": "Games",
+    "comingSoon": "Coming soon"
+  },
+  "games": {
+    "defTheBase": "Def the Base",
+    "jumpingJello": "Jumping Jello"
   },
   "privacy": {
     "title": "Privacy Policy",
@@ -37,10 +43,6 @@
     "deletionOutcome": "That removes all cloud-synced progress, scores, and upgrades permanently. Local data is deleted when you uninstall. Advertising data resets under Settings → Google → Ads.",
     "deletionContact": "To request data deletion:",
     "contactTitle": "Contact",
-    "selectGame": "Select a game to view its privacy policy",
-    "games": {
-      "defTheBase": "Def the Base",
-      "jumpingJello": "Jumping Jello"
-    }
+    "selectGame": "Select a game to view its privacy policy"
   }
 }

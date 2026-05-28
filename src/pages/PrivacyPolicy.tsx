@@ -2,8 +2,8 @@ import { useParams, Navigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 const GAME_CONFIGS = {
-  'def-the-base': { nameKey: 'privacy.games.defTheBase' as const, hasIAP: false },
-  'jumping-jello': { nameKey: 'privacy.games.jumpingJello' as const, hasIAP: true },
+  'def-the-base': { nameKey: 'games.defTheBase' as const, hasIAP: false },
+  'jumping-jello': { nameKey: 'games.jumpingJello' as const, hasIAP: true },
 }
 
 type GameSlug = keyof typeof GAME_CONFIGS

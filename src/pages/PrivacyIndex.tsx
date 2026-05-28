@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 const games = [
-  { slug: 'def-the-base', nameKey: 'privacy.games.defTheBase' as const },
-  { slug: 'jumping-jello', nameKey: 'privacy.games.jumpingJello' as const },
+  { slug: 'def-the-base', nameKey: 'games.defTheBase' as const },
+  { slug: 'jumping-jello', nameKey: 'games.jumpingJello' as const },
 ]
 
 export default function PrivacyIndex() {
