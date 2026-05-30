@@ -33,7 +33,7 @@ export default function PrivacyPolicy() {
         <div className="space-y-3">
           {(
             [
-              { key: 'unityAds', href: 'https://unity.com/legal/privacy-policy' },
+              { key: 'levelPlay', href: 'https://unity.com/legal/game-player-and-app-user-privacy-policy' },
               { key: 'googlePlay', href: 'https://policies.google.com/privacy' },
             ] as const
           ).map(({ key, href }) => (

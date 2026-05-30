@@ -19,9 +19,9 @@
     "lastUpdated": "Poslední aktualizace: květen 2026",
     "intro": "{{gameName}} přímo neshromažďuje osobní údaje. Níže jsou uvedeny služby třetích stran používané ve hře, které mohou shromažďovat data podle vlastních podmínek.",
     "thirdPartyTitle": "Služby třetích stran",
-    "unityAds": {
-      "name": "Unity Ads",
-      "desc": "Shromažďuje reklamní ID vašeho zařízení pro zobrazování reklam.",
+    "levelPlay": {
+      "name": "Unity LevelPlay (ironSource)",
+      "desc": "Mediační platforma pro reklamy. Zobrazuje reklamy z reklamních sítí (včetně Unity Ads) a shromažďuje reklamní ID vašeho zařízení.",
       "policy": "Zásady ochrany osobních údajů"
     },
     "googlePlay": {
@@ -32,7 +32,7 @@
     "saveDataTitle": "Ukládání dat",
     "saveDataDesc": "Váš herní postup je uložen lokálně v zařízení. Pokud používáte Herní služby Google Play, může být volitelně synchronizován do cloudového úložiště Google.",
     "advertisingTitle": "Reklama",
-    "advertisingDesc": "Unity Ads používá vaše reklamní ID k zobrazování reklam. Chcete-li se odhlásit, přejděte na Nastavení → Google → Reklamy ve svém zařízení.",
+    "advertisingDesc": "Reklamy jsou zobrazovány prostřednictvím mediační platformy Unity LevelPlay (ironSource), která využívá vaše reklamní ID. Chcete-li se odhlásit, přejděte na Nastavení → Google → Reklamy ve svém zařízení.",
     "purchasesTitle": "Nákupy v aplikaci",
     "purchasesDesc": "Nákupy jsou zpracovávány přes Google Play. Google může uchovávat historii vašich nákupů.",
     "deletionTitle": "Smazání vašich dat",

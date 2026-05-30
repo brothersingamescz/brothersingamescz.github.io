@@ -19,9 +19,9 @@
     "lastUpdated": "Last updated: May 2026",
     "intro": "{{gameName}} does not collect personal data directly. The following third-party services are used in the game and may collect data under their own terms.",
     "thirdPartyTitle": "Third-party services",
-    "unityAds": {
-      "name": "Unity Ads",
-      "desc": "Collects your device's advertising ID to serve ads.",
+    "levelPlay": {
+      "name": "Unity LevelPlay (ironSource)",
+      "desc": "Ad mediation platform. Serves ads from ad networks (including Unity Ads) and collects your device's advertising ID.",
       "policy": "Privacy policy"
     },
     "googlePlay": {
@@ -32,7 +32,7 @@
     "saveDataTitle": "Save data",
     "saveDataDesc": "Your game progress is saved locally on your device. If you use Google Play Games, it can optionally sync to Google's cloud storage.",
     "advertisingTitle": "Advertising",
-    "advertisingDesc": "Unity Ads uses your advertising ID to show ads. To opt out, go to Settings → Google → Ads on your device.",
+    "advertisingDesc": "Ads are served through the Unity LevelPlay (ironSource) mediation platform, which uses your advertising ID. To opt out, go to Settings → Google → Ads on your device.",
     "purchasesTitle": "In-app purchases",
     "purchasesDesc": "Purchases go through Google Play. Google may retain your purchase history.",
     "deletionTitle": "Deleting your data",
