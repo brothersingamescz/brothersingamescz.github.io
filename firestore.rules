@@ -1,0 +1,13 @@
+rules_version = '2';
+
+// Each player can read and write only their own document. The web profile reads
+// it; the Def the Base game writes it. Nobody can read another player's data.
+//
+// Deploy: Firebase console → Firestore Database → Rules → paste → Publish.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /def_the_base/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+  }
+}

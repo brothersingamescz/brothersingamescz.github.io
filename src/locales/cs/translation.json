@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Domů",
+    "dashboard": "Dashboard",
     "privacy": "Zásady ochrany osobních údajů"
   },
   "home": {
@@ -12,7 +13,34 @@
   },
   "games": {
     "defTheBase": "Def the Base",
-    "jumpingJello": "Jumping Jello"
+    "jumpingJello": "Jumping Jello",
+    "taglines": {
+      "defTheBase": "Tower defense",
+      "jumpingJello": "Arkáda"
+    }
+  },
+  "dashboard": {
+    "title": "Moje hry",
+    "subtitle": "Vyber hru a podívej se na svůj postup.",
+    "viewProgress": "Zobrazit postup",
+    "comingSoon": "Brzy"
+  },
+  "detail": {
+    "back": "Zpět na dashboard",
+    "signInPrompt": "Přihlas se účtem Google, který používáš ve hře {{game}}, a uvidíš svůj postup.",
+    "signInHere": "Přihlásit se zde",
+    "noTracking": "Pro tuto hru zatím nesledujeme postup na webu. Zkus to později!"
+  },
+  "account": {
+    "title": "Účet",
+    "signInTitle": "Přihlášení",
+    "signInPrompt": "Přihlas se účtem Google, který používáš v našich hrách.",
+    "backToDashboard": "Zpět na dashboard"
+  },
+  "menu": {
+    "dashboard": "Můj dashboard",
+    "account": "Účet",
+    "signIn": "Přihlásit se"
   },
   "privacy": {
     "title": "Zásady ochrany osobních údajů",
@@ -44,5 +72,64 @@
     "deletionContact": "Žádosti o smazání dat zasílejte na:",
     "contactTitle": "Kontakt",
     "selectGame": "Vyberte hru pro zobrazení zásad ochrany osobních údajů"
+  },
+  "profile": {
+    "title": "Můj postup",
+    "subtitle": "Přihlas se účtem Google, který používáš ve hře, a uvidíš svůj postup.",
+    "loading": "Načítání…",
+    "signInPrompt": "Přihlas se účtem Google, který používáš ve hře Def the Base, a zobrazíš svůj postup.",
+    "signIn": "Přihlásit se Googlem",
+    "signInError": "Přihlášení se nezdařilo. Zkus to prosím znovu.",
+    "signedInAs": "Přihlášen jako",
+    "signOut": "Odhlásit se",
+    "loadError": "Data se nepodařilo načíst. Zkus to prosím později.",
+    "empty": "Pro tento účet jsme nenašli žádný uložený postup. Otevři hru, synchronizuj postup a vrať se. (Musí to být stejný účet Google jako ve hře.)",
+    "scoreTitle": "Skóre",
+    "score": {
+      "best": "Nejlepší skóre",
+      "bestWave": "Nejvyšší vlna",
+      "lastScore": "Poslední skóre",
+      "kills": "Zabití",
+      "structuresBuilt": "Postavené stavby",
+      "gold": "Zlato"
+    },
+    "stateTitle": "Stav hry",
+    "state": {
+      "currentWave": "Aktuální vlna",
+      "metal": "Kov",
+      "mainHallHealth": "HP hlavní budovy",
+      "difficulty": "Obtížnost",
+      "adGold": "Zlato z reklam"
+    },
+    "difficulty": {
+      "easy": "Lehká",
+      "medium": "Střední",
+      "hard": "Těžká"
+    },
+    "missions": "Splněné mise",
+    "upgradesTitle": "Odemknutá vylepšení",
+    "towers": {
+      "minigun": "Minigun",
+      "rocket": "Raketomet",
+      "quarry": "Lom",
+      "wall": "Zeď",
+      "shield": "Generátor štítu"
+    },
+    "upgrades": {
+      "tier2": "Tier 2",
+      "tier23": "Tier 2–3",
+      "tier34": "Tier 3–4",
+      "tier45": "Tier 4–5",
+      "hp": "HP",
+      "hp1": "HP I",
+      "hp2": "HP II",
+      "dmg": "Poškození",
+      "metal": "Těžba kovu",
+      "shield": "Štít",
+      "plus": "Plus",
+      "max": "Max"
+    },
+    "delete": "Smazat moje data",
+    "deleteConfirm": "Opravdu smazat svůj webový profil? Tím se z webu odstraní uložený postup pro tento účet. Postup ve hře a v Google Play to neovlivní a při příští synchronizaci se znovu nahraje."
   }
 }

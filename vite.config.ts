@@ -6,7 +6,18 @@ import { join } from 'node:path'
 
 // Routes that need their own index.html so GitHub Pages returns HTTP 200
 // on direct access (bots like Google Play Console check HTTP status codes).
-const spaRoutes = ['privacy', 'privacy/def-the-base', 'privacy/jumping-jello']
+// `:gameId` is dynamic, so list the concrete games (same as privacy/:game).
+// 'profile' stays for the client-side redirect to /dashboard.
+const spaRoutes = [
+  'privacy',
+  'privacy/def-the-base',
+  'privacy/jumping-jello',
+  'dashboard',
+  'dashboard/def-the-base',
+  'dashboard/jumping-jello',
+  'account',
+  'profile',
+]
 
 export default defineConfig({
   base: '/',

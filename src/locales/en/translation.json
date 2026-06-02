@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Home",
+    "dashboard": "Dashboard",
     "privacy": "Privacy Policy"
   },
   "home": {
@@ -12,7 +13,34 @@
   },
   "games": {
     "defTheBase": "Def the Base",
-    "jumpingJello": "Jumping Jello"
+    "jumpingJello": "Jumping Jello",
+    "taglines": {
+      "defTheBase": "Tower defense",
+      "jumpingJello": "Arcade"
+    }
+  },
+  "dashboard": {
+    "title": "My games",
+    "subtitle": "Pick a game to see your progress.",
+    "viewProgress": "View progress",
+    "comingSoon": "Coming soon"
+  },
+  "detail": {
+    "back": "Back to dashboard",
+    "signInPrompt": "Sign in with the Google account you use in {{game}} to see your progress.",
+    "signInHere": "Sign in here",
+    "noTracking": "We don't track web progress for this game yet. Check back later!"
+  },
+  "account": {
+    "title": "Account",
+    "signInTitle": "Sign in",
+    "signInPrompt": "Sign in with the Google account you use in our games.",
+    "backToDashboard": "Back to dashboard"
+  },
+  "menu": {
+    "dashboard": "My dashboard",
+    "account": "Account",
+    "signIn": "Sign in"
   },
   "privacy": {
     "title": "Privacy Policy",
@@ -44,5 +72,64 @@
     "deletionContact": "To request data deletion:",
     "contactTitle": "Contact",
     "selectGame": "Select a game to view its privacy policy"
+  },
+  "profile": {
+    "title": "My progress",
+    "subtitle": "Sign in with the Google account you use in the game to see your progress.",
+    "loading": "Loading…",
+    "signInPrompt": "Sign in with the Google account you use in Def the Base to view your progress.",
+    "signIn": "Sign in with Google",
+    "signInError": "Sign-in failed. Please try again.",
+    "signedInAs": "Signed in as",
+    "signOut": "Sign out",
+    "loadError": "Couldn't load your data. Please try again later.",
+    "empty": "We couldn't find any saved progress for this account. Open the game, sync your progress, and come back. (Make sure it's the same Google account you use in the game.)",
+    "scoreTitle": "Score",
+    "score": {
+      "best": "Best score",
+      "bestWave": "Best wave",
+      "lastScore": "Last score",
+      "kills": "Kills",
+      "structuresBuilt": "Structures built",
+      "gold": "Gold"
+    },
+    "stateTitle": "Game state",
+    "state": {
+      "currentWave": "Current wave",
+      "metal": "Metal",
+      "mainHallHealth": "Main hall HP",
+      "difficulty": "Difficulty",
+      "adGold": "Ad gold"
+    },
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard"
+    },
+    "missions": "Missions completed",
+    "upgradesTitle": "Unlocked upgrades",
+    "towers": {
+      "minigun": "Minigun",
+      "rocket": "Rocket Launcher",
+      "quarry": "Quarry",
+      "wall": "Wall",
+      "shield": "Shield Generator"
+    },
+    "upgrades": {
+      "tier2": "Tier 2",
+      "tier23": "Tier 2–3",
+      "tier34": "Tier 3–4",
+      "tier45": "Tier 4–5",
+      "hp": "HP",
+      "hp1": "HP I",
+      "hp2": "HP II",
+      "dmg": "Damage",
+      "metal": "Metal output",
+      "shield": "Shield",
+      "plus": "Plus",
+      "max": "Max"
+    },
+    "delete": "Delete my data",
+    "deleteConfirm": "Really delete your web profile? This removes the saved progress shown on the web for this account. Your in-game and Google Play data are not affected and will re-sync next time."
   }
 }

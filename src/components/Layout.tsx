@@ -1,6 +1,7 @@
 import { Outlet, NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import LangSwitcher from './LangSwitcher'
+import AccountMenu from './AccountMenu'
 import Footer from './Footer'
 
 export default function Layout() {
@@ -9,11 +10,11 @@ export default function Layout() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
       <nav className="sticky top-0 z-10 border-b border-slate-800 bg-slate-950/80 backdrop-blur-sm">
-        <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4">
+        <div className="mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 px-4">
           <NavLink to="/" className="font-bold tracking-tight text-indigo-400">
             BrothersInGames
           </NavLink>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4 sm:gap-6">
             <NavLink
               to="/"
               end
@@ -24,14 +25,25 @@ export default function Layout() {
               {t('nav.home')}
             </NavLink>
             <NavLink
-              to="/privacy"
+              to="/dashboard"
               className={({ isActive }) =>
                 `text-sm transition-colors ${isActive ? 'text-indigo-400' : 'text-slate-400 hover:text-slate-100'}`
+              }
+            >
+              {t('nav.dashboard')}
+            </NavLink>
+            <NavLink
+              to="/privacy"
+              className={({ isActive }) =>
+                `hidden text-sm transition-colors sm:inline ${isActive ? 'text-indigo-400' : 'text-slate-400 hover:text-slate-100'}`
               }
             >
               {t('nav.privacy')}
             </NavLink>
             <LangSwitcher />
+            <div className="ml-1 border-l border-slate-800 pl-3 sm:pl-4">
+              <AccountMenu />
+            </div>
           </div>
         </div>
       </nav>
