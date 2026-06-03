@@ -25,14 +25,6 @@ export default function Layout() {
               {t('nav.home')}
             </NavLink>
             <NavLink
-              to="/dashboard"
-              className={({ isActive }) =>
-                `text-sm transition-colors ${isActive ? 'text-indigo-400' : 'text-slate-400 hover:text-slate-100'}`
-              }
-            >
-              {t('nav.dashboard')}
-            </NavLink>
-            <NavLink
               to="/privacy"
               className={({ isActive }) =>
                 `hidden text-sm transition-colors sm:inline ${isActive ? 'text-indigo-400' : 'text-slate-400 hover:text-slate-100'}`

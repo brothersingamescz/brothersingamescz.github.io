@@ -12,11 +12,11 @@ const spaRoutes = [
   'privacy',
   'privacy/def-the-base',
   'privacy/jumping-jello',
-  'dashboard',
-  'dashboard/def-the-base',
-  'dashboard/jumping-jello',
+  'games/def-the-base',
+  'games/jumping-jello',
   'account',
   'profile',
+  'dashboard',
 ]
 
 export default defineConfig({

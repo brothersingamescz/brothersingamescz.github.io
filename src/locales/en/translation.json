@@ -1,7 +1,6 @@
 {
   "nav": {
     "home": "Home",
-    "dashboard": "Dashboard",
     "privacy": "Privacy Policy"
   },
   "home": {
@@ -20,13 +19,11 @@
     }
   },
   "dashboard": {
-    "title": "My games",
-    "subtitle": "Pick a game to see your progress.",
     "viewProgress": "View progress",
     "comingSoon": "Coming soon"
   },
   "detail": {
-    "back": "Back to dashboard",
+    "back": "Back",
     "signInPrompt": "Sign in with the Google account you use in {{game}} to see your progress.",
     "signInHere": "Sign in here",
     "noTracking": "We don't track web progress for this game yet. Check back later!"
@@ -35,10 +32,10 @@
     "title": "Account",
     "signInTitle": "Sign in",
     "signInPrompt": "Sign in with the Google account you use in our games.",
-    "backToDashboard": "Back to dashboard"
+    "backToDashboard": "Back to games"
   },
   "menu": {
-    "dashboard": "My dashboard",
+    "dashboard": "My games",
     "account": "Account",
     "signIn": "Sign in"
   },

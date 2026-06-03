@@ -71,7 +71,7 @@ export default function Account() {
               {t('profile.signOut')}
             </button>
             <Link
-              to="/dashboard"
+              to="/"
               className="text-sm text-indigo-400 transition-colors hover:text-indigo-300"
             >
               {t('account.backToDashboard')}

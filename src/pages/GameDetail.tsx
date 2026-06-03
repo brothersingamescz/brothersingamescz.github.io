@@ -16,7 +16,7 @@ export default function GameDetail() {
   const { gameId } = useParams()
   const game = getGameById(gameId)
 
-  if (!game) return <Navigate to="/dashboard" replace />
+  if (!game) return <Navigate to="/" replace />
 
   return (
     <div className="mx-auto max-w-3xl">
@@ -39,7 +39,7 @@ function Banner({ game }: { game: Game }) {
       <div className="absolute inset-0 bg-black/20" />
       <div className="relative">
         <Link
-          to="/dashboard"
+          to="/"
           className="inline-flex items-center gap-1 text-sm text-white/80 transition-colors hover:text-white"
         >
           <span aria-hidden>←</span> {t('detail.back')}

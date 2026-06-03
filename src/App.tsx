@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import AuthProvider from './components/AuthProvider'
 import Layout from './components/Layout'
 import Home from './pages/Home'
-import Dashboard from './pages/Dashboard'
 import Account from './pages/Account'
 import PrivacyIndex from './pages/PrivacyIndex'
 import PrivacyPolicy from './pages/PrivacyPolicy'
@@ -21,9 +20,8 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path="privacy" element={<PrivacyIndex />} />
             <Route path="privacy/:game" element={<PrivacyPolicy />} />
-            <Route path="dashboard" element={<Dashboard />} />
             <Route
-              path="dashboard/:gameId"
+              path="games/:gameId"
               element={
                 <Suspense fallback={null}>
                   <GameDetail />
@@ -31,8 +29,10 @@ export default function App() {
               }
             />
             <Route path="account" element={<Account />} />
-            {/* Old route kept as a redirect for existing links/bookmarks. */}
-            <Route path="profile" element={<Navigate to="/dashboard" replace />} />
+            {/* Old routes kept as redirects for existing links/bookmarks. */}
+            <Route path="dashboard" element={<Navigate to="/" replace />} />
+            <Route path="dashboard/:gameId" element={<Navigate to="/" replace />} />
+            <Route path="profile" element={<Navigate to="/" replace />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

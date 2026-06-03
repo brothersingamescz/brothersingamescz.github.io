@@ -1,7 +1,6 @@
 {
   "nav": {
     "home": "Domů",
-    "dashboard": "Dashboard",
     "privacy": "Zásady ochrany osobních údajů"
   },
   "home": {
@@ -20,13 +19,11 @@
     }
   },
   "dashboard": {
-    "title": "Moje hry",
-    "subtitle": "Vyber hru a podívej se na svůj postup.",
     "viewProgress": "Zobrazit postup",
     "comingSoon": "Brzy"
   },
   "detail": {
-    "back": "Zpět na dashboard",
+    "back": "Zpět",
     "signInPrompt": "Přihlas se účtem Google, který používáš ve hře {{game}}, a uvidíš svůj postup.",
     "signInHere": "Přihlásit se zde",
     "noTracking": "Pro tuto hru zatím nesledujeme postup na webu. Zkus to později!"
@@ -35,10 +32,10 @@
     "title": "Účet",
     "signInTitle": "Přihlášení",
     "signInPrompt": "Přihlas se účtem Google, který používáš v našich hrách.",
-    "backToDashboard": "Zpět na dashboard"
+    "backToDashboard": "Zpět na hry"
   },
   "menu": {
-    "dashboard": "Můj dashboard",
+    "dashboard": "Moje hry",
     "account": "Účet",
     "signIn": "Přihlásit se"
   },

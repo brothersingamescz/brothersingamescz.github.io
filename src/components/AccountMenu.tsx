@@ -84,7 +84,7 @@ export default function AccountMenu() {
             <p className="truncate text-xs text-slate-500">{user.email}</p>
           </div>
           <Link
-            to="/dashboard"
+            to="/"
             role="menuitem"
             className="block px-4 py-2.5 text-sm text-slate-300 transition-colors hover:bg-slate-800 hover:text-slate-100"
           >
