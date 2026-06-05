@@ -41,7 +41,7 @@
   },
   "privacy": {
     "title": "Privacy Policy",
-    "lastUpdated": "Last updated: May 2026",
+    "lastUpdated": "Last updated: June 2026",
     "intro": "{{gameName}} does not collect personal data directly. The following third-party services are used in the game and may collect data under their own terms.",
     "thirdPartyTitle": "Third-party services",
     "levelPlay": {
@@ -51,22 +51,30 @@
     },
     "googlePlay": {
       "name": "Google Play Games Services",
-      "desc": "Links your save data to your Google account for cloud sync.",
+      "desc": "Saves your game progress to the cloud (Saved Games), linked to your Google account.",
+      "policy": "Privacy policy"
+    },
+    "firebase": {
+      "name": "Google Firebase",
+      "desc": "Receives a copy of your save data (Cloud Firestore) and signs you in with your Google account (Firebase Authentication) so you can view your progress on this website.",
       "policy": "Privacy policy"
     },
     "saveDataTitle": "Save data",
-    "saveDataDesc": "Your game progress is saved locally on your device. If you use Google Play Games, it can optionally sync to Google's cloud storage.",
+    "saveDataDesc": "Your game progress is saved to the cloud in two ways: via Google Play Games (Saved Games), linked to your Google account, and a copy is written to Google Firebase (Cloud Firestore). When you sign in with your Google account on this website, we read the Firebase copy to show your progress.",
     "advertisingTitle": "Advertising",
     "advertisingDesc": "Ads are served through the Unity LevelPlay (ironSource) mediation platform, which uses your advertising ID. To opt out, go to Settings → Google → Ads on your device.",
     "purchasesTitle": "In-app purchases",
-    "purchasesDesc": "Purchases go through Google Play. Google may retain your purchase history.",
+    "purchasesDesc": "In-app purchases use Unity's IAP package and are processed through Google Play Billing. Google may retain your purchase history.",
     "deletionTitle": "Deleting your data",
-    "deletionIntro": "To delete cloud save data:",
-    "deletionStep1": "Open the Google Play Games app",
-    "deletionStep2": "Find {{gameName}}",
-    "deletionStep3": "Tap the three-dot menu → \"Delete Play Games data\"",
-    "deletionOutcome": "That removes all cloud-synced progress, scores, and upgrades permanently. Local data is deleted when you uninstall. Advertising data resets under Settings → Google → Ads.",
-    "deletionContact": "To request data deletion:",
+    "deletionIntro": "Your game progress is stored both in Google Play Games (Saved Games) and in Firebase. You can delete each:",
+    "deletionGpgsTitle": "Google Play Games (Saved Games)",
+    "deletionGpgsStep1": "Open the Google Play Games app and go to its settings",
+    "deletionGpgsStep2": "Under \"Your Data\" → \"Delete individual game data\", find {{gameName}}",
+    "deletionGpgsStep3": "Tap Delete",
+    "deletionWebTitle": "Data shown on this website (Firebase)",
+    "deletionWebDesc": "If {{gameName}} shows your progress on this site, sign in with your Google account, open it, and click \"Delete my data\".",
+    "deletionOutcome": "Deleting the Firebase copy removes the progress shown here; if you keep playing, the game may re-sync it. Deleting your Google Play Games data removes the cloud save linked to your account. Advertising data resets under Settings → Google → Ads.",
+    "deletionContact": "If your game isn't shown here, or to request full deletion, email us:",
     "contactTitle": "Contact",
     "selectGame": "Select a game to view its privacy policy"
   },

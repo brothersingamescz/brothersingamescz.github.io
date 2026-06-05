@@ -35,6 +35,7 @@ export default function PrivacyPolicy() {
             [
               { key: 'levelPlay', href: 'https://unity.com/legal/game-player-and-app-user-privacy-policy' },
               { key: 'googlePlay', href: 'https://policies.google.com/privacy' },
+              { key: 'firebase', href: 'https://policies.google.com/privacy' },
             ] as const
           ).map(({ key, href }) => (
             <div key={key} className="rounded-lg border border-slate-800 bg-slate-900 p-4">
@@ -77,11 +78,17 @@ export default function PrivacyPolicy() {
 
       <Section title={t('privacy.deletionTitle')}>
         <p className="mb-3 text-slate-400">{t('privacy.deletionIntro')}</p>
-        <ol className="mb-3 list-decimal space-y-1 pl-5 text-slate-400">
-          <li>{t('privacy.deletionStep1')}</li>
-          <li>{t('privacy.deletionStep2', { gameName })}</li>
-          <li>{t('privacy.deletionStep3')}</li>
+
+        <h3 className="mb-1 font-medium text-slate-200">{t('privacy.deletionGpgsTitle')}</h3>
+        <ol className="mb-4 list-decimal space-y-1 pl-5 text-slate-400">
+          <li>{t('privacy.deletionGpgsStep1')}</li>
+          <li>{t('privacy.deletionGpgsStep2', { gameName })}</li>
+          <li>{t('privacy.deletionGpgsStep3')}</li>
         </ol>
+
+        <h3 className="mb-1 font-medium text-slate-200">{t('privacy.deletionWebTitle')}</h3>
+        <p className="mb-4 text-slate-400">{t('privacy.deletionWebDesc', { gameName })}</p>
+
         <p className="mb-3 text-slate-400">{t('privacy.deletionOutcome')}</p>
         <p className="text-slate-400">
           {t('privacy.deletionContact')}{' '}

@@ -41,7 +41,7 @@
   },
   "privacy": {
     "title": "Zásady ochrany osobních údajů",
-    "lastUpdated": "Poslední aktualizace: květen 2026",
+    "lastUpdated": "Poslední aktualizace: červen 2026",
     "intro": "{{gameName}} přímo neshromažďuje osobní údaje. Níže jsou uvedeny služby třetích stran používané ve hře, které mohou shromažďovat data podle vlastních podmínek.",
     "thirdPartyTitle": "Služby třetích stran",
     "levelPlay": {
@@ -51,22 +51,30 @@
     },
     "googlePlay": {
       "name": "Herní služby Google Play",
-      "desc": "Propojuje vaše uložené hry s vaším účtem Google pro synchronizaci v cloudu.",
+      "desc": "Ukládá váš herní postup do cloudu (Uložené hry) propojený s vaším účtem Google.",
+      "policy": "Zásady ochrany osobních údajů"
+    },
+    "firebase": {
+      "name": "Google Firebase",
+      "desc": "Přijímá kopii vašich uložených dat (Cloud Firestore) a přihlašuje vás vaším účtem Google (Firebase Authentication), abyste si na tomto webu mohli zobrazit svůj postup.",
       "policy": "Zásady ochrany osobních údajů"
     },
     "saveDataTitle": "Ukládání dat",
-    "saveDataDesc": "Váš herní postup je uložen lokálně v zařízení. Pokud používáte Herní služby Google Play, může být volitelně synchronizován do cloudového úložiště Google.",
+    "saveDataDesc": "Váš herní postup se ukládá do cloudu dvěma způsoby: přes Google Play Games (Uložené hry) propojené s vaším účtem Google a jeho kopie se zapisuje do služby Google Firebase (Cloud Firestore). Když se na tomto webu přihlásíte účtem Google, načteme kopii z Firebase a zobrazíme váš postup.",
     "advertisingTitle": "Reklama",
     "advertisingDesc": "Reklamy jsou zobrazovány prostřednictvím mediační platformy Unity LevelPlay (ironSource), která využívá vaše reklamní ID. Chcete-li se odhlásit, přejděte na Nastavení → Google → Reklamy ve svém zařízení.",
     "purchasesTitle": "Nákupy v aplikaci",
-    "purchasesDesc": "Nákupy jsou zpracovávány přes Google Play. Google může uchovávat historii vašich nákupů.",
+    "purchasesDesc": "Nákupy v aplikaci využívají balíček Unity IAP a jsou zpracovány přes Google Play Billing. Google může uchovávat historii vašich nákupů.",
     "deletionTitle": "Smazání vašich dat",
-    "deletionIntro": "Jak smazat cloudové zálohy:",
-    "deletionStep1": "Otevřete aplikaci Herní služby Google Play",
-    "deletionStep2": "Najděte hru {{gameName}}",
-    "deletionStep3": "Klepněte na menu se třemi tečkami → \"Smazat data z Herních služeb Google Play\"",
-    "deletionOutcome": "Tím trvale odstraníte veškerý cloudový postup, skóre a vylepšení. Lokální data jsou smazána po odinstalování hry. Reklamní data lze resetovat v části Nastavení → Google → Reklamy.",
-    "deletionContact": "Žádosti o smazání dat zasílejte na:",
+    "deletionIntro": "Váš herní postup je uložen jak v Google Play Games (Uložené hry), tak ve Firebase. Obojí lze smazat:",
+    "deletionGpgsTitle": "Google Play Games (Uložené hry)",
+    "deletionGpgsStep1": "Otevřete aplikaci Google Play Games a přejděte do jejího nastavení",
+    "deletionGpgsStep2": "V části \"Vaše data\" → \"Smazat data jednotlivých her\" najděte hru {{gameName}}",
+    "deletionGpgsStep3": "Klepněte na Smazat",
+    "deletionWebTitle": "Data zobrazená na tomto webu (Firebase)",
+    "deletionWebDesc": "Pokud {{gameName}} zobrazuje váš postup na tomto webu, přihlaste se účtem Google, otevřete hru a klikněte na \"Smazat moje data\".",
+    "deletionOutcome": "Smazáním kopie ve Firebase zmizí postup zobrazený zde; pokud budete dál hrát, hra jej může znovu nahrát. Smazáním dat v Google Play Games odstraníte cloudovou zálohu navázanou na váš účet. Reklamní data lze resetovat v části Nastavení → Google → Reklamy.",
+    "deletionContact": "Pokud vaše hra zde není zobrazena nebo chcete úplné smazání, napište nám e-mailem:",
     "contactTitle": "Kontakt",
     "selectGame": "Vyberte hru pro zobrazení zásad ochrany osobních údajů"
   },

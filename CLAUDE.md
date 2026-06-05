@@ -52,9 +52,17 @@ Routes:
 - `nameKey` / `taglineKey` — i18n keys
 - `emoji` + `gradient` — cover-art placeholder until real artwork exists (Tailwind `bg-linear-to-br` gradient)
 - `storeUrl` — add to flip the homepage card from "coming soon" to a store link
-- `hasWebProfile` + `firestoreCollection` — set on games that sync save data (currently only Def the Base)
+- `hasWebProfile` + `firestoreCollection` — controls whether **this site reads/renders** a game's save data (currently only Def the Base). This flag is website-only; what each game's Unity build actually ships is in *Per-game services & data flow* below.
 
 When a game gains web save-data support, add `hasWebProfile: true, firestoreCollection: 'collection_name'` to its entry in `games.ts`, add a renderer component (e.g. `src/components/DefTheBaseProfile.tsx`), and register it in the `RENDERERS` map in `src/pages/GameDetail.tsx`. Per-game privacy policy variants are configured separately in `GAME_CONFIGS` inside `src/pages/PrivacyPolicy.tsx`.
+
+**Per-game services & data flow (drives the privacy policy).** Both games' Unity builds ship the same stack, so `src/pages/PrivacyPolicy.tsx` and the `privacy.*` i18n keys must disclose all of it:
+- **Ads** — Unity LevelPlay (ironSource mediation, incl. Unity Ads); collects the device advertising ID.
+- **Cloud save — two stores.** Google Play Games (Saved Games), linked to the player's Google account, *and* a copy the game writes to Firebase Cloud Firestore. This website reads only the Firestore copy (after Firebase Auth Google sign-in) and can delete it.
+- **Auth** — Firebase Authentication (Google), used both in-game (to write Firestore) and on the website (to read it).
+- **In-app purchases** — Jumping Jello only (`hasIAP` in `GAME_CONFIGS`): Unity IAP via Google Play Billing.
+
+Two deletion paths follow: the Google Play Games app (Saved Games, both games) and the website's "Delete my data" button (Firestore copy, web-profile games only), plus an email fallback. Keep this section, the `Game` entry, and `GAME_CONFIGS` in sync whenever a game's shipped SDKs change.
 
 **i18n** — All user-facing text is keyed and resolved with `useTranslation`/`t()`. Two locales (`en`, `cs`) in `src/locales/*/translation.json` that **must stay in sync** — add every new string to both files. Detection order is localStorage then navigator (`src/i18n.ts`). Taglines are under `games.taglines.*` (not nested under `games.<name>`) so that `t(game.nameKey)` keeps returning a plain string.
 
