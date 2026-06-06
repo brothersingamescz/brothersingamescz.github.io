@@ -10,11 +10,11 @@ import { join } from 'node:path'
 // 'profile' stays for the client-side redirect to /dashboard.
 const spaRoutes = [
   'privacy',
+  'privacy/web',
   'privacy/def-the-base',
   'privacy/jumping-jello',
   'games/def-the-base',
   'games/jumping-jello',
-  'account',
   'profile',
   'dashboard',
 ]

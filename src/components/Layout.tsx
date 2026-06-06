@@ -1,7 +1,6 @@
 import { Outlet, NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import LangSwitcher from './LangSwitcher'
-import AccountMenu from './AccountMenu'
 import Footer from './Footer'
 
 export default function Layout() {
@@ -33,9 +32,6 @@ export default function Layout() {
               {t('nav.privacy')}
             </NavLink>
             <LangSwitcher />
-            <div className="ml-1 border-l border-slate-800 pl-3 sm:pl-4">
-              <AccountMenu />
-            </div>
           </div>
         </div>
       </nav>

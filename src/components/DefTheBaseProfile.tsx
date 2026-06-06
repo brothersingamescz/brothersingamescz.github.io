@@ -1,14 +1,16 @@
 import { useTranslation } from 'react-i18next'
+import type { Game } from '../data/games'
 import type { PlayerData } from '../lib/player'
 import { usePlayerData } from '../hooks/usePlayerData'
 import UpgradeTree from './UpgradeTree'
 
 // Renders the Def the Base save data. Assumes the player is signed in — the
-// auth gate lives in GameDetail. Importing usePlayerData (which pulls
-// `firebase/firestore`) keeps this whole subtree in the lazy game-detail chunk.
-export default function DefTheBaseProfile() {
+// auth gate (in GameDetail) resolves the project-specific uid and passes it in.
+// Importing usePlayerData (which pulls `firebase/firestore`) keeps this whole
+// subtree in the lazy game-detail chunk.
+export default function DefTheBaseProfile({ game, uid }: { game: Game; uid: string }) {
   const { t } = useTranslation()
-  const { data, error, remove } = usePlayerData<PlayerData>('def_the_base')
+  const { data, error, remove } = usePlayerData<PlayerData>(game, uid)
 
   async function handleDelete() {
     if (!window.confirm(t('profile.deleteConfirm'))) return

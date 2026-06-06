@@ -1,18 +1,22 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { useAuth, signOut } from '../hooks/useAuth'
+import type { User } from 'firebase/auth'
 import Avatar from './Avatar'
 
-export default function AccountMenu() {
+// Account dropdown for a game's detail page: shows who's signed in to that game's
+// Firebase project and lets them sign out. Auth is per project (see useGameAuth),
+// so there's no single global account — each game's detail renders its own. Only
+// rendered when signed in; the signed-out state is handled by the sign-in prompt.
+export default function AccountMenu({
+  user,
+  onSignOut,
+}: {
+  user: User
+  onSignOut: () => void
+}) {
   const { t } = useTranslation()
-  const { user, loading } = useAuth()
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
-  const location = useLocation()
-
-  // Close the menu when the route changes (a menu item was clicked).
-  useEffect(() => setOpen(false), [location.pathname])
 
   // Close on outside click and Escape.
   useEffect(() => {
@@ -30,21 +34,6 @@ export default function AccountMenu() {
       document.removeEventListener('keydown', onKey)
     }
   }, [open])
-
-  if (loading) {
-    return <div className="h-8 w-8 animate-pulse rounded-full bg-slate-800" />
-  }
-
-  if (!user) {
-    return (
-      <Link
-        to="/account"
-        className="rounded-lg bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-indigo-500"
-      >
-        {t('menu.signIn')}
-      </Link>
-    )
-  }
 
   const name = user.displayName || user.email || ''
 
@@ -83,22 +72,8 @@ export default function AccountMenu() {
             )}
             <p className="truncate text-xs text-slate-500">{user.email}</p>
           </div>
-          <Link
-            to="/"
-            role="menuitem"
-            className="block px-4 py-2.5 text-sm text-slate-300 transition-colors hover:bg-slate-800 hover:text-slate-100"
-          >
-            {t('menu.dashboard')}
-          </Link>
-          <Link
-            to="/account"
-            role="menuitem"
-            className="block px-4 py-2.5 text-sm text-slate-300 transition-colors hover:bg-slate-800 hover:text-slate-100"
-          >
-            {t('menu.account')}
-          </Link>
           <button
-            onClick={() => signOut()}
+            onClick={onSignOut}
             role="menuitem"
             className="block w-full px-4 py-2.5 text-left text-sm text-slate-400 transition-colors hover:bg-slate-800 hover:text-slate-100"
           >

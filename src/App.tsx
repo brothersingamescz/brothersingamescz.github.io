@@ -3,9 +3,9 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import AuthProvider from './components/AuthProvider'
 import Layout from './components/Layout'
 import Home from './pages/Home'
-import Account from './pages/Account'
 import PrivacyIndex from './pages/PrivacyIndex'
 import PrivacyPolicy from './pages/PrivacyPolicy'
+import WebsitePrivacy from './pages/WebsitePrivacy'
 
 // Lazy-loaded so the heavy `firebase/firestore` SDK only ships when a player
 // opens a game's progress detail. Auth ships globally (the header needs it).
@@ -19,6 +19,8 @@ export default function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="privacy" element={<PrivacyIndex />} />
+            {/* Static route ranks above the dynamic :game one in React Router. */}
+            <Route path="privacy/web" element={<WebsitePrivacy />} />
             <Route path="privacy/:game" element={<PrivacyPolicy />} />
             <Route
               path="games/:gameId"
@@ -28,8 +30,8 @@ export default function App() {
                 </Suspense>
               }
             />
-            <Route path="account" element={<Account />} />
             {/* Old routes kept as redirects for existing links/bookmarks. */}
+            <Route path="account" element={<Navigate to="/" replace />} />
             <Route path="dashboard" element={<Navigate to="/" replace />} />
             <Route path="dashboard/:gameId" element={<Navigate to="/" replace />} />
             <Route path="profile" element={<Navigate to="/" replace />} />

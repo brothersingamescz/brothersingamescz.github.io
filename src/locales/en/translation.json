@@ -28,17 +28,6 @@
     "signInHere": "Sign in here",
     "noTracking": "We don't track web progress for this game yet. Check back later!"
   },
-  "account": {
-    "title": "Account",
-    "signInTitle": "Sign in",
-    "signInPrompt": "Sign in with the Google account you use in our games.",
-    "backToDashboard": "Back to games"
-  },
-  "menu": {
-    "dashboard": "My games",
-    "account": "Account",
-    "signIn": "Sign in"
-  },
   "privacy": {
     "title": "Privacy Policy",
     "lastUpdated": "Last updated: June 2026",
@@ -77,6 +66,32 @@
     "deletionContact": "If your game isn't shown here, or to request full deletion, email us:",
     "contactTitle": "Contact",
     "selectGame": "Select a game to view its privacy policy"
+  },
+  "privacyWeb": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: June 2026",
+    "intro": "This policy explains how the BrothersInGames website handles your data. The site lets you view and delete your game progress — it doesn't sell or share your data, and uses no analytics or advertising. Each game collects its own data in-app; see the game-specific policies at the bottom of this page.",
+    "servicesTitle": "Services this website uses",
+    "policyLink": "Privacy policy",
+    "firebase": {
+      "name": "Google Firebase",
+      "desc": "Signs you in with your Google account (Firebase Authentication) and stores the copy of your game progress (Cloud Firestore) that this site reads. Each game uses its own Firebase project."
+    },
+    "github": {
+      "name": "GitHub Pages",
+      "desc": "Hosts this website. GitHub may process technical data such as your IP address and request logs in order to serve the pages."
+    },
+    "signInTitle": "Signing in",
+    "signInDesc": "To show your progress, the site signs you in with your Google account via Firebase Authentication. When you sign in, we receive your name, email address, profile picture and account ID, used only to identify you and load your save data. Because each game has its own Firebase project, you sign in (and out) separately for each game on its page.",
+    "saveDataTitle": "Your game progress",
+    "saveDataDesc": "After you sign in, the site reads a copy of your save data from Google Firebase (Cloud Firestore) and shows it to you. The site only reads this copy — your progress is written by the game, not by the website.",
+    "noTrackingTitle": "No analytics or advertising",
+    "noTrackingDesc": "This website uses no analytics, no advertising, and no tracking cookies. (Ads or purchases that appear inside the games are covered by each game's own privacy policy.)",
+    "deletionTitle": "Deleting your data",
+    "deletionDesc": "You can delete the copy of your progress shown here at any time: sign in, open your game, and click \"Delete my data\". This removes the Firebase copy; if you keep playing, the game may sync it again. For anything else, email us below.",
+    "gamesTitle": "Game privacy policies",
+    "gamesDesc": "Each game collects its own data in-app (cloud save, ads, purchases). See the policy for each game:",
+    "contactTitle": "Contact"
   },
   "profile": {
     "title": "My progress",
@@ -133,6 +148,20 @@
       "shield": "Shield",
       "plus": "Plus",
       "max": "Max"
+    },
+    "jello": {
+      "overviewTitle": "Overview",
+      "stars": "Stars",
+      "levels": "Levels",
+      "skins": "Skins",
+      "selectedSkin": "Selected skin",
+      "adsRemoved": "Ads removed",
+      "yes": "Yes",
+      "no": "No",
+      "levelsTitle": "Levels",
+      "level": "Level",
+      "locked": "Locked",
+      "endless": "Endless"
     },
     "delete": "Delete my data",
     "deleteConfirm": "Really delete your web profile? This removes the saved progress shown on the web for this account. Your in-game and Google Play data are not affected and will re-sync next time."

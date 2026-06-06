@@ -1,30 +1,30 @@
 import { useEffect, useState } from 'react'
 import { deleteDoc, doc, getDoc } from 'firebase/firestore'
-import { db } from '../lib/firestore'
-import { useAuth } from './useAuth'
+import { dbFor } from '../lib/firestore'
+import type { Game } from '../data/games'
 
 // `undefined` = still loading, `null` = no document for this account.
 export type DataState<T> = T | null | undefined
 
 // Reads (and lets the player delete) the per-game Firestore document at
-// `{collection}/{uid}`. The web app is a read-only view of save data the Unity
-// game writes; `remove` only clears the web copy. Importing `firebase/firestore`
-// here is what keeps that heavy module in the lazy game-detail chunk.
-export function usePlayerData<T>(collection: string) {
-  const { user } = useAuth()
+// `{game.firestoreCollection}/{uid}`. The `uid` and the target Firebase project
+// come from the game's own auth session (see hooks/useGameAuth), resolved by the
+// caller before this hook runs. The web app is a read-only view of save data the
+// Unity game writes; `remove` only clears the web copy. Importing
+// `firebase/firestore` here is what keeps that heavy module in the lazy
+// game-detail chunk.
+export function usePlayerData<T>(game: Game, uid: string) {
+  const collection = game.firestoreCollection
+  const projectKey = game.firebaseProject
   const [data, setData] = useState<DataState<T>>(undefined)
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    if (!user) {
-      setData(undefined)
-      setError(false)
-      return
-    }
+    if (!collection) return
     let cancelled = false
     setData(undefined)
     setError(false)
-    getDoc(doc(db, collection, user.uid))
+    getDoc(doc(dbFor(projectKey), collection, uid))
       .then((snap) => {
         if (!cancelled) setData(snap.exists() ? (snap.data() as T) : null)
       })
@@ -34,11 +34,11 @@ export function usePlayerData<T>(collection: string) {
     return () => {
       cancelled = true
     }
-  }, [user, collection])
+  }, [collection, projectKey, uid])
 
   async function remove() {
-    if (!user) return
-    await deleteDoc(doc(db, collection, user.uid))
+    if (!collection) return
+    await deleteDoc(doc(dbFor(projectKey), collection, uid))
     setData(null)
   }
 

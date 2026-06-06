@@ -28,17 +28,6 @@
     "signInHere": "Přihlásit se zde",
     "noTracking": "Pro tuto hru zatím nesledujeme postup na webu. Zkus to později!"
   },
-  "account": {
-    "title": "Účet",
-    "signInTitle": "Přihlášení",
-    "signInPrompt": "Přihlas se účtem Google, který používáš v našich hrách.",
-    "backToDashboard": "Zpět na hry"
-  },
-  "menu": {
-    "dashboard": "Moje hry",
-    "account": "Účet",
-    "signIn": "Přihlásit se"
-  },
   "privacy": {
     "title": "Zásady ochrany osobních údajů",
     "lastUpdated": "Poslední aktualizace: červen 2026",
@@ -77,6 +66,32 @@
     "deletionContact": "Pokud vaše hra zde není zobrazena nebo chcete úplné smazání, napište nám e-mailem:",
     "contactTitle": "Kontakt",
     "selectGame": "Vyberte hru pro zobrazení zásad ochrany osobních údajů"
+  },
+  "privacyWeb": {
+    "title": "Zásady ochrany osobních údajů",
+    "lastUpdated": "Poslední aktualizace: červen 2026",
+    "intro": "Tyto zásady popisují, jak web BrothersInGames nakládá s tvými údaji. Web ti umožňuje zobrazit a smazat tvůj herní postup — neprodává ani nesdílí tvoje data a nepoužívá žádnou analytiku ani reklamu. Každá hra sbírá vlastní data přímo v aplikaci; viz zásady jednotlivých her na konci stránky.",
+    "servicesTitle": "Služby, které tento web používá",
+    "policyLink": "Zásady ochrany údajů",
+    "firebase": {
+      "name": "Google Firebase",
+      "desc": "Přihlašuje tě účtem Google (Firebase Authentication) a uchovává kopii tvého herního postupu (Cloud Firestore), kterou tento web čte. Každá hra používá vlastní projekt Firebase."
+    },
+    "github": {
+      "name": "GitHub Pages",
+      "desc": "Hostuje tento web. GitHub může pro doručení stránek zpracovávat technické údaje, jako je tvoje IP adresa a logy požadavků."
+    },
+    "signInTitle": "Přihlášení",
+    "signInDesc": "Abychom ti zobrazili postup, web tě přihlásí účtem Google přes Firebase Authentication. Při přihlášení získáme tvé jméno, e-mailovou adresu, profilový obrázek a ID účtu — slouží jen k tvé identifikaci a načtení uložených dat. Protože každá hra má vlastní projekt Firebase, přihlašuješ (i odhlašuješ) se ke každé hře zvlášť na její stránce.",
+    "saveDataTitle": "Tvůj herní postup",
+    "saveDataDesc": "Po přihlášení web načte kopii tvých uložených dat z Google Firebase (Cloud Firestore) a zobrazí ti je. Web tuto kopii pouze čte — tvůj postup zapisuje hra, ne web.",
+    "noTrackingTitle": "Žádná analytika ani reklama",
+    "noTrackingDesc": "Tento web nepoužívá žádnou analytiku, reklamu ani sledovací cookies. (Reklamy nebo nákupy uvnitř her pokrývají zásady ochrany údajů jednotlivých her.)",
+    "deletionTitle": "Smazání tvých dat",
+    "deletionDesc": "Kopii postupu zobrazenou zde můžeš kdykoli smazat: přihlas se, otevři svou hru a klikni na „Smazat moje data“. Tím se odstraní kopie ve Firebase; pokud hraješ dál, hra ji může znovu synchronizovat. Pro cokoli dalšího nám napiš níže.",
+    "gamesTitle": "Zásady ochrany údajů her",
+    "gamesDesc": "Každá hra sbírá vlastní data v aplikaci (cloudové uložení, reklamy, nákupy). Viz zásady pro každou hru:",
+    "contactTitle": "Kontakt"
   },
   "profile": {
     "title": "Můj postup",
@@ -133,6 +148,20 @@
       "shield": "Štít",
       "plus": "Plus",
       "max": "Max"
+    },
+    "jello": {
+      "overviewTitle": "Přehled",
+      "stars": "Hvězdy",
+      "levels": "Levely",
+      "skins": "Skiny",
+      "selectedSkin": "Vybraný skin",
+      "adsRemoved": "Reklamy odstraněny",
+      "yes": "Ano",
+      "no": "Ne",
+      "levelsTitle": "Levely",
+      "level": "Level",
+      "locked": "Zamčeno",
+      "endless": "Nekonečno"
     },
     "delete": "Smazat moje data",
     "deleteConfirm": "Opravdu smazat svůj webový profil? Tím se z webu odstraní uložený postup pro tento účet. Postup ve hře a v Google Play to neovlivní a při příští synchronizaci se znovu nahraje."

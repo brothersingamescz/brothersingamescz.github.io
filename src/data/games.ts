@@ -1,3 +1,9 @@
+// Games whose Unity build writes to a *different* Firebase project than the
+// site's primary one (Def the Base, see lib/firebase.ts). Configured + lazily
+// initialized in lib/firebaseProjects.ts. Auth (and the player UID) is per
+// project, so these games sign in against their own project on their detail page.
+export type FirebaseProjectKey = 'jumpingJello'
+
 export type Game = {
   id: string
   nameKey: 'games.defTheBase' | 'games.jumpingJello'
@@ -12,6 +18,9 @@ export type Game = {
   // `hasWebProfile` show progress on the dashboard.
   hasWebProfile?: boolean
   firestoreCollection?: string
+  // Set when the game's save lives in a secondary Firebase project. Omitted =
+  // primary project (Def the Base).
+  firebaseProject?: FirebaseProjectKey
 }
 
 export const games: Game[] = [
@@ -30,6 +39,9 @@ export const games: Game[] = [
     taglineKey: 'games.taglines.jumpingJello',
     emoji: '🍮',
     gradient: 'from-amber-400 to-pink-500',
+    hasWebProfile: true,
+    firestoreCollection: 'jumping_jello',
+    firebaseProject: 'jumpingJello',
   },
 ]
 

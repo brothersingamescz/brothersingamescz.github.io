@@ -2,28 +2,41 @@ import { useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { getGameById, type Game } from '../data/games'
-import { useAuth, signInWithGoogle } from '../hooks/useAuth'
+import { useGameAuth, type GameAuth } from '../hooks/useGameAuth'
+import AccountMenu from '../components/AccountMenu'
 import DefTheBaseProfile from '../components/DefTheBaseProfile'
+import JumpingJelloProfile from '../components/JumpingJelloProfile'
 
-// game id -> the component that renders that game's save data. Only Def the Base
-// has a web profile today; add an entry here when another game starts syncing.
-const RENDERERS: Record<string, React.ComponentType> = {
+// game id -> the component that renders that game's save data. Add an entry here
+// when another game starts syncing its save to Firestore. The gate passes the
+// game and the (project-specific) signed-in uid down.
+const RENDERERS: Record<string, React.ComponentType<{ game: Game; uid: string }>> = {
   'def-the-base': DefTheBaseProfile,
+  'jumping-jello': JumpingJelloProfile,
 }
 
 export default function GameDetail() {
   const { t } = useTranslation()
   const { gameId } = useParams()
   const game = getGameById(gameId)
+  // Auth against this game's own Firebase project (per-project sign-in/out).
+  const auth = useGameAuth(game?.firebaseProject)
 
   if (!game) return <Navigate to="/" replace />
 
   return (
     <div className="mx-auto max-w-3xl">
+      {/* Per-game account menu (sign out). Sits above the banner because the
+          banner clips overflow and would cut off the dropdown. */}
+      {game.hasWebProfile && auth.user && (
+        <div className="mb-3 flex justify-end">
+          <AccountMenu user={auth.user} onSignOut={auth.signOut} />
+        </div>
+      )}
       <Banner game={game} />
       <div className="mt-8">
         {game.hasWebProfile ? (
-          <ProfileGate game={game} />
+          <ProfileGate game={game} auth={auth} />
         ) : (
           <Notice>{t('detail.noTracking')}</Notice>
         )}
@@ -56,26 +69,27 @@ function Banner({ game }: { game: Game }) {
   )
 }
 
-// Gates the game-specific data renderer behind sign-in.
-function ProfileGate({ game }: { game: Game }) {
+// Gates the game-specific data renderer behind sign-in. Auth is resolved once in
+// GameDetail (against the game's own Firebase project) and passed in.
+function ProfileGate({ game, auth }: { game: Game; auth: GameAuth }) {
   const { t } = useTranslation()
-  const { user, loading } = useAuth()
+  const { uid, status, signIn } = auth
 
-  if (loading) return <p className="text-slate-400">{t('profile.loading')}</p>
-  if (!user) return <SignInPrompt game={game} />
+  if (status === 'loading') return <p className="text-slate-400">{t('profile.loading')}</p>
+  if (status === 'needs-signin' || !uid) return <SignInPrompt game={game} signIn={signIn} />
 
   const Renderer = RENDERERS[game.id]
-  return Renderer ? <Renderer /> : <Notice>{t('detail.noTracking')}</Notice>
+  return Renderer ? <Renderer game={game} uid={uid} /> : <Notice>{t('detail.noTracking')}</Notice>
 }
 
-function SignInPrompt({ game }: { game: Game }) {
+function SignInPrompt({ game, signIn }: { game: Game; signIn: () => Promise<void> }) {
   const { t } = useTranslation()
   const [error, setError] = useState(false)
 
   async function handleSignIn() {
     setError(false)
     try {
-      await signInWithGoogle()
+      await signIn()
     } catch {
       setError(true)
     }

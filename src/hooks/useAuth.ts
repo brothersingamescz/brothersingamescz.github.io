@@ -4,6 +4,7 @@ import {
   signInWithPopup,
   signInWithRedirect,
   signOut as fbSignOut,
+  type Auth,
   type User,
 } from 'firebase/auth'
 import { auth } from '../lib/firebase'
@@ -27,19 +28,27 @@ const POPUP_FALLBACK_CODES = new Set([
   'auth/cancelled-popup-request',
 ])
 
-export async function signInWithGoogle() {
+// Google sign-in against a specific Firebase project's Auth. Each game on a
+// secondary project signs in against its own Auth (see hooks/useGameAuth), so the
+// popup/redirect handling lives here and is reused.
+export async function googleSignIn(targetAuth: Auth) {
   const provider = new GoogleAuthProvider()
   try {
-    await signInWithPopup(auth, provider)
+    await signInWithPopup(targetAuth, provider)
   } catch (err) {
     const code = (err as { code?: string }).code
     if (code && POPUP_FALLBACK_CODES.has(code)) {
-      await signInWithRedirect(auth, provider)
+      await signInWithRedirect(targetAuth, provider)
       return
     }
     if (code === 'auth/popup-closed-by-user') return // user dismissed, not an error
     throw err
   }
+}
+
+// Sign in against the primary project (global header / account page).
+export function signInWithGoogle() {
+  return googleSignIn(auth)
 }
 
 export function signOut() {
