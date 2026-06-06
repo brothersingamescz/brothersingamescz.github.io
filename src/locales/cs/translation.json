@@ -25,7 +25,7 @@
   "detail": {
     "back": "Zpět",
     "signInPrompt": "Přihlas se účtem Google, který používáš ve hře {{game}}, a uvidíš svůj postup.",
-    "signInHere": "Přihlásit se zde",
+    "signInWithGoogle": "Přihlásit se přes Google",
     "noTracking": "Pro tuto hru zatím nesledujeme postup na webu. Zkus to později!"
   },
   "privacy": {

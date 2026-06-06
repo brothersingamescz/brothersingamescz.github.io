@@ -25,7 +25,7 @@
   "detail": {
     "back": "Back",
     "signInPrompt": "Sign in with the Google account you use in {{game}} to see your progress.",
-    "signInHere": "Sign in here",
+    "signInWithGoogle": "Sign in with Google",
     "noTracking": "We don't track web progress for this game yet. Check back later!"
   },
   "privacy": {

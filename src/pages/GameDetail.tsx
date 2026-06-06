@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { getGameById, type Game } from '../data/games'
 import { useGameAuth, type GameAuth } from '../hooks/useGameAuth'
 import AccountMenu from '../components/AccountMenu'
+import GoogleSignInButton from '../components/GoogleSignInButton'
 import DefTheBaseProfile from '../components/DefTheBaseProfile'
 import JumpingJelloProfile from '../components/JumpingJelloProfile'
 
@@ -98,12 +99,7 @@ function SignInPrompt({ game, signIn }: { game: Game; signIn: () => Promise<void
   return (
     <div className="rounded-lg border border-slate-800 bg-slate-900 p-6">
       <p className="mb-4 text-slate-300">{t('detail.signInPrompt', { game: t(game.nameKey) })}</p>
-      <button
-        onClick={handleSignIn}
-        className="rounded-lg bg-indigo-600 px-4 py-2 font-medium text-white transition-colors hover:bg-indigo-500"
-      >
-        {t('detail.signInHere')}
-      </button>
+      <GoogleSignInButton onClick={handleSignIn} />
       {error && <p className="mt-3 text-sm text-red-400">{t('profile.signInError')}</p>}
     </div>
   )
