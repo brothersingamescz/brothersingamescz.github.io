@@ -11,12 +11,12 @@ import { getAuth } from 'firebase/auth'
 // Games whose Unity build writes to a different Firebase project are configured
 // separately in ./firebaseProjects (initialized lazily, per game).
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FB_DEF_THE_BASE_API_KEY,
-  authDomain: import.meta.env.VITE_FB_DEF_THE_BASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FB_DEF_THE_BASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FB_DEF_THE_BASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FB_DEF_THE_BASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FB_DEF_THE_BASE_APP_ID,
+    apiKey: import.meta.env.VITE_FB_DEF_THE_BASE_API_KEY,
+    authDomain: import.meta.env.VITE_FB_DEF_THE_BASE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_FB_DEF_THE_BASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FB_DEF_THE_BASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FB_DEF_THE_BASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FB_DEF_THE_BASE_APP_ID,
 }
 
 // Only Auth is initialized here — it ships globally because the header shows

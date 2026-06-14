@@ -11,5 +11,5 @@ import type { FirebaseProjectKey } from '../data/games'
 // bundle that the global auth header loads on every page. `getFirestore` caches
 // per app, so calling this repeatedly returns the same instance.
 export function dbFor(projectKey?: FirebaseProjectKey): Firestore {
-  return getFirestore(projectKey ? appFor(projectKey) : primaryApp)
+    return getFirestore(projectKey ? appFor(projectKey) : primaryApp)
 }
