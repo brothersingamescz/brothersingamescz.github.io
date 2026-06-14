@@ -1,169 +1,244 @@
 {
-  "nav": {
-    "home": "Domů",
-    "privacy": "Zásady ochrany osobních údajů"
-  },
-  "home": {
-    "welcome": "Vítejte",
-    "subtitle": "Hry od BrothersInGames",
-    "description": "Nezávislé herní studio.",
-    "gamesTitle": "Hry",
-    "comingSoon": "Brzy"
-  },
-  "games": {
-    "defTheBase": "Def the Base",
-    "jumpingJello": "Jumping Jello",
-    "taglines": {
-      "defTheBase": "Tower defense",
-      "jumpingJello": "Arkáda"
+    "nav": {
+        "home": "Domů",
+        "privacy": "Zásady ochrany osobních údajů"
+    },
+    "home": {
+        "welcome": "Vítejte",
+        "subtitle": "Hry od BrothersInGames",
+        "description": "Nezávislé herní studio.",
+        "gamesTitle": "Hry",
+        "appsTitle": "Aplikace",
+        "comingSoon": "Brzy"
+    },
+    "games": {
+        "defTheBase": "Def the Base",
+        "jumpingJello": "Jumping Jello",
+        "taglines": {
+            "defTheBase": "Tower defense",
+            "jumpingJello": "Arkáda"
+        }
+    },
+    "apps": {
+        "birthdaysBeyond": "Birthdays & Beyond",
+        "taglines": {
+            "birthdaysBeyond": "Připomínky"
+        }
+    },
+    "dashboard": {
+        "viewProgress": "Zobrazit postup",
+        "comingSoon": "Brzy"
+    },
+    "detail": {
+        "back": "Zpět",
+        "signInPrompt": "Přihlas se účtem Google, který používáš ve hře {{game}}, a uvidíš svůj postup.",
+        "signInWithGoogle": "Přihlásit se přes Google",
+        "noTracking": "Pro tuto hru zatím nesledujeme postup na webu. Zkus to později!",
+        "comingSoon": "Tato aplikace bude brzy k dispozici. Sledujte nás!"
+    },
+    "privacy": {
+        "title": "Zásady ochrany osobních údajů",
+        "lastUpdated": "Poslední aktualizace: červen 2026",
+        "intro": "{{gameName}} přímo neshromažďuje osobní údaje. Níže jsou uvedeny služby třetích stran používané ve hře, které mohou shromažďovat data podle vlastních podmínek.",
+        "thirdPartyTitle": "Služby třetích stran",
+        "levelPlay": {
+            "name": "Unity LevelPlay (ironSource)",
+            "desc": "Mediační platforma pro reklamy. Zobrazuje reklamy z reklamních sítí (včetně Unity Ads) a shromažďuje reklamní ID vašeho zařízení.",
+            "policy": "Zásady ochrany osobních údajů"
+        },
+        "googlePlay": {
+            "name": "Herní služby Google Play",
+            "desc": "Ukládá váš herní postup do cloudu (Uložené hry) propojený s vaším účtem Google.",
+            "policy": "Zásady ochrany osobních údajů"
+        },
+        "firebase": {
+            "name": "Google Firebase",
+            "desc": "Přijímá kopii vašich uložených dat (Cloud Firestore) a přihlašuje vás vaším účtem Google (Firebase Authentication), abyste si na tomto webu mohli zobrazit svůj postup.",
+            "policy": "Zásady ochrany osobních údajů"
+        },
+        "saveDataTitle": "Ukládání dat",
+        "saveDataDesc": "Váš herní postup se ukládá do cloudu dvěma způsoby: přes Google Play Games (Uložené hry) propojené s vaším účtem Google a jeho kopie se zapisuje do služby Google Firebase (Cloud Firestore). Když se na tomto webu přihlásíte účtem Google, načteme kopii z Firebase a zobrazíme váš postup.",
+        "advertisingTitle": "Reklama",
+        "advertisingDesc": "Reklamy jsou zobrazovány prostřednictvím mediační platformy Unity LevelPlay (ironSource), která využívá vaše reklamní ID. Chcete-li se odhlásit, přejděte na Nastavení → Google → Reklamy ve svém zařízení.",
+        "purchasesTitle": "Nákupy v aplikaci",
+        "purchasesDesc": "Nákupy v aplikaci využívají balíček Unity IAP a jsou zpracovány přes Google Play Billing. Google může uchovávat historii vašich nákupů.",
+        "deletionTitle": "Smazání vašich dat",
+        "deletionIntro": "Váš herní postup je uložen jak v Google Play Games (Uložené hry), tak ve Firebase. Obojí lze smazat:",
+        "deletionGpgsTitle": "Google Play Games (Uložené hry)",
+        "deletionGpgsStep1": "Otevřete aplikaci Google Play Games a přejděte do jejího nastavení",
+        "deletionGpgsStep2": "V části \"Vaše data\" → \"Smazat data jednotlivých her\" najděte hru {{gameName}}",
+        "deletionGpgsStep3": "Klepněte na Smazat",
+        "deletionWebTitle": "Data zobrazená na tomto webu (Firebase)",
+        "deletionWebDesc": "Pokud {{gameName}} zobrazuje váš postup na tomto webu, přihlaste se účtem Google, otevřete hru a klikněte na \"Smazat moje data\".",
+        "deletionOutcome": "Smazáním kopie ve Firebase zmizí postup zobrazený zde; pokud budete dál hrát, hra jej může znovu nahrát. Smazáním dat v Google Play Games odstraníte cloudovou zálohu navázanou na váš účet. Reklamní data lze resetovat v části Nastavení → Google → Reklamy.",
+        "deletionContact": "Pokud vaše hra zde není zobrazena nebo chcete úplné smazání, napište nám e-mailem:",
+        "contactTitle": "Kontakt",
+        "selectGame": "Vyberte hru pro zobrazení zásad ochrany osobních údajů"
+    },
+    "privacyWeb": {
+        "title": "Zásady ochrany osobních údajů",
+        "lastUpdated": "Poslední aktualizace: červen 2026",
+        "intro": "Tyto zásady popisují, jak web BrothersInGames nakládá s tvými údaji. Web ti umožňuje zobrazit a smazat tvůj herní postup — neprodává ani nesdílí tvoje data a nepoužívá žádnou analytiku ani reklamu. Každá hra sbírá vlastní data přímo v aplikaci; viz zásady jednotlivých her na konci stránky.",
+        "servicesTitle": "Služby, které tento web používá",
+        "policyLink": "Zásady ochrany údajů",
+        "firebase": {
+            "name": "Google Firebase",
+            "desc": "Přihlašuje tě účtem Google (Firebase Authentication) a uchovává kopii tvého herního postupu (Cloud Firestore), kterou tento web čte. Každá hra používá vlastní projekt Firebase."
+        },
+        "github": {
+            "name": "GitHub Pages",
+            "desc": "Hostuje tento web. GitHub může pro doručení stránek zpracovávat technické údaje, jako je tvoje IP adresa a logy požadavků."
+        },
+        "signInTitle": "Přihlášení",
+        "signInDesc": "Abychom ti zobrazili postup, web tě přihlásí účtem Google přes Firebase Authentication. Při přihlášení získáme tvé jméno, e-mailovou adresu, profilový obrázek a ID účtu — slouží jen k tvé identifikaci a načtení uložených dat. Protože každá hra má vlastní projekt Firebase, přihlašuješ (i odhlašuješ) se ke každé hře zvlášť na její stránce.",
+        "saveDataTitle": "Tvůj herní postup",
+        "saveDataDesc": "Po přihlášení web načte kopii tvých uložených dat z Google Firebase (Cloud Firestore) a zobrazí ti je. Web tuto kopii pouze čte — tvůj postup zapisuje hra, ne web.",
+        "noTrackingTitle": "Žádná analytika ani reklama",
+        "noTrackingDesc": "Tento web nepoužívá žádnou analytiku, reklamu ani sledovací cookies. (Reklamy nebo nákupy uvnitř her pokrývají zásady ochrany údajů jednotlivých her.)",
+        "deletionTitle": "Smazání tvých dat",
+        "deletionDesc": "Kopii postupu zobrazenou zde můžeš kdykoli smazat: přihlas se, otevři svou hru a klikni na „Smazat moje data“. Tím se odstraní kopie ve Firebase; pokud hraješ dál, hra ji může znovu synchronizovat. Pro cokoli dalšího nám napiš níže.",
+        "gamesTitle": "Zásady ochrany údajů her",
+        "gamesDesc": "Každá hra sbírá vlastní data v aplikaci (cloudové uložení, reklamy, nákupy). Viz zásady pro každou hru:",
+        "appsTitle": "Zásady ochrany údajů aplikací",
+        "appsDesc": "Každá aplikace sbírá vlastní data. Viz zásady pro každou aplikaci:",
+        "contactTitle": "Kontakt"
+    },
+    "privacyApp": {
+        "title": "Zásady ochrany osobních údajů",
+        "lastUpdated": "Poslední aktualizace: červen 2026",
+        "intro": "Tyto zásady popisují, jak aplikace Birthdays & Beyond (balíček com.brothersingames.birthdaysbeyond) nakládá s vašimi údaji. Aplikace slouží k připomínání narozenin, jmenin, výročí úmrtí a dalších výročí, včetně odpočtu a výpočtu věku. Je navržena jako „offline-first“: vaše data jsou primárně uložena ve vašem zařízení a vývojář neprovozuje vlastní server.",
+        "controllerTitle": "Správce údajů",
+        "controllerDesc": "Správcem osobních údajů zpracovávaných v rámci aplikace je BrothersInGames (Česká republika); kontaktovat nás můžete na e-mailu uvedeném v sekci Kontakt níže. Společnost Google vystupuje jako poskytovatel služeb, případně samostatný správce, u reklam (AdMob) a u volitelné zálohy na Google Drive. Právním základem zpracování je plnění služby a oprávněný zájem u základních funkcí a volitelné synchronizace (kterou si sami zapnete) a váš souhlas u personalizovaných reklam.",
+        "dataTitle": "Jaká data zpracováváme a kde",
+        "dataDesc": "Vaše záznamy (narozeniny, jmeniny, výročí a poznámky) i případné přiložené fotky jsou ve výchozím stavu uloženy pouze ve vašem zařízení. Data opouštějí zařízení jen ve dvou případech popsaných níže: když si zapnete volitelnou zálohu na Google Drive (přenos do vašeho vlastního účtu Google) a v souvislosti se zobrazováním reklam přes Google AdMob. Jinak vaše data nikam neodesíláme.",
+        "permissionsTitle": "Oprávnění a jejich účel",
+        "permissions": {
+            "contacts": {
+                "name": "Kontakty (čtení)",
+                "desc": "Pouze pro import narozenin a výročí z vašich kontaktů. Uloží se jen záznamy, které sami vyberete. Kontakty se nikam neodesílají (kromě případné zálohy na Drive, viz níže)."
+            },
+            "notifications": {
+                "name": "Oznámení",
+                "desc": "Pouze pro lokální připomínky ve vašem zařízení. Žádné push notifikace, žádný server."
+            },
+            "media": {
+                "name": "Fotky a média (galerie)",
+                "desc": "Pouze pro přiložení fotky k záznamu. Fotky zůstávají uloženy lokálně."
+            },
+            "files": {
+                "name": "Přístup k souborům a sdílení",
+                "desc": "Pouze pro import a export dat (JSON/CSV/XLSX) a stažení šablony. Soubory vybíráte a sdílíte vy sami přes systémové sdílení."
+            }
+        },
+        "driveTitle": "Volitelná záloha a synchronizace přes Google Drive",
+        "driveDesc": "Zálohu a synchronizaci si aktivně zapnete přihlášením přes Google (OAuth 2.0 s PKCE). Při přihlášení aplikace získá identitu vašeho účtu Google (e-mailovou adresu a základní profil) výhradně kvůli autentizaci. Zálohují se pouze vaše textové záznamy — přiložené fotky se nezálohují a zůstávají v zařízení — a to do skryté složky aplikace ve vašem vlastním Google Drive (oprávnění drive.appdata). Tato data jsou uložena na vašem účtu Google, nikoli na serverech vývojáře; jsou přístupná jen této aplikaci a nejsou vidět mezi běžnými soubory na Drive. Synchronizace přenáší data mezi zařízením a vaším Drive; konflikty se řeší pravidlem „poslední zápis vyhrává“. Funkci můžete kdykoli vypnout, odhlásit se a zálohu ve svém účtu Google smazat. Na tato data se vztahuje Google API Services User Data Policy včetně požadavků Limited Use: data používáme výhradně k poskytnutí funkce zálohy a synchronizace a nesdílíme ani neprodáváme je k jiným účelům.",
+        "adsTitle": "Reklamy Google AdMob",
+        "adsDesc": "Aplikace zobrazuje reklamy prostřednictvím Google AdMob (mj. celoobrazovkovou reklamu při spuštění). AdMob je služba Google, která může shromažďovat a zpracovávat údaje pro zobrazování a měření reklam, zejména reklamní identifikátor zařízení (Android Advertising ID), IP adresu a informace o zařízení a používání. Jde o sdílení dat se třetí stranou (Google). Pro uživatele v EU/EHP aplikace před zobrazením personalizovaných reklam vyžádá souhlas prostřednictvím consent dialogu (Google User Messaging Platform), v souladu s GDPR a ePrivacy; bez souhlasu se zobrazují pouze nepersonalizované reklamy, případně podle vaší volby. Reklamní ID můžete resetovat nebo personalizaci omezit v Nastavení → Google → Reklamy ve svém zařízení Android.",
+        "thirdPartyTitle": "Sdílení dat se třetími stranami",
+        "admob": {
+            "name": "Google AdMob",
+            "desc": "Zobrazuje reklamy a k tomu zpracovává reklamní ID, IP adresu a informace o zařízení.",
+            "policy": "Zásady ochrany osobních údajů"
+        },
+        "googleAccount": {
+            "name": "Google (přihlášení a Drive)",
+            "desc": "Ověřuje vaši identitu při přihlášení a uchovává volitelnou zálohu ve skryté složce vašeho Google Drive.",
+            "policy": "Zásady ochrany osobních údajů"
+        },
+        "partnerSites": "Jak Google používá informace z webů a aplikací, které využívají jeho služby",
+        "retentionTitle": "Uchování a mazání dat",
+        "retentionDesc": "Data ve vašem zařízení zůstávají, dokud příslušný záznam nesmažete nebo aplikaci neodinstalujete. Odinstalace odstraní lokální data; případná záloha ve vašem Google Drive zůstává zachována, dokud ji sami nesmažete (vypnutím funkce, nebo odhlášením a smazáním zálohy ve svém účtu Google). Reklamní data spravujete přes nastavení reklamního ID ve svém zařízení.",
+        "securityTitle": "Zabezpečení",
+        "securityDesc": "Přenos dat mezi aplikací a službami Google (přihlášení, záloha na Drive, reklamy) probíhá šifrovaně přes HTTPS/TLS. Lokální data jsou chráněna mechanismy vašeho zařízení a systému Android.",
+        "rightsTitle": "Vaše práva dle GDPR",
+        "rightsIntro": "Protože většina dat je uložena přímo ve vašem zařízení a ve vašem účtu Google, máte je z velké části pod přímou kontrolou. Vůči správci máte tato práva:",
+        "rights": {
+            "access": "právo na přístup ke svým údajům,",
+            "rectification": "právo na opravu nepřesných údajů,",
+            "erasure": "právo na výmaz („právo být zapomenut“),",
+            "withdraw": "právo kdykoli odvolat souhlas (např. se sledováním pro personalizované reklamy),",
+            "object": "právo vznést námitku proti zpracování,",
+            "portability": "právo na přenositelnost údajů (aplikace umožňuje export do JSON/CSV/XLSX),",
+            "complaint": "právo podat stížnost u dozorového úřadu (v ČR Úřad pro ochranu osobních údajů)."
+        },
+        "rightsHow": "Pro uplatnění práv nás kontaktujte na e-mailu v sekci Kontakt.",
+        "childrenTitle": "Děti",
+        "childrenDesc": "Aplikace není určena dětem a vědomě neshromažďuje osobní údaje dětí. Pokud se domníváte, že nám dítě poskytlo osobní údaje, kontaktujte nás a údaje odstraníme.",
+        "changesTitle": "Změny těchto zásad",
+        "changesDesc": "Tyto zásady můžeme čas od času aktualizovat. Podstatné změny oznámíme v aplikaci nebo na této stránce a aktualizujeme datum účinnosti výše.",
+        "contactTitle": "Kontakt"
+    },
+    "profile": {
+        "title": "Můj postup",
+        "subtitle": "Přihlas se účtem Google, který používáš ve hře, a uvidíš svůj postup.",
+        "loading": "Načítání…",
+        "signInPrompt": "Přihlas se účtem Google, který používáš ve hře Def the Base, a zobrazíš svůj postup.",
+        "signIn": "Přihlásit se Googlem",
+        "signInError": "Přihlášení se nezdařilo. Zkus to prosím znovu.",
+        "signedInAs": "Přihlášen jako",
+        "signOut": "Odhlásit se",
+        "loadError": "Data se nepodařilo načíst. Zkus to prosím později.",
+        "empty": "Pro tento účet jsme nenašli žádný uložený postup. Otevři hru, synchronizuj postup a vrať se. (Musí to být stejný účet Google jako ve hře.)",
+        "scoreTitle": "Skóre",
+        "score": {
+            "best": "Nejlepší skóre",
+            "bestWave": "Nejvyšší vlna",
+            "lastScore": "Poslední skóre",
+            "kills": "Zabití",
+            "structuresBuilt": "Postavené stavby",
+            "gold": "Zlato"
+        },
+        "stateTitle": "Stav hry",
+        "state": {
+            "currentWave": "Aktuální vlna",
+            "metal": "Kov",
+            "mainHallHealth": "HP hlavní budovy",
+            "difficulty": "Obtížnost",
+            "adGold": "Zlato z reklam"
+        },
+        "difficulty": {
+            "easy": "Lehká",
+            "medium": "Střední",
+            "hard": "Těžká"
+        },
+        "missions": "Splněné mise",
+        "upgradesTitle": "Odemknutá vylepšení",
+        "towers": {
+            "minigun": "Minigun",
+            "rocket": "Raketomet",
+            "quarry": "Lom",
+            "wall": "Zeď",
+            "shield": "Generátor štítu"
+        },
+        "upgrades": {
+            "tier2": "Tier 2",
+            "tier23": "Tier 2–3",
+            "tier34": "Tier 3–4",
+            "tier45": "Tier 4–5",
+            "hp": "HP",
+            "hp1": "HP I",
+            "hp2": "HP II",
+            "dmg": "Poškození",
+            "metal": "Těžba kovu",
+            "shield": "Štít",
+            "plus": "Plus",
+            "max": "Max"
+        },
+        "jello": {
+            "overviewTitle": "Přehled",
+            "stars": "Hvězdy",
+            "levels": "Levely",
+            "skins": "Skiny",
+            "selectedSkin": "Vybraný skin",
+            "adsRemoved": "Reklamy odstraněny",
+            "yes": "Ano",
+            "no": "Ne",
+            "levelsTitle": "Levely",
+            "level": "Level",
+            "locked": "Zamčeno",
+            "endless": "Nekonečno"
+        },
+        "delete": "Smazat moje data",
+        "deleteConfirm": "Opravdu smazat svůj webový profil? Tím se z webu odstraní uložený postup pro tento účet. Postup ve hře a v Google Play to neovlivní a při příští synchronizaci se znovu nahraje."
     }
-  },
-  "dashboard": {
-    "viewProgress": "Zobrazit postup",
-    "comingSoon": "Brzy"
-  },
-  "detail": {
-    "back": "Zpět",
-    "signInPrompt": "Přihlas se účtem Google, který používáš ve hře {{game}}, a uvidíš svůj postup.",
-    "signInWithGoogle": "Přihlásit se přes Google",
-    "noTracking": "Pro tuto hru zatím nesledujeme postup na webu. Zkus to později!"
-  },
-  "privacy": {
-    "title": "Zásady ochrany osobních údajů",
-    "lastUpdated": "Poslední aktualizace: červen 2026",
-    "intro": "{{gameName}} přímo neshromažďuje osobní údaje. Níže jsou uvedeny služby třetích stran používané ve hře, které mohou shromažďovat data podle vlastních podmínek.",
-    "thirdPartyTitle": "Služby třetích stran",
-    "levelPlay": {
-      "name": "Unity LevelPlay (ironSource)",
-      "desc": "Mediační platforma pro reklamy. Zobrazuje reklamy z reklamních sítí (včetně Unity Ads) a shromažďuje reklamní ID vašeho zařízení.",
-      "policy": "Zásady ochrany osobních údajů"
-    },
-    "googlePlay": {
-      "name": "Herní služby Google Play",
-      "desc": "Ukládá váš herní postup do cloudu (Uložené hry) propojený s vaším účtem Google.",
-      "policy": "Zásady ochrany osobních údajů"
-    },
-    "firebase": {
-      "name": "Google Firebase",
-      "desc": "Přijímá kopii vašich uložených dat (Cloud Firestore) a přihlašuje vás vaším účtem Google (Firebase Authentication), abyste si na tomto webu mohli zobrazit svůj postup.",
-      "policy": "Zásady ochrany osobních údajů"
-    },
-    "saveDataTitle": "Ukládání dat",
-    "saveDataDesc": "Váš herní postup se ukládá do cloudu dvěma způsoby: přes Google Play Games (Uložené hry) propojené s vaším účtem Google a jeho kopie se zapisuje do služby Google Firebase (Cloud Firestore). Když se na tomto webu přihlásíte účtem Google, načteme kopii z Firebase a zobrazíme váš postup.",
-    "advertisingTitle": "Reklama",
-    "advertisingDesc": "Reklamy jsou zobrazovány prostřednictvím mediační platformy Unity LevelPlay (ironSource), která využívá vaše reklamní ID. Chcete-li se odhlásit, přejděte na Nastavení → Google → Reklamy ve svém zařízení.",
-    "purchasesTitle": "Nákupy v aplikaci",
-    "purchasesDesc": "Nákupy v aplikaci využívají balíček Unity IAP a jsou zpracovány přes Google Play Billing. Google může uchovávat historii vašich nákupů.",
-    "deletionTitle": "Smazání vašich dat",
-    "deletionIntro": "Váš herní postup je uložen jak v Google Play Games (Uložené hry), tak ve Firebase. Obojí lze smazat:",
-    "deletionGpgsTitle": "Google Play Games (Uložené hry)",
-    "deletionGpgsStep1": "Otevřete aplikaci Google Play Games a přejděte do jejího nastavení",
-    "deletionGpgsStep2": "V části \"Vaše data\" → \"Smazat data jednotlivých her\" najděte hru {{gameName}}",
-    "deletionGpgsStep3": "Klepněte na Smazat",
-    "deletionWebTitle": "Data zobrazená na tomto webu (Firebase)",
-    "deletionWebDesc": "Pokud {{gameName}} zobrazuje váš postup na tomto webu, přihlaste se účtem Google, otevřete hru a klikněte na \"Smazat moje data\".",
-    "deletionOutcome": "Smazáním kopie ve Firebase zmizí postup zobrazený zde; pokud budete dál hrát, hra jej může znovu nahrát. Smazáním dat v Google Play Games odstraníte cloudovou zálohu navázanou na váš účet. Reklamní data lze resetovat v části Nastavení → Google → Reklamy.",
-    "deletionContact": "Pokud vaše hra zde není zobrazena nebo chcete úplné smazání, napište nám e-mailem:",
-    "contactTitle": "Kontakt",
-    "selectGame": "Vyberte hru pro zobrazení zásad ochrany osobních údajů"
-  },
-  "privacyWeb": {
-    "title": "Zásady ochrany osobních údajů",
-    "lastUpdated": "Poslední aktualizace: červen 2026",
-    "intro": "Tyto zásady popisují, jak web BrothersInGames nakládá s tvými údaji. Web ti umožňuje zobrazit a smazat tvůj herní postup — neprodává ani nesdílí tvoje data a nepoužívá žádnou analytiku ani reklamu. Každá hra sbírá vlastní data přímo v aplikaci; viz zásady jednotlivých her na konci stránky.",
-    "servicesTitle": "Služby, které tento web používá",
-    "policyLink": "Zásady ochrany údajů",
-    "firebase": {
-      "name": "Google Firebase",
-      "desc": "Přihlašuje tě účtem Google (Firebase Authentication) a uchovává kopii tvého herního postupu (Cloud Firestore), kterou tento web čte. Každá hra používá vlastní projekt Firebase."
-    },
-    "github": {
-      "name": "GitHub Pages",
-      "desc": "Hostuje tento web. GitHub může pro doručení stránek zpracovávat technické údaje, jako je tvoje IP adresa a logy požadavků."
-    },
-    "signInTitle": "Přihlášení",
-    "signInDesc": "Abychom ti zobrazili postup, web tě přihlásí účtem Google přes Firebase Authentication. Při přihlášení získáme tvé jméno, e-mailovou adresu, profilový obrázek a ID účtu — slouží jen k tvé identifikaci a načtení uložených dat. Protože každá hra má vlastní projekt Firebase, přihlašuješ (i odhlašuješ) se ke každé hře zvlášť na její stránce.",
-    "saveDataTitle": "Tvůj herní postup",
-    "saveDataDesc": "Po přihlášení web načte kopii tvých uložených dat z Google Firebase (Cloud Firestore) a zobrazí ti je. Web tuto kopii pouze čte — tvůj postup zapisuje hra, ne web.",
-    "noTrackingTitle": "Žádná analytika ani reklama",
-    "noTrackingDesc": "Tento web nepoužívá žádnou analytiku, reklamu ani sledovací cookies. (Reklamy nebo nákupy uvnitř her pokrývají zásady ochrany údajů jednotlivých her.)",
-    "deletionTitle": "Smazání tvých dat",
-    "deletionDesc": "Kopii postupu zobrazenou zde můžeš kdykoli smazat: přihlas se, otevři svou hru a klikni na „Smazat moje data“. Tím se odstraní kopie ve Firebase; pokud hraješ dál, hra ji může znovu synchronizovat. Pro cokoli dalšího nám napiš níže.",
-    "gamesTitle": "Zásady ochrany údajů her",
-    "gamesDesc": "Každá hra sbírá vlastní data v aplikaci (cloudové uložení, reklamy, nákupy). Viz zásady pro každou hru:",
-    "contactTitle": "Kontakt"
-  },
-  "profile": {
-    "title": "Můj postup",
-    "subtitle": "Přihlas se účtem Google, který používáš ve hře, a uvidíš svůj postup.",
-    "loading": "Načítání…",
-    "signInPrompt": "Přihlas se účtem Google, který používáš ve hře Def the Base, a zobrazíš svůj postup.",
-    "signIn": "Přihlásit se Googlem",
-    "signInError": "Přihlášení se nezdařilo. Zkus to prosím znovu.",
-    "signedInAs": "Přihlášen jako",
-    "signOut": "Odhlásit se",
-    "loadError": "Data se nepodařilo načíst. Zkus to prosím později.",
-    "empty": "Pro tento účet jsme nenašli žádný uložený postup. Otevři hru, synchronizuj postup a vrať se. (Musí to být stejný účet Google jako ve hře.)",
-    "scoreTitle": "Skóre",
-    "score": {
-      "best": "Nejlepší skóre",
-      "bestWave": "Nejvyšší vlna",
-      "lastScore": "Poslední skóre",
-      "kills": "Zabití",
-      "structuresBuilt": "Postavené stavby",
-      "gold": "Zlato"
-    },
-    "stateTitle": "Stav hry",
-    "state": {
-      "currentWave": "Aktuální vlna",
-      "metal": "Kov",
-      "mainHallHealth": "HP hlavní budovy",
-      "difficulty": "Obtížnost",
-      "adGold": "Zlato z reklam"
-    },
-    "difficulty": {
-      "easy": "Lehká",
-      "medium": "Střední",
-      "hard": "Těžká"
-    },
-    "missions": "Splněné mise",
-    "upgradesTitle": "Odemknutá vylepšení",
-    "towers": {
-      "minigun": "Minigun",
-      "rocket": "Raketomet",
-      "quarry": "Lom",
-      "wall": "Zeď",
-      "shield": "Generátor štítu"
-    },
-    "upgrades": {
-      "tier2": "Tier 2",
-      "tier23": "Tier 2–3",
-      "tier34": "Tier 3–4",
-      "tier45": "Tier 4–5",
-      "hp": "HP",
-      "hp1": "HP I",
-      "hp2": "HP II",
-      "dmg": "Poškození",
-      "metal": "Těžba kovu",
-      "shield": "Štít",
-      "plus": "Plus",
-      "max": "Max"
-    },
-    "jello": {
-      "overviewTitle": "Přehled",
-      "stars": "Hvězdy",
-      "levels": "Levely",
-      "skins": "Skiny",
-      "selectedSkin": "Vybraný skin",
-      "adsRemoved": "Reklamy odstraněny",
-      "yes": "Ano",
-      "no": "Ne",
-      "levelsTitle": "Levely",
-      "level": "Level",
-      "locked": "Zamčeno",
-      "endless": "Nekonečno"
-    },
-    "delete": "Smazat moje data",
-    "deleteConfirm": "Opravdu smazat svůj webový profil? Tím se z webu odstraní uložený postup pro tento účet. Postup ve hře a v Google Play to neovlivní a při příští synchronizaci se znovu nahraje."
-  }
 }

@@ -9,33 +9,35 @@ import { join } from 'node:path'
 // `:gameId` is dynamic, so list the concrete games (same as privacy/:game).
 // 'profile' stays for the client-side redirect to /dashboard.
 const spaRoutes = [
-  'privacy',
-  'privacy/web',
-  'privacy/def-the-base',
-  'privacy/jumping-jello',
-  'games/def-the-base',
-  'games/jumping-jello',
-  'profile',
-  'dashboard',
+    'privacy',
+    'privacy/web',
+    'privacy/def-the-base',
+    'privacy/jumping-jello',
+    'privacy/birthdays-beyond',
+    'games/def-the-base',
+    'games/jumping-jello',
+    'apps/birthdays-beyond',
+    'profile',
+    'dashboard',
 ]
 
 export default defineConfig({
-  base: '/',
-  plugins: [
-    react(),
-    tailwindcss(),
-    {
-      name: 'spa-fallback',
-      closeBundle() {
-        for (const route of spaRoutes) {
-          const dir = join('dist', route)
-          mkdirSync(dir, { recursive: true })
-          copyFileSync(join('dist', 'index.html'), join(dir, 'index.html'))
-        }
-      },
+    base: '/',
+    plugins: [
+        react(),
+        tailwindcss(),
+        {
+            name: 'spa-fallback',
+            closeBundle() {
+                for (const route of spaRoutes) {
+                    const dir = join('dist', route)
+                    mkdirSync(dir, { recursive: true })
+                    copyFileSync(join('dist', 'index.html'), join(dir, 'index.html'))
+                }
+            },
+        },
+    ],
+    build: {
+        outDir: 'dist',
     },
-  ],
-  build: {
-    outDir: 'dist',
-  },
 })

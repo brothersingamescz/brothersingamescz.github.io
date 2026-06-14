@@ -1,169 +1,244 @@
 {
-  "nav": {
-    "home": "Home",
-    "privacy": "Privacy Policy"
-  },
-  "home": {
-    "welcome": "Welcome",
-    "subtitle": "Games by BrothersInGames",
-    "description": "Independent game development studio.",
-    "gamesTitle": "Games",
-    "comingSoon": "Coming soon"
-  },
-  "games": {
-    "defTheBase": "Def the Base",
-    "jumpingJello": "Jumping Jello",
-    "taglines": {
-      "defTheBase": "Tower defense",
-      "jumpingJello": "Arcade"
+    "nav": {
+        "home": "Home",
+        "privacy": "Privacy Policy"
+    },
+    "home": {
+        "welcome": "Welcome",
+        "subtitle": "Games by BrothersInGames",
+        "description": "Independent game development studio.",
+        "gamesTitle": "Games",
+        "appsTitle": "Apps",
+        "comingSoon": "Coming soon"
+    },
+    "games": {
+        "defTheBase": "Def the Base",
+        "jumpingJello": "Jumping Jello",
+        "taglines": {
+            "defTheBase": "Tower defense",
+            "jumpingJello": "Arcade"
+        }
+    },
+    "apps": {
+        "birthdaysBeyond": "Birthdays & Beyond",
+        "taglines": {
+            "birthdaysBeyond": "Reminders"
+        }
+    },
+    "dashboard": {
+        "viewProgress": "View progress",
+        "comingSoon": "Coming soon"
+    },
+    "detail": {
+        "back": "Back",
+        "signInPrompt": "Sign in with the Google account you use in {{game}} to see your progress.",
+        "signInWithGoogle": "Sign in with Google",
+        "noTracking": "We don't track web progress for this game yet. Check back later!",
+        "comingSoon": "This app will be available soon. Stay tuned!"
+    },
+    "privacy": {
+        "title": "Privacy Policy",
+        "lastUpdated": "Last updated: June 2026",
+        "intro": "{{gameName}} does not collect personal data directly. The following third-party services are used in the game and may collect data under their own terms.",
+        "thirdPartyTitle": "Third-party services",
+        "levelPlay": {
+            "name": "Unity LevelPlay (ironSource)",
+            "desc": "Ad mediation platform. Serves ads from ad networks (including Unity Ads) and collects your device's advertising ID.",
+            "policy": "Privacy policy"
+        },
+        "googlePlay": {
+            "name": "Google Play Games Services",
+            "desc": "Saves your game progress to the cloud (Saved Games), linked to your Google account.",
+            "policy": "Privacy policy"
+        },
+        "firebase": {
+            "name": "Google Firebase",
+            "desc": "Receives a copy of your save data (Cloud Firestore) and signs you in with your Google account (Firebase Authentication) so you can view your progress on this website.",
+            "policy": "Privacy policy"
+        },
+        "saveDataTitle": "Save data",
+        "saveDataDesc": "Your game progress is saved to the cloud in two ways: via Google Play Games (Saved Games), linked to your Google account, and a copy is written to Google Firebase (Cloud Firestore). When you sign in with your Google account on this website, we read the Firebase copy to show your progress.",
+        "advertisingTitle": "Advertising",
+        "advertisingDesc": "Ads are served through the Unity LevelPlay (ironSource) mediation platform, which uses your advertising ID. To opt out, go to Settings → Google → Ads on your device.",
+        "purchasesTitle": "In-app purchases",
+        "purchasesDesc": "In-app purchases use Unity's IAP package and are processed through Google Play Billing. Google may retain your purchase history.",
+        "deletionTitle": "Deleting your data",
+        "deletionIntro": "Your game progress is stored both in Google Play Games (Saved Games) and in Firebase. You can delete each:",
+        "deletionGpgsTitle": "Google Play Games (Saved Games)",
+        "deletionGpgsStep1": "Open the Google Play Games app and go to its settings",
+        "deletionGpgsStep2": "Under \"Your Data\" → \"Delete individual game data\", find {{gameName}}",
+        "deletionGpgsStep3": "Tap Delete",
+        "deletionWebTitle": "Data shown on this website (Firebase)",
+        "deletionWebDesc": "If {{gameName}} shows your progress on this site, sign in with your Google account, open it, and click \"Delete my data\".",
+        "deletionOutcome": "Deleting the Firebase copy removes the progress shown here; if you keep playing, the game may re-sync it. Deleting your Google Play Games data removes the cloud save linked to your account. Advertising data resets under Settings → Google → Ads.",
+        "deletionContact": "If your game isn't shown here, or to request full deletion, email us:",
+        "contactTitle": "Contact",
+        "selectGame": "Select a game to view its privacy policy"
+    },
+    "privacyWeb": {
+        "title": "Privacy Policy",
+        "lastUpdated": "Last updated: June 2026",
+        "intro": "This policy explains how the BrothersInGames website handles your data. The site lets you view and delete your game progress — it doesn't sell or share your data, and uses no analytics or advertising. Each game collects its own data in-app; see the game-specific policies at the bottom of this page.",
+        "servicesTitle": "Services this website uses",
+        "policyLink": "Privacy policy",
+        "firebase": {
+            "name": "Google Firebase",
+            "desc": "Signs you in with your Google account (Firebase Authentication) and stores the copy of your game progress (Cloud Firestore) that this site reads. Each game uses its own Firebase project."
+        },
+        "github": {
+            "name": "GitHub Pages",
+            "desc": "Hosts this website. GitHub may process technical data such as your IP address and request logs in order to serve the pages."
+        },
+        "signInTitle": "Signing in",
+        "signInDesc": "To show your progress, the site signs you in with your Google account via Firebase Authentication. When you sign in, we receive your name, email address, profile picture and account ID, used only to identify you and load your save data. Because each game has its own Firebase project, you sign in (and out) separately for each game on its page.",
+        "saveDataTitle": "Your game progress",
+        "saveDataDesc": "After you sign in, the site reads a copy of your save data from Google Firebase (Cloud Firestore) and shows it to you. The site only reads this copy — your progress is written by the game, not by the website.",
+        "noTrackingTitle": "No analytics or advertising",
+        "noTrackingDesc": "This website uses no analytics, no advertising, and no tracking cookies. (Ads or purchases that appear inside the games are covered by each game's own privacy policy.)",
+        "deletionTitle": "Deleting your data",
+        "deletionDesc": "You can delete the copy of your progress shown here at any time: sign in, open your game, and click \"Delete my data\". This removes the Firebase copy; if you keep playing, the game may sync it again. For anything else, email us below.",
+        "gamesTitle": "Game privacy policies",
+        "gamesDesc": "Each game collects its own data in-app (cloud save, ads, purchases). See the policy for each game:",
+        "appsTitle": "App privacy policies",
+        "appsDesc": "Each app collects its own data. See the policy for each app:",
+        "contactTitle": "Contact"
+    },
+    "privacyApp": {
+        "title": "Privacy Policy",
+        "lastUpdated": "Last updated: June 2026",
+        "intro": "This policy explains how the Birthdays & Beyond app (package com.brothersingames.birthdaysbeyond) handles your data. The app reminds you of birthdays, name days, death anniversaries and other anniversaries, including countdowns and age calculation. It is designed to be offline-first: your data is stored primarily on your device and the developer runs no server of its own.",
+        "controllerTitle": "Data controller",
+        "controllerDesc": "The controller of the personal data processed within the app is BrothersInGames (Czech Republic); you can reach us at the email in the Contact section below. Google acts as a service provider or independent controller for ads (AdMob) and for the optional Google Drive backup. The legal bases for processing are performance of the service and legitimate interest for the core features and the optional sync (which you turn on yourself), and your consent for personalized ads.",
+        "dataTitle": "What data we process and where",
+        "dataDesc": "Your records (birthdays, name days, anniversaries and notes) and any attached photos are stored only on your device by default. Data leaves the device only in the two cases described below: when you turn on the optional Google Drive backup (a transfer to your own Google account) and in connection with serving ads via Google AdMob. Otherwise we do not send your data anywhere.",
+        "permissionsTitle": "Permissions and their purpose",
+        "permissions": {
+            "contacts": {
+                "name": "Contacts (read)",
+                "desc": "Only to import birthdays and anniversaries from your contacts. Only the records you select are saved. Contacts are not sent anywhere (except the optional Drive backup, see below)."
+            },
+            "notifications": {
+                "name": "Notifications",
+                "desc": "Only for local reminders on your device. No push notifications, no server."
+            },
+            "media": {
+                "name": "Photos and media (gallery)",
+                "desc": "Only to attach a photo to a record. Photos stay stored locally."
+            },
+            "files": {
+                "name": "File access and sharing",
+                "desc": "Only to import and export data (JSON/CSV/XLSX) and download a template. You choose and share files yourself via the system share sheet."
+            }
+        },
+        "driveTitle": "Optional backup and sync via Google Drive",
+        "driveDesc": "You actively enable backup and sync by signing in with Google (OAuth 2.0 with PKCE). On sign-in the app obtains your Google account identity (email address and basic profile) solely for authentication. Only your text records are backed up — attached photos are not backed up and stay on the device — into the app's hidden folder in your own Google Drive (the drive.appdata scope). This data is stored in your Google account, not on the developer's servers; it is accessible only to this app and is not visible among your regular Drive files. Sync transfers data between the device and your Drive; conflicts are resolved with a last-write-wins rule. You can turn the feature off at any time, sign out, and delete the backup in your Google account. This data is subject to the Google API Services User Data Policy, including the Limited Use requirements: we use the data solely to provide the backup and sync feature to you and do not share or sell it for any other purpose.",
+        "adsTitle": "Google AdMob advertising",
+        "adsDesc": "The app shows ads through Google AdMob (including an interstitial ad on launch). AdMob is a Google service that may collect and process data to serve and measure ads, in particular the device advertising identifier (Android Advertising ID), IP address and information about your device and usage. This is sharing data with a third party (Google). For users in the EU/EEA, the app requests consent before showing personalized ads via a consent dialog (Google User Messaging Platform), in line with GDPR and ePrivacy; without consent only non-personalized ads are shown, or as you choose. You can reset your advertising ID or limit personalization under Settings → Google → Ads on your Android device.",
+        "thirdPartyTitle": "Sharing data with third parties",
+        "admob": {
+            "name": "Google AdMob",
+            "desc": "Serves ads and for that processes your advertising ID, IP address and device information.",
+            "policy": "Privacy policy"
+        },
+        "googleAccount": {
+            "name": "Google (sign-in and Drive)",
+            "desc": "Verifies your identity at sign-in and stores the optional backup in the hidden folder of your Google Drive.",
+            "policy": "Privacy policy"
+        },
+        "partnerSites": "How Google uses information from sites or apps that use its services",
+        "retentionTitle": "Data retention and deletion",
+        "retentionDesc": "Data on your device remains until you delete the relevant record or uninstall the app. Uninstalling removes the local data; any backup in your Google Drive remains until you delete it yourself (by turning the feature off, or signing out and deleting the backup in your Google account). You manage advertising data via the advertising ID settings on your device.",
+        "securityTitle": "Security",
+        "securityDesc": "Data transferred between the app and Google services (sign-in, Drive backup, ads) is encrypted in transit over HTTPS/TLS. Local data is protected by your device and Android system mechanisms.",
+        "rightsTitle": "Your rights under GDPR",
+        "rightsIntro": "Because most data is stored directly on your device and in your Google account, much of it is under your direct control. With respect to the controller you have the following rights:",
+        "rights": {
+            "access": "the right to access your data,",
+            "rectification": "the right to rectify inaccurate data,",
+            "erasure": "the right to erasure (the \"right to be forgotten\"),",
+            "withdraw": "the right to withdraw consent at any time (e.g. tracking for personalized ads),",
+            "object": "the right to object to processing,",
+            "portability": "the right to data portability (the app supports export to JSON/CSV/XLSX),",
+            "complaint": "the right to lodge a complaint with a supervisory authority (in the Czech Republic, the Office for Personal Data Protection)."
+        },
+        "rightsHow": "To exercise your rights, contact us at the email in the Contact section.",
+        "childrenTitle": "Children",
+        "childrenDesc": "The app is not directed at children and does not knowingly collect children's personal data. If you believe a child has provided us with personal data, contact us and we will remove it.",
+        "changesTitle": "Changes to this policy",
+        "changesDesc": "We may update this policy from time to time. We will announce material changes in the app or on this page and update the effective date above.",
+        "contactTitle": "Contact"
+    },
+    "profile": {
+        "title": "My progress",
+        "subtitle": "Sign in with the Google account you use in the game to see your progress.",
+        "loading": "Loading…",
+        "signInPrompt": "Sign in with the Google account you use in Def the Base to view your progress.",
+        "signIn": "Sign in with Google",
+        "signInError": "Sign-in failed. Please try again.",
+        "signedInAs": "Signed in as",
+        "signOut": "Sign out",
+        "loadError": "Couldn't load your data. Please try again later.",
+        "empty": "We couldn't find any saved progress for this account. Open the game, sync your progress, and come back. (Make sure it's the same Google account you use in the game.)",
+        "scoreTitle": "Score",
+        "score": {
+            "best": "Best score",
+            "bestWave": "Best wave",
+            "lastScore": "Last score",
+            "kills": "Kills",
+            "structuresBuilt": "Structures built",
+            "gold": "Gold"
+        },
+        "stateTitle": "Game state",
+        "state": {
+            "currentWave": "Current wave",
+            "metal": "Metal",
+            "mainHallHealth": "Main hall HP",
+            "difficulty": "Difficulty",
+            "adGold": "Ad gold"
+        },
+        "difficulty": {
+            "easy": "Easy",
+            "medium": "Medium",
+            "hard": "Hard"
+        },
+        "missions": "Missions completed",
+        "upgradesTitle": "Unlocked upgrades",
+        "towers": {
+            "minigun": "Minigun",
+            "rocket": "Rocket Launcher",
+            "quarry": "Quarry",
+            "wall": "Wall",
+            "shield": "Shield Generator"
+        },
+        "upgrades": {
+            "tier2": "Tier 2",
+            "tier23": "Tier 2–3",
+            "tier34": "Tier 3–4",
+            "tier45": "Tier 4–5",
+            "hp": "HP",
+            "hp1": "HP I",
+            "hp2": "HP II",
+            "dmg": "Damage",
+            "metal": "Metal output",
+            "shield": "Shield",
+            "plus": "Plus",
+            "max": "Max"
+        },
+        "jello": {
+            "overviewTitle": "Overview",
+            "stars": "Stars",
+            "levels": "Levels",
+            "skins": "Skins",
+            "selectedSkin": "Selected skin",
+            "adsRemoved": "Ads removed",
+            "yes": "Yes",
+            "no": "No",
+            "levelsTitle": "Levels",
+            "level": "Level",
+            "locked": "Locked",
+            "endless": "Endless"
+        },
+        "delete": "Delete my data",
+        "deleteConfirm": "Really delete your web profile? This removes the saved progress shown on the web for this account. Your in-game and Google Play data are not affected and will re-sync next time."
     }
-  },
-  "dashboard": {
-    "viewProgress": "View progress",
-    "comingSoon": "Coming soon"
-  },
-  "detail": {
-    "back": "Back",
-    "signInPrompt": "Sign in with the Google account you use in {{game}} to see your progress.",
-    "signInWithGoogle": "Sign in with Google",
-    "noTracking": "We don't track web progress for this game yet. Check back later!"
-  },
-  "privacy": {
-    "title": "Privacy Policy",
-    "lastUpdated": "Last updated: June 2026",
-    "intro": "{{gameName}} does not collect personal data directly. The following third-party services are used in the game and may collect data under their own terms.",
-    "thirdPartyTitle": "Third-party services",
-    "levelPlay": {
-      "name": "Unity LevelPlay (ironSource)",
-      "desc": "Ad mediation platform. Serves ads from ad networks (including Unity Ads) and collects your device's advertising ID.",
-      "policy": "Privacy policy"
-    },
-    "googlePlay": {
-      "name": "Google Play Games Services",
-      "desc": "Saves your game progress to the cloud (Saved Games), linked to your Google account.",
-      "policy": "Privacy policy"
-    },
-    "firebase": {
-      "name": "Google Firebase",
-      "desc": "Receives a copy of your save data (Cloud Firestore) and signs you in with your Google account (Firebase Authentication) so you can view your progress on this website.",
-      "policy": "Privacy policy"
-    },
-    "saveDataTitle": "Save data",
-    "saveDataDesc": "Your game progress is saved to the cloud in two ways: via Google Play Games (Saved Games), linked to your Google account, and a copy is written to Google Firebase (Cloud Firestore). When you sign in with your Google account on this website, we read the Firebase copy to show your progress.",
-    "advertisingTitle": "Advertising",
-    "advertisingDesc": "Ads are served through the Unity LevelPlay (ironSource) mediation platform, which uses your advertising ID. To opt out, go to Settings → Google → Ads on your device.",
-    "purchasesTitle": "In-app purchases",
-    "purchasesDesc": "In-app purchases use Unity's IAP package and are processed through Google Play Billing. Google may retain your purchase history.",
-    "deletionTitle": "Deleting your data",
-    "deletionIntro": "Your game progress is stored both in Google Play Games (Saved Games) and in Firebase. You can delete each:",
-    "deletionGpgsTitle": "Google Play Games (Saved Games)",
-    "deletionGpgsStep1": "Open the Google Play Games app and go to its settings",
-    "deletionGpgsStep2": "Under \"Your Data\" → \"Delete individual game data\", find {{gameName}}",
-    "deletionGpgsStep3": "Tap Delete",
-    "deletionWebTitle": "Data shown on this website (Firebase)",
-    "deletionWebDesc": "If {{gameName}} shows your progress on this site, sign in with your Google account, open it, and click \"Delete my data\".",
-    "deletionOutcome": "Deleting the Firebase copy removes the progress shown here; if you keep playing, the game may re-sync it. Deleting your Google Play Games data removes the cloud save linked to your account. Advertising data resets under Settings → Google → Ads.",
-    "deletionContact": "If your game isn't shown here, or to request full deletion, email us:",
-    "contactTitle": "Contact",
-    "selectGame": "Select a game to view its privacy policy"
-  },
-  "privacyWeb": {
-    "title": "Privacy Policy",
-    "lastUpdated": "Last updated: June 2026",
-    "intro": "This policy explains how the BrothersInGames website handles your data. The site lets you view and delete your game progress — it doesn't sell or share your data, and uses no analytics or advertising. Each game collects its own data in-app; see the game-specific policies at the bottom of this page.",
-    "servicesTitle": "Services this website uses",
-    "policyLink": "Privacy policy",
-    "firebase": {
-      "name": "Google Firebase",
-      "desc": "Signs you in with your Google account (Firebase Authentication) and stores the copy of your game progress (Cloud Firestore) that this site reads. Each game uses its own Firebase project."
-    },
-    "github": {
-      "name": "GitHub Pages",
-      "desc": "Hosts this website. GitHub may process technical data such as your IP address and request logs in order to serve the pages."
-    },
-    "signInTitle": "Signing in",
-    "signInDesc": "To show your progress, the site signs you in with your Google account via Firebase Authentication. When you sign in, we receive your name, email address, profile picture and account ID, used only to identify you and load your save data. Because each game has its own Firebase project, you sign in (and out) separately for each game on its page.",
-    "saveDataTitle": "Your game progress",
-    "saveDataDesc": "After you sign in, the site reads a copy of your save data from Google Firebase (Cloud Firestore) and shows it to you. The site only reads this copy — your progress is written by the game, not by the website.",
-    "noTrackingTitle": "No analytics or advertising",
-    "noTrackingDesc": "This website uses no analytics, no advertising, and no tracking cookies. (Ads or purchases that appear inside the games are covered by each game's own privacy policy.)",
-    "deletionTitle": "Deleting your data",
-    "deletionDesc": "You can delete the copy of your progress shown here at any time: sign in, open your game, and click \"Delete my data\". This removes the Firebase copy; if you keep playing, the game may sync it again. For anything else, email us below.",
-    "gamesTitle": "Game privacy policies",
-    "gamesDesc": "Each game collects its own data in-app (cloud save, ads, purchases). See the policy for each game:",
-    "contactTitle": "Contact"
-  },
-  "profile": {
-    "title": "My progress",
-    "subtitle": "Sign in with the Google account you use in the game to see your progress.",
-    "loading": "Loading…",
-    "signInPrompt": "Sign in with the Google account you use in Def the Base to view your progress.",
-    "signIn": "Sign in with Google",
-    "signInError": "Sign-in failed. Please try again.",
-    "signedInAs": "Signed in as",
-    "signOut": "Sign out",
-    "loadError": "Couldn't load your data. Please try again later.",
-    "empty": "We couldn't find any saved progress for this account. Open the game, sync your progress, and come back. (Make sure it's the same Google account you use in the game.)",
-    "scoreTitle": "Score",
-    "score": {
-      "best": "Best score",
-      "bestWave": "Best wave",
-      "lastScore": "Last score",
-      "kills": "Kills",
-      "structuresBuilt": "Structures built",
-      "gold": "Gold"
-    },
-    "stateTitle": "Game state",
-    "state": {
-      "currentWave": "Current wave",
-      "metal": "Metal",
-      "mainHallHealth": "Main hall HP",
-      "difficulty": "Difficulty",
-      "adGold": "Ad gold"
-    },
-    "difficulty": {
-      "easy": "Easy",
-      "medium": "Medium",
-      "hard": "Hard"
-    },
-    "missions": "Missions completed",
-    "upgradesTitle": "Unlocked upgrades",
-    "towers": {
-      "minigun": "Minigun",
-      "rocket": "Rocket Launcher",
-      "quarry": "Quarry",
-      "wall": "Wall",
-      "shield": "Shield Generator"
-    },
-    "upgrades": {
-      "tier2": "Tier 2",
-      "tier23": "Tier 2–3",
-      "tier34": "Tier 3–4",
-      "tier45": "Tier 4–5",
-      "hp": "HP",
-      "hp1": "HP I",
-      "hp2": "HP II",
-      "dmg": "Damage",
-      "metal": "Metal output",
-      "shield": "Shield",
-      "plus": "Plus",
-      "max": "Max"
-    },
-    "jello": {
-      "overviewTitle": "Overview",
-      "stars": "Stars",
-      "levels": "Levels",
-      "skins": "Skins",
-      "selectedSkin": "Selected skin",
-      "adsRemoved": "Ads removed",
-      "yes": "Yes",
-      "no": "No",
-      "levelsTitle": "Levels",
-      "level": "Level",
-      "locked": "Locked",
-      "endless": "Endless"
-    },
-    "delete": "Delete my data",
-    "deleteConfirm": "Really delete your web profile? This removes the saved progress shown on the web for this account. Your in-game and Google Play data are not affected and will re-sync next time."
-  }
 }
