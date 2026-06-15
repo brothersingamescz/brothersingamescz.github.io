@@ -3,8 +3,8 @@
 // machinery games do. They're marketing cards + their own privacy policy.
 export type App = {
     id: string
-    nameKey: 'apps.birthdaysBeyond'
-    taglineKey: 'apps.taglines.birthdaysBeyond'
+    nameKey: 'apps.birthdayReminder'
+    taglineKey: 'apps.taglines.birthdayReminder'
     emoji: string
     // Tailwind gradient classes used as placeholder "cover art" until real
     // artwork exists (e.g. 'from-rose-500 to-amber-400').
@@ -16,9 +16,9 @@ export type App = {
 
 export const apps: App[] = [
     {
-        id: 'birthdays-beyond',
-        nameKey: 'apps.birthdaysBeyond',
-        taglineKey: 'apps.taglines.birthdaysBeyond',
+        id: 'birthday-reminder',
+        nameKey: 'apps.birthdayReminder',
+        taglineKey: 'apps.taglines.birthdayReminder',
         emoji: '🎂',
         gradient: 'from-rose-500 to-amber-400',
     },

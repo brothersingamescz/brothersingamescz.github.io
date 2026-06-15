@@ -6,7 +6,7 @@ const games = [
     { slug: 'jumping-jello', nameKey: 'games.jumpingJello' as const },
 ]
 
-const apps = [{ slug: 'birthdays-beyond', nameKey: 'apps.birthdaysBeyond' as const }]
+const apps = [{ slug: 'birthday-reminder', nameKey: 'apps.birthdayReminder' as const }]
 
 export default function PrivacyIndex() {
     const { t } = useTranslation()

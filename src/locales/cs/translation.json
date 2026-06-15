@@ -20,9 +20,9 @@
         }
     },
     "apps": {
-        "birthdaysBeyond": "Birthdays & Beyond",
+        "birthdayReminder": "Připomínka narozenin a svátků",
         "taglines": {
-            "birthdaysBeyond": "Připomínky"
+            "birthdayReminder": "Připomínky"
         }
     },
     "dashboard": {
@@ -106,7 +106,7 @@
     "privacyApp": {
         "title": "Zásady ochrany osobních údajů",
         "lastUpdated": "Poslední aktualizace: červen 2026",
-        "intro": "Tyto zásady popisují, jak aplikace Birthdays & Beyond (balíček com.brothersingames.birthdaysbeyond) nakládá s vašimi údaji. Aplikace slouží k připomínání narozenin, jmenin, výročí úmrtí a dalších výročí, včetně odpočtu a výpočtu věku. Je navržena jako „offline-first“: vaše data jsou primárně uložena ve vašem zařízení a vývojář neprovozuje vlastní server.",
+        "intro": "Tyto zásady popisují, jak aplikace Připomínka narozenin a svátků (balíček com.brothersingames.birthdaysbeyond) nakládá s vašimi údaji. Aplikace slouží k připomínání narozenin, jmenin, výročí úmrtí a dalších výročí, včetně odpočtu a výpočtu věku. Je navržena jako „offline-first“: vaše data jsou primárně uložena ve vašem zařízení a vývojář neprovozuje vlastní server.",
         "controllerTitle": "Správce údajů",
         "controllerDesc": "Správcem osobních údajů zpracovávaných v rámci aplikace je BrothersInGames (Česká republika); kontaktovat nás můžete na e-mailu uvedeném v sekci Kontakt níže. Společnost Google vystupuje jako poskytovatel služeb, případně samostatný správce, u reklam (AdMob) a u volitelné zálohy na Google Drive. Právním základem zpracování je plnění služby a oprávněný zájem u základních funkcí a volitelné synchronizace (kterou si sami zapnete) a váš souhlas u personalizovaných reklam.",
         "dataTitle": "Jaká data zpracováváme a kde",

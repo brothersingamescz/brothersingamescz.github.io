@@ -1,13 +1,14 @@
 import { useTranslation } from 'react-i18next'
 
-// Privacy policy for the Birthdays & Beyond app. Its data stack (offline-first
-// local storage, optional Google Drive appdata backup, Google AdMob + UMP
-// consent, device permissions) is entirely different from the games' policies
-// in PrivacyPolicy.tsx, so it gets its own page + i18n namespace (privacyApp.*),
-// the same way WebsitePrivacy.tsx is separate. Static route /privacy/birthdays-beyond.
+// Privacy policy for the Birthday and Name Day Reminder app. Its data stack
+// (offline-first local storage, optional Google Drive appdata backup, Google
+// AdMob + UMP consent, device permissions) is entirely different from the
+// games' policies in PrivacyPolicy.tsx, so it gets its own page + i18n
+// namespace (privacyApp.*), the same way WebsitePrivacy.tsx is separate.
+// Static route /privacy/birthday-reminder.
 export default function AppPrivacyPolicy() {
     const { t } = useTranslation()
-    const appName = t('apps.birthdaysBeyond')
+    const appName = t('apps.birthdayReminder')
 
     return (
         <article className="mx-auto max-w-2xl">

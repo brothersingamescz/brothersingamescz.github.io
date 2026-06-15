@@ -13,10 +13,10 @@ const spaRoutes = [
     'privacy/web',
     'privacy/def-the-base',
     'privacy/jumping-jello',
-    'privacy/birthdays-beyond',
+    'privacy/birthday-reminder',
     'games/def-the-base',
     'games/jumping-jello',
-    'apps/birthdays-beyond',
+    'apps/birthday-reminder',
     'profile',
     'dashboard',
 ]

@@ -20,9 +20,9 @@
         }
     },
     "apps": {
-        "birthdaysBeyond": "Birthdays & Beyond",
+        "birthdayReminder": "Birthday and Name Day Reminder",
         "taglines": {
-            "birthdaysBeyond": "Reminders"
+            "birthdayReminder": "Reminders"
         }
     },
     "dashboard": {
@@ -106,7 +106,7 @@
     "privacyApp": {
         "title": "Privacy Policy",
         "lastUpdated": "Last updated: June 2026",
-        "intro": "This policy explains how the Birthdays & Beyond app (package com.brothersingames.birthdaysbeyond) handles your data. The app reminds you of birthdays, name days, death anniversaries and other anniversaries, including countdowns and age calculation. It is designed to be offline-first: your data is stored primarily on your device and the developer runs no server of its own.",
+        "intro": "This policy explains how the Birthday and Name Day Reminder app (package com.brothersingames.birthdaysbeyond) handles your data. The app reminds you of birthdays, name days, death anniversaries and other anniversaries, including countdowns and age calculation. It is designed to be offline-first: your data is stored primarily on your device and the developer runs no server of its own.",
         "controllerTitle": "Data controller",
         "controllerDesc": "The controller of the personal data processed within the app is BrothersInGames (Czech Republic); you can reach us at the email in the Contact section below. Google acts as a service provider or independent controller for ads (AdMob) and for the optional Google Drive backup. The legal bases for processing are performance of the service and legitimate interest for the core features and the optional sync (which you turn on yourself), and your consent for personalized ads.",
         "dataTitle": "What data we process and where",

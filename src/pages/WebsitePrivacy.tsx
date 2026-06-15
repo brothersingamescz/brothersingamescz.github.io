@@ -7,7 +7,7 @@ const GAME_POLICIES = [
     { slug: 'jumping-jello', nameKey: 'games.jumpingJello' as const },
 ]
 
-const APP_POLICIES = [{ slug: 'birthdays-beyond', nameKey: 'apps.birthdaysBeyond' as const }]
+const APP_POLICIES = [{ slug: 'birthday-reminder', nameKey: 'apps.birthdayReminder' as const }]
 
 // Privacy policy for the website itself (sign-in, reading/deleting save data,
 // hosting). Game data collection (ads, IAP, cloud save) lives in the per-game

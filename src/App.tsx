@@ -23,7 +23,7 @@ export default function App() {
                         <Route path="privacy" element={<PrivacyIndex />} />
                         {/* Static routes rank above the dynamic :game one in React Router. */}
                         <Route path="privacy/web" element={<WebsitePrivacy />} />
-                        <Route path="privacy/birthdays-beyond" element={<AppPrivacyPolicy />} />
+                        <Route path="privacy/birthday-reminder" element={<AppPrivacyPolicy />} />
                         <Route path="privacy/:game" element={<PrivacyPolicy />} />
                         <Route path="apps/:appId" element={<AppDetail />} />
                         <Route
