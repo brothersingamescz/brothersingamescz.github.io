@@ -1,24 +1,30 @@
 import { Outlet, NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import LangSwitcher from './LangSwitcher'
+import ThemeToggle from './ThemeToggle'
+import Logo from './Logo'
 import Footer from './Footer'
 
 export default function Layout() {
     const { t } = useTranslation()
 
     return (
-        <div className="min-h-screen bg-slate-950 text-slate-100">
-            <nav className="sticky top-0 z-10 border-b border-slate-800 bg-slate-950/80 backdrop-blur-sm">
-                <div className="mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 px-4">
-                    <NavLink to="/" className="font-bold tracking-tight text-indigo-400">
-                        BrothersInGames
+        <div className="flex min-h-dvh flex-col bg-base text-ink">
+            <header className="sticky top-0 z-40 border-b border-line bg-base/70 backdrop-blur-xl">
+                <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
+                    <NavLink to="/" aria-label="BrothersInGames - home" className="shrink-0">
+                        <Logo />
                     </NavLink>
-                    <div className="flex items-center gap-4 sm:gap-6">
+                    <nav className="flex items-center gap-1 sm:gap-2">
                         <NavLink
                             to="/"
                             end
                             className={({ isActive }) =>
-                                `text-sm transition-colors ${isActive ? 'text-indigo-400' : 'text-slate-400 hover:text-slate-100'}`
+                                `rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${
+                                    isActive
+                                        ? 'bg-raised text-ink'
+                                        : 'text-muted hover:bg-raised/60 hover:text-ink'
+                                }`
                             }
                         >
                             {t('nav.home')}
@@ -26,18 +32,26 @@ export default function Layout() {
                         <NavLink
                             to="/privacy"
                             className={({ isActive }) =>
-                                `hidden text-sm transition-colors sm:inline ${isActive ? 'text-indigo-400' : 'text-slate-400 hover:text-slate-100'}`
+                                `hidden rounded-lg px-3 py-1.5 text-sm font-medium transition-colors sm:inline-block ${
+                                    isActive
+                                        ? 'bg-raised text-ink'
+                                        : 'text-muted hover:bg-raised/60 hover:text-ink'
+                                }`
                             }
                         >
                             {t('nav.privacy')}
                         </NavLink>
+                        <span className="mx-1 hidden h-5 w-px bg-line sm:block" aria-hidden />
+                        <ThemeToggle />
                         <LangSwitcher />
-                    </div>
+                    </nav>
                 </div>
-            </nav>
-            <main className="mx-auto max-w-5xl px-4 py-12">
+            </header>
+
+            <main className="flex-1">
                 <Outlet />
             </main>
+
             <Footer />
         </div>
     )

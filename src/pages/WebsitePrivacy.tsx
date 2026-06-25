@@ -1,5 +1,13 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { ArrowRight } from '../components/icons'
+import {
+    MailLink,
+    PolicyArticle,
+    PolicyCard,
+    PolicyHeader,
+    PolicySection,
+} from '../components/policyUi'
 
 // Game-specific policies linked at the bottom of the website policy.
 const GAME_POLICIES = [
@@ -16,14 +24,16 @@ export default function WebsitePrivacy() {
     const { t } = useTranslation()
 
     return (
-        <article className="mx-auto max-w-2xl">
-            <h1 className="mb-1 text-2xl font-bold text-slate-100">{t('privacyWeb.title')}</h1>
-            <p className="mb-8 text-sm text-slate-500">{t('privacyWeb.lastUpdated')}</p>
-
-            <p className="mb-8 text-slate-300">{t('privacyWeb.intro')}</p>
+        <PolicyArticle>
+            <PolicyHeader
+                kicker={t('privacyWeb.title')}
+                title={t('privacyWeb.heading')}
+                lastUpdated={t('privacyWeb.lastUpdated')}
+                intro={t('privacyWeb.intro')}
+            />
 
             <section className="mb-8">
-                <h2 className="mb-4 text-lg font-semibold text-slate-100">
+                <h2 className="mb-4 text-lg text-ink sm:text-xl">
                     {t('privacyWeb.servicesTitle')}
                 </h2>
                 <div className="space-y-3">
@@ -36,94 +46,67 @@ export default function WebsitePrivacy() {
                             },
                         ] as const
                     ).map(({ key, href }) => (
-                        <div
+                        <PolicyCard
                             key={key}
-                            className="rounded-lg border border-slate-800 bg-slate-900 p-4"
-                        >
-                            <p className="font-medium text-slate-100">
-                                {t(`privacyWeb.${key}.name`)}
-                            </p>
-                            <p className="mt-1 text-sm text-slate-400">
-                                {t(`privacyWeb.${key}.desc`)}
-                            </p>
-                            <a
-                                href={href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-1 inline-block text-sm text-indigo-400 hover:underline"
-                            >
-                                {t('privacyWeb.policyLink')} →
-                            </a>
-                        </div>
+                            name={t(`privacyWeb.${key}.name`)}
+                            desc={t(`privacyWeb.${key}.desc`)}
+                            href={href}
+                            linkLabel={t('privacyWeb.policyLink')}
+                        />
                     ))}
                 </div>
             </section>
 
-            <Section title={t('privacyWeb.signInTitle')}>
-                <p className="text-slate-400">{t('privacyWeb.signInDesc')}</p>
-            </Section>
+            <PolicySection title={t('privacyWeb.signInTitle')}>
+                <p>{t('privacyWeb.signInDesc')}</p>
+            </PolicySection>
 
-            <Section title={t('privacyWeb.saveDataTitle')}>
-                <p className="text-slate-400">{t('privacyWeb.saveDataDesc')}</p>
-            </Section>
+            <PolicySection title={t('privacyWeb.saveDataTitle')}>
+                <p>{t('privacyWeb.saveDataDesc')}</p>
+            </PolicySection>
 
-            <Section title={t('privacyWeb.noTrackingTitle')}>
-                <p className="text-slate-400">{t('privacyWeb.noTrackingDesc')}</p>
-            </Section>
+            <PolicySection title={t('privacyWeb.noTrackingTitle')}>
+                <p>{t('privacyWeb.noTrackingDesc')}</p>
+            </PolicySection>
 
-            <Section title={t('privacyWeb.deletionTitle')}>
-                <p className="text-slate-400">{t('privacyWeb.deletionDesc')}</p>
-            </Section>
+            <PolicySection title={t('privacyWeb.deletionTitle')}>
+                <p>{t('privacyWeb.deletionDesc')}</p>
+            </PolicySection>
 
-            <Section title={t('privacyWeb.gamesTitle')}>
-                <p className="mb-3 text-slate-400">{t('privacyWeb.gamesDesc')}</p>
-                <ul className="space-y-2">
-                    {GAME_POLICIES.map(({ slug, nameKey }) => (
-                        <li key={slug}>
-                            <Link
-                                to={`/privacy/${slug}`}
-                                className="text-indigo-400 hover:underline"
-                            >
-                                {t(nameKey)} →
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </Section>
+            <PolicySection title={t('privacyWeb.gamesTitle')}>
+                <p>{t('privacyWeb.gamesDesc')}</p>
+                <PolicyLinkList items={GAME_POLICIES} />
+            </PolicySection>
 
-            <Section title={t('privacyWeb.appsTitle')}>
-                <p className="mb-3 text-slate-400">{t('privacyWeb.appsDesc')}</p>
-                <ul className="space-y-2">
-                    {APP_POLICIES.map(({ slug, nameKey }) => (
-                        <li key={slug}>
-                            <Link
-                                to={`/privacy/${slug}`}
-                                className="text-indigo-400 hover:underline"
-                            >
-                                {t(nameKey)} →
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </Section>
+            <PolicySection title={t('privacyWeb.appsTitle')}>
+                <p>{t('privacyWeb.appsDesc')}</p>
+                <PolicyLinkList items={APP_POLICIES} />
+            </PolicySection>
 
-            <Section title={t('privacyWeb.contactTitle')}>
-                <a
-                    href="mailto:brothersingamescz@gmail.com"
-                    className="text-indigo-400 hover:underline"
-                >
-                    brothersingamescz@gmail.com
-                </a>
-            </Section>
-        </article>
+            <PolicySection title={t('privacyWeb.contactTitle')}>
+                <p>
+                    <MailLink />
+                </p>
+            </PolicySection>
+        </PolicyArticle>
     )
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+function PolicyLinkList({ items }: { items: { slug: string; nameKey: string }[] }) {
+    const { t } = useTranslation()
     return (
-        <section className="mb-6">
-            <h2 className="mb-2 text-lg font-semibold text-slate-100">{title}</h2>
-            {children}
-        </section>
+        <ul className="space-y-2">
+            {items.map(({ slug, nameKey }) => (
+                <li key={slug}>
+                    <Link
+                        to={`/privacy/${slug}`}
+                        className="group inline-flex items-center gap-1.5 font-medium text-brand-text transition-opacity hover:opacity-80"
+                    >
+                        {t(nameKey)}
+                        <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+                    </Link>
+                </li>
+            ))}
+        </ul>
     )
 }

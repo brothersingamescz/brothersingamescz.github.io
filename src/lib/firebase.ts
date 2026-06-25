@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
 
 // Config values come from Vite env vars (see .env.example).
-// These are NOT secrets — the Firebase web config is public by design and ships
+// These are NOT secrets - the Firebase web config is public by design and ships
 // in the browser bundle. Data security is enforced by Firebase Auth + Firestore
 // Security Rules, not by hiding these values. We keep them in env vars only to
 // avoid hardcoding project identifiers in source.
@@ -19,7 +19,7 @@ const firebaseConfig = {
     appId: import.meta.env.VITE_FB_DEF_THE_BASE_APP_ID,
 }
 
-// Only Auth is initialized here — it ships globally because the header shows
+// Only Auth is initialized here - it ships globally because the header shows
 // sign-in state on every page. Firestore lives in ./firestore so the heavy
 // `firebase/firestore` chunk only loads on the (lazy) game-detail route.
 export const app = initializeApp(firebaseConfig)

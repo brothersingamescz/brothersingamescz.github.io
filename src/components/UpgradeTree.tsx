@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { UPGRADE_GROUPS, type Upgrades } from '../lib/player'
+import { Check, Lock } from './icons'
 
 export default function UpgradeTree({ upgrades }: { upgrades?: Upgrades }) {
     const { t } = useTranslation()
@@ -8,22 +9,26 @@ export default function UpgradeTree({ upgrades }: { upgrades?: Upgrades }) {
         <div className="space-y-4">
             {UPGRADE_GROUPS.map((group) => (
                 <div key={group.tower}>
-                    <h3 className="mb-2 text-sm font-semibold text-slate-300">
+                    <h4 className="mb-2 font-sans text-sm font-semibold text-muted">
                         {t(`profile.towers.${group.tower}`)}
-                    </h3>
+                    </h4>
                     <div className="flex flex-wrap gap-2">
                         {group.items.map((item) => {
                             const unlocked = Boolean(upgrades?.[group.tower]?.[item])
                             return (
                                 <span
                                     key={item}
-                                    className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs ${
+                                    className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 font-sans text-xs ${
                                         unlocked
-                                            ? 'border-indigo-500/40 bg-indigo-500/10 text-indigo-300'
-                                            : 'border-slate-800 bg-slate-900 text-slate-600'
+                                            ? 'border-pa/40 bg-pa/10 text-pa'
+                                            : 'border-line bg-surface text-faint'
                                     }`}
                                 >
-                                    <span aria-hidden>{unlocked ? '✓' : '🔒'}</span>
+                                    {unlocked ? (
+                                        <Check className="size-3.5" />
+                                    ) : (
+                                        <Lock className="size-3.5" />
+                                    )}
                                     {t(`profile.upgrades.${item}`)}
                                 </span>
                             )

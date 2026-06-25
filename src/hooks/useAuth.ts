@@ -21,7 +21,7 @@ export function useAuth() {
 }
 
 // Popup is the smooth path on desktop, but mobile browsers and in-app webviews
-// often block or don't support it — fall back to a full-page redirect there.
+// often block or don't support it - fall back to a full-page redirect there.
 const POPUP_FALLBACK_CODES = new Set([
     'auth/popup-blocked',
     'auth/operation-not-supported-in-this-environment',

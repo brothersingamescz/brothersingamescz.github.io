@@ -20,7 +20,7 @@ export default function GoogleSignInButton({
             type="button"
             onClick={onClick}
             disabled={disabled}
-            className="inline-flex h-10 items-center gap-2.5 whitespace-nowrap rounded border border-[#747775] bg-white pr-3 pl-3 text-[#1f1f1f] transition hover:bg-[#f7f8f8] hover:shadow-[0_1px_2px_0_rgba(60,64,67,0.30),0_1px_3px_1px_rgba(60,64,67,0.15)] focus-visible:ring-2 focus-visible:ring-[#4285f4] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 focus-visible:outline-none active:bg-[#f1f3f4] disabled:cursor-default disabled:opacity-40 disabled:shadow-none disabled:hover:bg-white"
+            className="inline-flex h-10 items-center gap-2.5 whitespace-nowrap rounded border border-[#747775] bg-white pr-3 pl-3 text-[#1f1f1f] transition hover:bg-[#f7f8f8] hover:shadow-[0_1px_2px_0_rgba(60,64,67,0.30),0_1px_3px_1px_rgba(60,64,67,0.15)] focus-visible:ring-2 focus-visible:ring-[#4285f4] focus-visible:ring-offset-2 focus-visible:ring-offset-surface focus-visible:outline-none active:bg-[#f1f3f4] disabled:cursor-default disabled:opacity-40 disabled:shadow-none disabled:hover:bg-white"
             style={{
                 fontFamily: "'Roboto', arial, sans-serif",
                 fontWeight: 500,

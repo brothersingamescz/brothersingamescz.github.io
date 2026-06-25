@@ -5,15 +5,14 @@ export default function LangSwitcher() {
     const current = i18n.language.startsWith('cs') ? 'cs' : 'en'
 
     return (
-        <div className="flex items-center gap-1 text-sm">
+        <div className="flex items-center rounded-lg border border-line bg-surface/60 p-0.5 text-xs font-semibold">
             {(['en', 'cs'] as const).map((lang) => (
                 <button
                     key={lang}
                     onClick={() => i18n.changeLanguage(lang)}
-                    className={`px-2 py-0.5 rounded transition-colors cursor-pointer ${
-                        current === lang
-                            ? 'bg-indigo-600 text-white'
-                            : 'text-slate-400 hover:text-slate-100'
+                    aria-pressed={current === lang}
+                    className={`cursor-pointer rounded-md px-2 py-1 transition-colors ${
+                        current === lang ? 'bg-brand text-brand-ink' : 'text-muted hover:text-ink'
                     }`}
                 >
                     {lang.toUpperCase()}

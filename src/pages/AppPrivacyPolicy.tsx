@@ -1,4 +1,12 @@
 import { useTranslation } from 'react-i18next'
+import {
+    ExtLink,
+    MailLink,
+    PolicyArticle,
+    PolicyCard,
+    PolicyHeader,
+    PolicySection,
+} from '../components/policyUi'
 
 // Privacy policy for the Birthday and Name Day Reminder app. Its data stack
 // (offline-first local storage, optional Google Drive appdata backup, Google
@@ -11,99 +19,76 @@ export default function AppPrivacyPolicy() {
     const appName = t('apps.birthdayReminder')
 
     return (
-        <article className="mx-auto max-w-2xl">
-            <h1 className="mb-1 text-2xl font-bold text-slate-100">
-                {t('privacyApp.title')} — {appName}
-            </h1>
-            <p className="mb-8 text-sm text-slate-500">{t('privacyApp.lastUpdated')}</p>
+        <PolicyArticle>
+            <PolicyHeader
+                kicker={t('privacyApp.title')}
+                title={appName}
+                lastUpdated={t('privacyApp.lastUpdated')}
+                intro={t('privacyApp.intro')}
+            />
 
-            <p className="mb-8 text-slate-300">{t('privacyApp.intro')}</p>
+            <PolicySection title={t('privacyApp.controllerTitle')}>
+                <p>{t('privacyApp.controllerDesc')}</p>
+            </PolicySection>
 
-            <Section title={t('privacyApp.controllerTitle')}>
-                <p className="text-slate-400">{t('privacyApp.controllerDesc')}</p>
-            </Section>
+            <PolicySection title={t('privacyApp.dataTitle')}>
+                <p>{t('privacyApp.dataDesc')}</p>
+            </PolicySection>
 
-            <Section title={t('privacyApp.dataTitle')}>
-                <p className="text-slate-400">{t('privacyApp.dataDesc')}</p>
-            </Section>
-
-            <section className="mb-6">
-                <h2 className="mb-2 text-lg font-semibold text-slate-100">
+            <section className="mb-8">
+                <h2 className="mb-4 text-lg text-ink sm:text-xl">
                     {t('privacyApp.permissionsTitle')}
                 </h2>
                 <div className="space-y-3">
                     {(['contacts', 'notifications', 'media', 'files'] as const).map((key) => (
-                        <div
+                        <PolicyCard
                             key={key}
-                            className="rounded-lg border border-slate-800 bg-slate-900 p-4"
-                        >
-                            <p className="font-medium text-slate-100">
-                                {t(`privacyApp.permissions.${key}.name`)}
-                            </p>
-                            <p className="mt-1 text-sm text-slate-400">
-                                {t(`privacyApp.permissions.${key}.desc`)}
-                            </p>
-                        </div>
+                            name={t(`privacyApp.permissions.${key}.name`)}
+                            desc={t(`privacyApp.permissions.${key}.desc`)}
+                        />
                     ))}
                 </div>
             </section>
 
-            <Section title={t('privacyApp.driveTitle')}>
-                <p className="text-slate-400">{t('privacyApp.driveDesc')}</p>
-            </Section>
+            <PolicySection title={t('privacyApp.driveTitle')}>
+                <p>{t('privacyApp.driveDesc')}</p>
+            </PolicySection>
 
-            <Section title={t('privacyApp.adsTitle')}>
-                <p className="text-slate-400">{t('privacyApp.adsDesc')}</p>
-            </Section>
+            <PolicySection title={t('privacyApp.adsTitle')}>
+                <p>{t('privacyApp.adsDesc')}</p>
+            </PolicySection>
 
-            <section className="mb-6">
-                <h2 className="mb-4 text-lg font-semibold text-slate-100">
+            <section className="mb-8">
+                <h2 className="mb-4 text-lg text-ink sm:text-xl">
                     {t('privacyApp.thirdPartyTitle')}
                 </h2>
                 <div className="space-y-3">
                     {(['admob', 'googleAccount'] as const).map((key) => (
-                        <div
+                        <PolicyCard
                             key={key}
-                            className="rounded-lg border border-slate-800 bg-slate-900 p-4"
-                        >
-                            <p className="font-medium text-slate-100">
-                                {t(`privacyApp.${key}.name`)}
-                            </p>
-                            <p className="mt-1 text-sm text-slate-400">
-                                {t(`privacyApp.${key}.desc`)}
-                            </p>
-                            <a
-                                href="https://policies.google.com/privacy"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-1 inline-block text-sm text-indigo-400 hover:underline"
-                            >
-                                {t(`privacyApp.${key}.policy`)} →
-                            </a>
-                        </div>
+                            name={t(`privacyApp.${key}.name`)}
+                            desc={t(`privacyApp.${key}.desc`)}
+                            href="https://policies.google.com/privacy"
+                            linkLabel={t(`privacyApp.${key}.policy`)}
+                        />
                     ))}
-                    <a
-                        href="https://policies.google.com/technologies/partner-sites"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block text-sm text-indigo-400 hover:underline"
-                    >
-                        {t('privacyApp.partnerSites')} →
-                    </a>
+                    <ExtLink href="https://policies.google.com/technologies/partner-sites">
+                        {t('privacyApp.partnerSites')}
+                    </ExtLink>
                 </div>
             </section>
 
-            <Section title={t('privacyApp.retentionTitle')}>
-                <p className="text-slate-400">{t('privacyApp.retentionDesc')}</p>
-            </Section>
+            <PolicySection title={t('privacyApp.retentionTitle')}>
+                <p>{t('privacyApp.retentionDesc')}</p>
+            </PolicySection>
 
-            <Section title={t('privacyApp.securityTitle')}>
-                <p className="text-slate-400">{t('privacyApp.securityDesc')}</p>
-            </Section>
+            <PolicySection title={t('privacyApp.securityTitle')}>
+                <p>{t('privacyApp.securityDesc')}</p>
+            </PolicySection>
 
-            <Section title={t('privacyApp.rightsTitle')}>
-                <p className="mb-3 text-slate-400">{t('privacyApp.rightsIntro')}</p>
-                <ul className="mb-3 list-disc space-y-1 pl-5 text-slate-400">
+            <PolicySection title={t('privacyApp.rightsTitle')}>
+                <p>{t('privacyApp.rightsIntro')}</p>
+                <ul className="list-disc space-y-1 pl-5">
                     {(
                         [
                             'access',
@@ -118,34 +103,22 @@ export default function AppPrivacyPolicy() {
                         <li key={key}>{t(`privacyApp.rights.${key}`)}</li>
                     ))}
                 </ul>
-                <p className="text-slate-400">{t('privacyApp.rightsHow')}</p>
-            </Section>
+                <p>{t('privacyApp.rightsHow')}</p>
+            </PolicySection>
 
-            <Section title={t('privacyApp.childrenTitle')}>
-                <p className="text-slate-400">{t('privacyApp.childrenDesc')}</p>
-            </Section>
+            <PolicySection title={t('privacyApp.childrenTitle')}>
+                <p>{t('privacyApp.childrenDesc')}</p>
+            </PolicySection>
 
-            <Section title={t('privacyApp.changesTitle')}>
-                <p className="text-slate-400">{t('privacyApp.changesDesc')}</p>
-            </Section>
+            <PolicySection title={t('privacyApp.changesTitle')}>
+                <p>{t('privacyApp.changesDesc')}</p>
+            </PolicySection>
 
-            <Section title={t('privacyApp.contactTitle')}>
-                <a
-                    href="mailto:brothersingamescz@gmail.com"
-                    className="text-indigo-400 hover:underline"
-                >
-                    brothersingamescz@gmail.com
-                </a>
-            </Section>
-        </article>
-    )
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-    return (
-        <section className="mb-6">
-            <h2 className="mb-2 text-lg font-semibold text-slate-100">{title}</h2>
-            {children}
-        </section>
+            <PolicySection title={t('privacyApp.contactTitle')}>
+                <p>
+                    <MailLink />
+                </p>
+            </PolicySection>
+        </PolicyArticle>
     )
 }

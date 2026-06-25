@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { ArrowRight, ShieldCheck } from '../components/icons'
 
 const games = [
     { slug: 'def-the-base', nameKey: 'games.defTheBase' as const },
@@ -12,19 +13,28 @@ export default function PrivacyIndex() {
     const { t } = useTranslation()
 
     return (
-        <div className="mx-auto max-w-2xl">
-            <h1 className="mb-2 text-2xl font-bold text-slate-100">{t('nav.privacy')}</h1>
-            <p className="mb-8 text-slate-400">{t('privacy.selectGame')}</p>
+        <div className="mx-auto max-w-2xl px-4 py-10 sm:px-6 sm:py-14">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1 text-xs font-semibold text-muted">
+                <ShieldCheck className="size-3.5 text-brand-text" />
+                {t('nav.privacy')}
+            </span>
+            <h1 className="mt-4 text-2xl text-ink sm:text-3xl">{t('privacy.indexHeading')}</h1>
+            <p className="mt-2 font-sans text-muted">{t('privacy.selectGame')}</p>
 
-            <h2 className="mb-3 text-xs font-medium uppercase tracking-widest text-slate-500">
+            <h2 className="mb-3 mt-10 font-sans text-xs font-bold uppercase tracking-[0.18em] text-brand-text">
                 {t('home.gamesTitle')}
             </h2>
             <PolicyList items={games} />
 
-            <h2 className="mb-3 mt-8 text-xs font-medium uppercase tracking-widest text-slate-500">
+            <h2 className="mb-3 mt-8 font-sans text-xs font-bold uppercase tracking-[0.18em] text-brand-text">
                 {t('home.appsTitle')}
             </h2>
             <PolicyList items={apps} />
+
+            <h2 className="mb-3 mt-8 font-sans text-xs font-bold uppercase tracking-[0.18em] text-brand-text">
+                {t('privacyWeb.title')}
+            </h2>
+            <PolicyList items={[{ slug: 'web', nameKey: 'privacy.websiteItem' as const }]} />
         </div>
     )
 }
@@ -37,10 +47,10 @@ function PolicyList({ items }: { items: { slug: string; nameKey: string }[] }) {
                 <li key={slug}>
                     <Link
                         to={`/privacy/${slug}`}
-                        className="flex items-center justify-between rounded-lg border border-slate-800 bg-slate-900 px-5 py-4 text-slate-100 transition-colors hover:border-indigo-600 hover:bg-slate-800"
+                        className="group flex items-center justify-between rounded-2xl border border-line bg-surface px-5 py-4 text-ink transition-all hover:-translate-y-0.5 hover:border-brand/50 hover:shadow-md"
                     >
-                        <span>{t(nameKey)}</span>
-                        <span className="text-slate-500">→</span>
+                        <span className="font-sans font-medium">{t(nameKey)}</span>
+                        <ArrowRight className="size-5 text-faint transition-all group-hover:translate-x-1 group-hover:text-brand-text" />
                     </Link>
                 </li>
             ))}

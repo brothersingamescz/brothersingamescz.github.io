@@ -7,6 +7,9 @@ import AccountMenu from '../components/AccountMenu'
 import GoogleSignInButton from '../components/GoogleSignInButton'
 import DefTheBaseProfile from '../components/DefTheBaseProfile'
 import JumpingJelloProfile from '../components/JumpingJelloProfile'
+import ScreenshotGallery from '../components/ScreenshotGallery'
+import { BackLink, FeatureList, ProductHero, SectionTitle, SpecBar } from '../components/productUi'
+import { ShieldCheck } from '../components/icons'
 
 // game id -> the component that renders that game's save data. Add an entry here
 // when another game starts syncing its save to Firestore. The gate passes the
@@ -26,51 +29,94 @@ export default function GameDetail() {
     if (!game) return <Navigate to="/" replace />
 
     return (
-        <div className="mx-auto max-w-3xl">
-            {/* Per-game account menu (sign out). Sits above the banner because the
-          banner clips overflow and would cut off the dropdown. */}
-            {game.hasWebProfile && auth.user && (
-                <div className="mb-3 flex justify-end">
-                    <AccountMenu user={auth.user} onSignOut={auth.signOut} />
+        <div
+            style={{ ['--pa' as string]: game.accent }}
+            className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-10"
+        >
+            <div className="mb-5">
+                <BackLink />
+            </div>
+
+            <ProductHero
+                name={t(game.nameKey)}
+                tagline={t(game.taglineKey)}
+                icon={game.icon}
+                featureGraphic={game.featureGraphic}
+                gradient={game.gradient}
+                emoji={game.emoji}
+                storeUrl={game.storeUrl}
+                inDevelopment={game.inDevelopment}
+            />
+
+            {game.meta && <SpecBar meta={game.meta} />}
+
+            <section className="mt-10 grid gap-8 md:grid-cols-[1.6fr_1fr]">
+                <div>
+                    <SectionTitle>{t('detail.aboutGame')}</SectionTitle>
+                    <p className="font-sans leading-relaxed text-muted">{t(game.descriptionKey)}</p>
                 </div>
-            )}
-            <Banner game={game} />
-            <div className="mt-8">
-                {game.hasWebProfile ? (
+                <div className="rounded-2xl border border-line bg-surface p-5">
+                    <h3 className="mb-4 font-sans text-xs font-semibold uppercase tracking-wider text-faint">
+                        {t('detail.features')}
+                    </h3>
+                    <FeatureList items={game.featureKeys.map((k) => t(k))} />
+                </div>
+            </section>
+
+            {game.screenshots?.length ? (
+                <section className="mt-12">
+                    <SectionTitle>{t('detail.screenshots')}</SectionTitle>
+                    <ScreenshotGallery
+                        shots={game.screenshots}
+                        orientation="landscape"
+                        name={t(game.nameKey)}
+                    />
+                </section>
+            ) : game.inDevelopment ? (
+                <WipPlaceholder />
+            ) : null}
+
+            {game.hasWebProfile && (
+                <section className="mt-14">
+                    <div className="mb-5 flex items-center justify-between gap-3">
+                        <h2 className="text-xl text-ink sm:text-2xl">{t('detail.yourProgress')}</h2>
+                        {auth.user && <AccountMenu user={auth.user} onSignOut={auth.signOut} />}
+                    </div>
                     <ProfileGate game={game} auth={auth} />
-                ) : (
-                    <Notice>{t('detail.noTracking')}</Notice>
-                )}
+                </section>
+            )}
+
+            <div className="mt-14 border-t border-line pt-6">
+                <Link
+                    to={`/privacy/${game.id}`}
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-text transition-opacity hover:opacity-80"
+                >
+                    <ShieldCheck className="size-4" />
+                    {t('detail.privacyLink')}
+                </Link>
             </div>
         </div>
     )
 }
 
-function Banner({ game }: { game: Game }) {
+// Placeholder gallery for a game that's still in development (no screenshots yet).
+function WipPlaceholder() {
     const { t } = useTranslation()
     return (
-        <div
-            className={`relative overflow-hidden rounded-2xl bg-linear-to-br ${game.gradient} p-6 sm:p-8`}
-        >
-            <div className="absolute inset-0 bg-black/20" />
-            <div className="relative">
-                <Link
-                    to="/"
-                    className="inline-flex items-center gap-1 text-sm text-white/80 transition-colors hover:text-white"
-                >
-                    <span aria-hidden>←</span> {t('detail.back')}
-                </Link>
-                <div className="mt-4 flex items-center gap-4">
-                    <span className="text-5xl drop-shadow">{game.emoji}</span>
-                    <div>
-                        <h1 className="text-2xl font-bold text-white sm:text-3xl">
-                            {t(game.nameKey)}
-                        </h1>
-                        <p className="text-sm text-white/80">{t(game.taglineKey)}</p>
-                    </div>
+        <section className="mt-12">
+            <SectionTitle>{t('detail.screenshots')}</SectionTitle>
+            <div className="rounded-2xl border border-dashed border-line bg-surface/50 p-6">
+                <p className="mb-5 font-sans text-sm text-muted">{t('detail.wipNote')}</p>
+                <div className="no-scrollbar flex gap-4 overflow-hidden">
+                    {[0, 1, 2, 3].map((i) => (
+                        <div
+                            key={i}
+                            className="aspect-video w-60 shrink-0 animate-pulse rounded-xl bg-raised"
+                        />
+                    ))}
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
@@ -80,7 +126,7 @@ function ProfileGate({ game, auth }: { game: Game; auth: GameAuth }) {
     const { t } = useTranslation()
     const { uid, status, signIn } = auth
 
-    if (status === 'loading') return <p className="text-slate-400">{t('profile.loading')}</p>
+    if (status === 'loading') return <p className="text-muted">{t('profile.loading')}</p>
     if (status === 'needs-signin' || !uid) return <SignInPrompt game={game} signIn={signIn} />
 
     const Renderer = RENDERERS[game.id]
@@ -101,20 +147,20 @@ function SignInPrompt({ game, signIn }: { game: Game; signIn: () => Promise<void
     }
 
     return (
-        <div className="rounded-lg border border-slate-800 bg-slate-900 p-6">
-            <p className="mb-4 text-slate-300">
+        <div className="rounded-2xl border border-line bg-surface p-6">
+            <p className="mb-4 font-sans text-muted">
                 {t('detail.signInPrompt', { game: t(game.nameKey) })}
             </p>
             <GoogleSignInButton onClick={handleSignIn} />
-            {error && <p className="mt-3 text-sm text-red-400">{t('profile.signInError')}</p>}
+            {error && <p className="mt-3 text-sm text-danger">{t('profile.signInError')}</p>}
         </div>
     )
 }
 
 function Notice({ children }: { children: React.ReactNode }) {
     return (
-        <div className="rounded-lg border border-slate-800 bg-slate-900 p-6">
-            <p className="text-slate-300">{children}</p>
+        <div className="rounded-2xl border border-line bg-surface p-6">
+            <p className="font-sans text-muted">{children}</p>
         </div>
     )
 }

@@ -8,7 +8,7 @@ function initialsFrom(name: string) {
 }
 
 // Google profile photo with a graceful initials fallback (photos can fail to
-// load — hotlink protection, expired URLs). `referrerPolicy` helps them load.
+// load - hotlink protection, expired URLs). `referrerPolicy` helps them load.
 export default function Avatar({
     photoURL,
     name,
@@ -29,14 +29,14 @@ export default function Avatar({
                 alt=""
                 referrerPolicy="no-referrer"
                 onError={() => setBroken(true)}
-                className={`${size} rounded-full border border-slate-700 object-cover`}
+                className={`${size} rounded-full border border-line object-cover`}
             />
         )
     }
 
     return (
         <span
-            className={`${size} ${textClassName} flex items-center justify-center rounded-full bg-indigo-600 font-semibold text-white`}
+            className={`${size} ${textClassName} flex items-center justify-center rounded-full bg-brand font-semibold text-brand-ink`}
         >
             {initialsFrom(name)}
         </span>

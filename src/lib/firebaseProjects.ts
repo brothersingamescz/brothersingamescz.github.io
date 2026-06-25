@@ -4,7 +4,7 @@ import type { FirebaseProjectKey } from '../data/games'
 
 // Web config for games whose Unity build writes to a *different* Firebase project
 // than the primary one (see ./firebase). Like the primary config these are NOT
-// secrets — the Firebase web config is public by design (see .env.example).
+// secrets - the Firebase web config is public by design (see .env.example).
 //
 // Apps are initialized lazily as named instances (one per project). Because this
 // module is only imported from the lazy game-detail route (via useGameAuth /

@@ -18,7 +18,7 @@ export type GameAuth = {
 //
 // Primary-project games (no `projectKey`) reuse the global AuthProvider listener
 // via useAuth(). Games on a secondary project get their own listener + sign-in,
-// because Firebase Auth — and therefore the player's UID — is per project: the
+// because Firebase Auth - and therefore the player's UID - is per project: the
 // global session's token can't read (or satisfy the rules of) another project's
 // Firestore. Each game signs in/out against its own project on its detail page.
 export function useGameAuth(projectKey?: FirebaseProjectKey): GameAuth {

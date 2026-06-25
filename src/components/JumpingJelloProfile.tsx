@@ -2,9 +2,10 @@ import { useTranslation } from 'react-i18next'
 import type { Game } from '../data/games'
 import type { JelloMission, JumpingJelloData } from '../lib/jumpingJello'
 import { usePlayerData } from '../hooks/usePlayerData'
+import { InfinityIcon, Lock, Sparkles, Star, Trash } from './icons'
 
 // Renders the Jumping Jello save data. Assumes the player is signed in to the
-// Jumping Jello Firebase project — the auth gate (in GameDetail) resolves that
+// Jumping Jello Firebase project - the auth gate (in GameDetail) resolves that
 // project's uid and passes it in. Importing usePlayerData (which pulls
 // `firebase/firestore`) keeps this whole subtree in the lazy game-detail chunk.
 export default function JumpingJelloProfile({ game, uid }: { game: Game; uid: string }) {
@@ -16,14 +17,14 @@ export default function JumpingJelloProfile({ game, uid }: { game: Game; uid: st
         await remove()
     }
 
-    if (error) return <p className="text-red-400">{t('profile.loadError')}</p>
+    if (error) return <p className="text-danger">{t('profile.loadError')}</p>
 
-    if (data === undefined) return <p className="text-slate-400">{t('profile.loading')}</p>
+    if (data === undefined) return <p className="text-muted">{t('profile.loading')}</p>
 
     if (data === null) {
         return (
-            <div className="rounded-lg border border-slate-800 bg-slate-900 p-6">
-                <p className="text-slate-300">{t('profile.empty')}</p>
+            <div className="rounded-2xl border border-line bg-surface p-6">
+                <p className="font-sans text-muted">{t('profile.empty')}</p>
             </div>
         )
     }
@@ -34,7 +35,7 @@ export default function JumpingJelloProfile({ game, uid }: { game: Game; uid: st
     const skinsUnlocked = skins.filter(Boolean).length
 
     return (
-        <div className="space-y-6">
+        <div className="space-y-8">
             <Card title={t('profile.jello.overviewTitle')}>
                 <TileGrid>
                     <Tile label={t('profile.jello.stars')} value={data.totalStars} />
@@ -46,7 +47,7 @@ export default function JumpingJelloProfile({ game, uid }: { game: Game; uid: st
                         label={t('profile.jello.skins')}
                         text={`${skinsUnlocked} / ${skins.length}`}
                     />
-                    <Tile label={t('profile.jello.selectedSkin')} text={data.selectedSkin || '—'} />
+                    <Tile label={t('profile.jello.selectedSkin')} text={data.selectedSkin || '-'} />
                     <Tile
                         label={t('profile.jello.adsRemoved')}
                         text={t(data.adsRemoved ? 'profile.jello.yes' : 'profile.jello.no')}
@@ -62,11 +63,12 @@ export default function JumpingJelloProfile({ game, uid }: { game: Game; uid: st
                 </div>
             </Card>
 
-            <div className="pt-2">
+            <div className="pt-1">
                 <button
                     onClick={handleDelete}
-                    className="rounded-lg border border-red-500/40 px-4 py-2 text-sm text-red-400 transition-colors hover:bg-red-500/10"
+                    className="inline-flex cursor-pointer items-center gap-2 rounded-xl border border-danger/40 px-4 py-2 text-sm font-medium text-danger transition-colors hover:bg-danger/10"
                 >
+                    <Trash className="size-4" />
                     {t('profile.delete')}
                 </button>
             </div>
@@ -80,45 +82,44 @@ function LevelTile({ index, mission }: { index: number; mission: JelloMission })
 
     return (
         <div
-            className={`rounded-lg border border-slate-800 p-3 ${
-                locked ? 'bg-slate-900/50 opacity-60' : 'bg-slate-900'
+            className={`rounded-2xl border border-line p-3.5 ${
+                locked ? 'bg-surface/40 opacity-60' : 'bg-surface'
             }`}
         >
             <div className="flex items-center justify-between">
-                <span className="text-xs font-medium text-slate-400">
+                <span className="font-sans text-xs font-medium text-muted">
                     {t('profile.jello.level')} {index + 1}
                 </span>
                 {mission.isInfinity ? (
-                    <span
-                        className="text-xs text-pink-400"
-                        title={t('profile.jello.endless')}
-                        aria-hidden
-                    >
-                        ∞
-                    </span>
+                    <InfinityIcon
+                        className="size-4 text-pink-400"
+                        label={t('profile.jello.endless')}
+                    />
                 ) : mission.maxSkins > 0 ? (
-                    <span className="text-xs text-slate-500" title={t('profile.jello.skins')}>
-                        🎨 {mission.skins}/{mission.maxSkins}
+                    <span className="inline-flex items-center gap-1 font-sans text-xs text-faint">
+                        <Sparkles className="size-3.5" />
+                        {mission.skins}/{mission.maxSkins}
                     </span>
                 ) : null}
             </div>
 
             {locked ? (
-                <div className="mt-2 flex items-center gap-1.5 text-slate-600">
-                    <span aria-hidden>🔒</span>
-                    <span className="text-sm">{t('profile.jello.locked')}</span>
+                <div className="mt-2 flex items-center gap-1.5 text-faint">
+                    <Lock className="size-4" />
+                    <span className="font-sans text-sm">{t('profile.jello.locked')}</span>
                 </div>
             ) : mission.isInfinity ? (
                 <div className="mt-2">
-                    <div className="text-xl font-bold text-slate-100">
+                    <div className="font-sans text-xl font-bold tabular-nums text-ink">
                         ∞ {mission.infinityCount.toLocaleString()}
                     </div>
-                    <div className="text-xs text-slate-500">{t('profile.jello.endless')}</div>
+                    <div className="font-sans text-xs text-faint">{t('profile.jello.endless')}</div>
                 </div>
             ) : (
                 <div className="mt-2">
-                    <div className="text-sm font-semibold text-amber-300">
-                        <span aria-hidden>⭐</span> {mission.stars}/{mission.maxStars}
+                    <div className="flex items-center gap-1 font-sans text-sm font-semibold text-amber-400">
+                        <Star className="size-4" />
+                        {mission.stars}/{mission.maxStars}
                     </div>
                     <ProgressBar percent={mission.sliderPercent} />
                 </div>
@@ -130,7 +131,7 @@ function LevelTile({ index, mission }: { index: number; mission: JelloMission })
 function ProgressBar({ percent }: { percent: number }) {
     const clamped = Math.max(0, Math.min(100, percent))
     return (
-        <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-slate-800">
+        <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-raised">
             <div
                 className="h-full rounded-full bg-linear-to-r from-amber-400 to-pink-500"
                 style={{ width: `${clamped}%` }}
@@ -142,7 +143,7 @@ function ProgressBar({ percent }: { percent: number }) {
 function Card({ title, children }: { title: string; children: React.ReactNode }) {
     return (
         <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-100">{title}</h2>
+            <h3 className="mb-3 text-lg text-ink">{title}</h3>
             {children}
         </section>
     )
@@ -154,11 +155,11 @@ function TileGrid({ children }: { children: React.ReactNode }) {
 
 function Tile({ label, value, text }: { label: string; value?: number; text?: string }) {
     const display =
-        text !== undefined ? text : value !== undefined ? Math.round(value).toLocaleString() : '—'
+        text !== undefined ? text : value !== undefined ? Math.round(value).toLocaleString() : '-'
     return (
-        <div className="rounded-lg border border-slate-800 bg-slate-900 p-3">
-            <div className="text-xs text-slate-500">{label}</div>
-            <div className="mt-1 text-xl font-bold text-slate-100">{display}</div>
+        <div className="rounded-2xl border border-line bg-surface p-3.5">
+            <div className="font-sans text-xs text-faint">{label}</div>
+            <div className="mt-1 font-sans text-xl font-bold tabular-nums text-ink">{display}</div>
         </div>
     )
 }

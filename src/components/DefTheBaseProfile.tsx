@@ -3,8 +3,9 @@ import type { Game } from '../data/games'
 import type { PlayerData } from '../lib/player'
 import { usePlayerData } from '../hooks/usePlayerData'
 import UpgradeTree from './UpgradeTree'
+import { Trash } from './icons'
 
-// Renders the Def the Base save data. Assumes the player is signed in — the
+// Renders the Def the Base save data. Assumes the player is signed in - the
 // auth gate (in GameDetail) resolves the project-specific uid and passes it in.
 // Importing usePlayerData (which pulls `firebase/firestore`) keeps this whole
 // subtree in the lazy game-detail chunk.
@@ -17,14 +18,14 @@ export default function DefTheBaseProfile({ game, uid }: { game: Game; uid: stri
         await remove()
     }
 
-    if (error) return <p className="text-red-400">{t('profile.loadError')}</p>
+    if (error) return <p className="text-danger">{t('profile.loadError')}</p>
 
-    if (data === undefined) return <p className="text-slate-400">{t('profile.loading')}</p>
+    if (data === undefined) return <p className="text-muted">{t('profile.loading')}</p>
 
     if (data === null) {
         return (
-            <div className="rounded-lg border border-slate-800 bg-slate-900 p-6">
-                <p className="text-slate-300">{t('profile.empty')}</p>
+            <div className="rounded-2xl border border-line bg-surface p-6">
+                <p className="font-sans text-muted">{t('profile.empty')}</p>
             </div>
         )
     }
@@ -33,7 +34,7 @@ export default function DefTheBaseProfile({ game, uid }: { game: Game; uid: stri
     const missionsTotal = data.missions?.length ?? 0
 
     return (
-        <div className="space-y-6">
+        <div className="space-y-8">
             <Card title={t('profile.scoreTitle')}>
                 <TileGrid>
                     <Tile label={t('profile.score.best')} value={data.score?.best} />
@@ -79,11 +80,12 @@ export default function DefTheBaseProfile({ game, uid }: { game: Game; uid: stri
                 <UpgradeTree upgrades={data.upgrades} />
             </Card>
 
-            <div className="pt-2">
+            <div className="pt-1">
                 <button
                     onClick={handleDelete}
-                    className="rounded-lg border border-red-500/40 px-4 py-2 text-sm text-red-400 transition-colors hover:bg-red-500/10"
+                    className="inline-flex cursor-pointer items-center gap-2 rounded-xl border border-danger/40 px-4 py-2 text-sm font-medium text-danger transition-colors hover:bg-danger/10"
                 >
+                    <Trash className="size-4" />
                     {t('profile.delete')}
                 </button>
             </div>
@@ -94,7 +96,7 @@ export default function DefTheBaseProfile({ game, uid }: { game: Game; uid: stri
 function Card({ title, children }: { title: string; children: React.ReactNode }) {
     return (
         <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-100">{title}</h2>
+            <h3 className="mb-3 text-lg text-ink">{title}</h3>
             {children}
         </section>
     )
@@ -106,11 +108,11 @@ function TileGrid({ children }: { children: React.ReactNode }) {
 
 function Tile({ label, value, text }: { label: string; value?: number; text?: string }) {
     const display =
-        text !== undefined ? text : value !== undefined ? Math.round(value).toLocaleString() : '—'
+        text !== undefined ? text : value !== undefined ? Math.round(value).toLocaleString() : '-'
     return (
-        <div className="rounded-lg border border-slate-800 bg-slate-900 p-3">
-            <div className="text-xs text-slate-500">{label}</div>
-            <div className="mt-1 text-xl font-bold text-slate-100">{display}</div>
+        <div className="rounded-2xl border border-line bg-surface p-3.5">
+            <div className="font-sans text-xs text-faint">{label}</div>
+            <div className="mt-1 font-sans text-xl font-bold tabular-nums text-ink">{display}</div>
         </div>
     )
 }
