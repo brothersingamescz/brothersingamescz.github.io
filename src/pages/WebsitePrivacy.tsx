@@ -1,13 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ArrowRight } from '../components/icons'
-import {
-    MailLink,
-    PolicyArticle,
-    PolicyCard,
-    PolicyHeader,
-    PolicySection,
-} from '../components/policyUi'
+import { PolicyArticle, PolicyCard, PolicyHeader, PolicySection } from '../components/policyUi'
 
 // Game-specific policies linked at the bottom of the website policy.
 const GAME_POLICIES = [
@@ -44,6 +38,7 @@ export default function WebsitePrivacy() {
                                 key: 'github',
                                 href: 'https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement',
                             },
+                            { key: 'web3forms', href: 'https://web3forms.com/privacy' },
                         ] as const
                     ).map(({ key, href }) => (
                         <PolicyCard
@@ -69,6 +64,10 @@ export default function WebsitePrivacy() {
                 <p>{t('privacyWeb.noTrackingDesc')}</p>
             </PolicySection>
 
+            <PolicySection title={t('privacyWeb.contactFormTitle')}>
+                <p>{t('privacyWeb.contactFormDesc')}</p>
+            </PolicySection>
+
             <PolicySection title={t('privacyWeb.deletionTitle')}>
                 <p>{t('privacyWeb.deletionDesc')}</p>
             </PolicySection>
@@ -81,12 +80,6 @@ export default function WebsitePrivacy() {
             <PolicySection title={t('privacyWeb.appsTitle')}>
                 <p>{t('privacyWeb.appsDesc')}</p>
                 <PolicyLinkList items={APP_POLICIES} />
-            </PolicySection>
-
-            <PolicySection title={t('privacyWeb.contactTitle')}>
-                <p>
-                    <MailLink />
-                </p>
             </PolicySection>
         </PolicyArticle>
     )

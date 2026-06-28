@@ -13,21 +13,15 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col items-center gap-3 text-sm sm:items-end">
                     <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+                        <Link to="/support" className="text-muted transition-colors hover:text-ink">
+                            {t('nav.support')}
+                        </Link>
+                        <Link to="/contact" className="text-muted transition-colors hover:text-ink">
+                            {t('nav.contact')}
+                        </Link>
                         <Link to="/privacy" className="text-muted transition-colors hover:text-ink">
                             {t('nav.privacy')}
                         </Link>
-                        <Link
-                            to="/privacy/web"
-                            className="text-muted transition-colors hover:text-ink"
-                        >
-                            {t('privacyWeb.title')}
-                        </Link>
-                        <a
-                            href="mailto:brothersingamescz@gmail.com"
-                            className="text-muted transition-colors hover:text-ink"
-                        >
-                            brothersingamescz@gmail.com
-                        </a>
                     </div>
                     <p className="text-xs text-faint">
                         © {new Date().getFullYear()} BrothersInGames · {t('footer.madeIn')}

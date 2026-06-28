@@ -152,6 +152,33 @@ export function InfinityIcon({ className, label }: IconProps) {
     )
 }
 
+export function Heart({ className, label }: IconProps) {
+    return (
+        <svg className={className} {...base(label)}>
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.49 4.04 3 5.5l7 7Z" />
+        </svg>
+    )
+}
+
+export function Coffee({ className, label }: IconProps) {
+    return (
+        <svg className={className} {...base(label)}>
+            <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+            <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8Z" />
+            <path d="M6 2v2M10 2v2M14 2v2" />
+        </svg>
+    )
+}
+
+export function Send({ className, label }: IconProps) {
+    return (
+        <svg className={className} {...base(label)}>
+            <path d="M22 2 11 13" />
+            <path d="M22 2 15 22 11 13 2 9 22 2Z" />
+        </svg>
+    )
+}
+
 // Google Play "play triangle" glyph for store badges. Uses brand colours, not
 // currentColor, so it stays recognisable on any background.
 export function GooglePlay({ className }: { className?: string }) {

@@ -2,6 +2,8 @@
     "nav": {
         "home": "Home",
         "privacy": "Privacy Policy",
+        "support": "Support us",
+        "contact": "Contact",
         "theme": {
             "light": "Switch to light mode",
             "dark": "Switch to dark mode"
@@ -30,7 +32,65 @@
         "gamesHeading": "Pick your next obsession",
         "gamesSubtitle": "Mobile games crafted to be easy to start and hard to put down.",
         "appsHeading": "Little apps, big help",
-        "appsSubtitle": "Handy everyday tools, without the clutter or the noise."
+        "appsSubtitle": "Handy everyday tools, without the clutter or the noise.",
+        "support": {
+            "kicker": "Support us",
+            "heading": "Enjoying our games?",
+            "subtitle": "We build everything in our spare time. A small tip helps us keep making games and apps.",
+            "cta": "Support us",
+            "kofiCta": "Buy us a coffee"
+        }
+    },
+    "support": {
+        "title": "Support us",
+        "heading": "Support BrothersInGames",
+        "intro": "We're two brothers building games and apps in our spare time. If something we made put a smile on your face, you can help us keep going. Every little bit means a lot.",
+        "kofi": {
+            "title": "Buy us a coffee",
+            "desc": "A small tip helps cover the cost of building, running and improving our games - and fuels the late-night coding sessions.",
+            "cta": "Support us on Ko-fi",
+            "note": "Secure checkout on Ko-fi via card or PayPal. One-time tip, no account needed."
+        },
+        "funds": {
+            "title": "What your support helps with",
+            "items": {
+                "develop": "Building and finishing new games",
+                "fix": "Fixing bugs and adding new features",
+                "run": "Servers, store fees and dev tools",
+                "assets": "Art, music and sound for our games"
+            }
+        },
+        "contactLink": "Got a question or found a bug instead?",
+        "contactLinkCta": "Contact us"
+    },
+    "contact": {
+        "title": "Contact",
+        "heading": "Get in touch",
+        "intro": "Something not working, got a question, or have an idea for a new feature? Send us a message and we'll reply by email.",
+        "fromApp": "About {{app}}",
+        "optional": "optional",
+        "topicLabel": "Topic",
+        "topics": {
+            "bug": "Something's broken",
+            "question": "A question",
+            "idea": "An idea or suggestion",
+            "other": "Something else"
+        },
+        "name": "Your name",
+        "namePlaceholder": "Jane Doe",
+        "email": "Your email",
+        "emailPlaceholder": "you@example.com",
+        "message": "Message",
+        "messagePlaceholder": "Write your message…",
+        "send": "Send message",
+        "sending": "Sending…",
+        "successTitle": "Message sent!",
+        "success": "Thanks for reaching out - we'll get back to you by email soon.",
+        "sendAnother": "Send another message",
+        "error": "Something went wrong. Please try again, or email us directly at",
+        "emailAlt": "Prefer email? Write to us at",
+        "privacyNote": "We'll only use your email to reply to you. See our",
+        "privacyLink": "website privacy policy"
     },
     "footer": {
         "tagline": "Indie games & apps, made by brothers.",
@@ -189,14 +249,20 @@
             "name": "GitHub Pages",
             "desc": "Hosts this website. GitHub may process technical data such as your IP address and request logs in order to serve the pages."
         },
+        "web3forms": {
+            "name": "Web3Forms",
+            "desc": "Delivers messages from the website's contact form to our inbox. It only receives the name, email and message you submit, and only when you send the form."
+        },
         "signInTitle": "Signing in",
         "signInDesc": "To show your progress, the site signs you in with your Google account via Firebase Authentication. When you sign in, we receive your name, email address, profile picture and account ID, used only to identify you and load your save data. Because each game has its own Firebase project, you sign in (and out) separately for each game on its page.",
         "saveDataTitle": "Your game progress",
         "saveDataDesc": "After you sign in, the site reads a copy of your save data from Google Firebase (Cloud Firestore) and shows it to you. The site only reads this copy - your progress is written by the game, not by the website.",
         "noTrackingTitle": "No analytics or advertising",
         "noTrackingDesc": "This website uses no analytics, no advertising, and no tracking cookies. (Ads or purchases that appear inside the games are covered by each game's own privacy policy.)",
+        "contactFormTitle": "Contact form",
+        "contactFormDesc": "The contact page has a form. When you submit it, your name, email address and message are sent through Web3Forms to our email so we can reply. We use this only to respond to you and don't share it further. Please don't submit sensitive personal information through the form.",
         "deletionTitle": "Deleting your data",
-        "deletionDesc": "You can delete the copy of your progress shown here at any time: sign in, open your game, and click \"Delete my data\". This removes the Firebase copy; if you keep playing, the game may sync it again. For anything else, email us below.",
+        "deletionDesc": "You can delete the copy of your progress shown here at any time: sign in, open your game, and click \"Delete my data\". This removes the Firebase copy; if you keep playing, the game may sync it again.",
         "gamesTitle": "Game privacy policies",
         "gamesDesc": "Each game collects its own data in-app (cloud save, ads, purchases). See the policy for each game:",
         "appsTitle": "App privacy policies",

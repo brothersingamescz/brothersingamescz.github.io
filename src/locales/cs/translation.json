@@ -2,6 +2,8 @@
     "nav": {
         "home": "Domů",
         "privacy": "Zásady ochrany osobních údajů",
+        "support": "Podpoř nás",
+        "contact": "Kontakt",
         "theme": {
             "light": "Přepnout na světlý režim",
             "dark": "Přepnout na tmavý režim"
@@ -30,7 +32,65 @@
         "gamesHeading": "Vyber si svou další závislost",
         "gamesSubtitle": "Mobilní hry, které snadno rozehraješ a těžko odložíš.",
         "appsHeading": "Malé aplikace, velká pomoc",
-        "appsSubtitle": "Praktické každodenní nástroje bez zbytečností a balastu."
+        "appsSubtitle": "Praktické každodenní nástroje bez zbytečností a balastu.",
+        "support": {
+            "kicker": "Podpoř nás",
+            "heading": "Baví tě naše hry?",
+            "subtitle": "Všechno tvoříme ve volném čase. Malý příspěvek nám pomáhá dělat hry a aplikace dál.",
+            "cta": "Podpoř nás",
+            "kofiCta": "Kup nám kafe"
+        }
+    },
+    "support": {
+        "title": "Podpoř nás",
+        "heading": "Podpoř BrothersInGames",
+        "intro": "Jsme dva bráchové a děláme hry a aplikace ve volném čase. Jestli tě něco od nás potěšilo, můžeš nám pomoct pokračovat. Každá maličkost pro nás hodně znamená.",
+        "kofi": {
+            "title": "Kup nám kafe",
+            "desc": "Malý příspěvek pomáhá pokrýt náklady na vývoj, provoz a vylepšování her - a pohání noční programování.",
+            "cta": "Podpoř nás na Ko-fi",
+            "note": "Bezpečná platba na Ko-fi kartou nebo přes PayPal. Jednorázový příspěvek, bez registrace."
+        },
+        "funds": {
+            "title": "S čím tvoje podpora pomáhá",
+            "items": {
+                "develop": "Tvorba a dokončování nových her",
+                "fix": "Opravy chyb a nové funkce",
+                "run": "Servery, poplatky obchodů a vývojové nástroje",
+                "assets": "Grafika, hudba a zvuky do her"
+            }
+        },
+        "contactLink": "Máš spíš dotaz nebo jsi našel chybu?",
+        "contactLinkCta": "Napiš nám"
+    },
+    "contact": {
+        "title": "Kontakt",
+        "heading": "Napiš nám",
+        "intro": "Něco nefunguje, máš dotaz nebo nápad na vylepšení? Pošli nám zprávu a ozveme se ti e-mailem.",
+        "fromApp": "K aplikaci {{app}}",
+        "optional": "nepovinné",
+        "topicLabel": "Téma",
+        "topics": {
+            "bug": "Něco nefunguje",
+            "question": "Dotaz",
+            "idea": "Nápad nebo návrh",
+            "other": "Něco jiného"
+        },
+        "name": "Tvoje jméno",
+        "namePlaceholder": "Jan Novák",
+        "email": "Tvůj e-mail",
+        "emailPlaceholder": "ty@priklad.cz",
+        "message": "Zpráva",
+        "messagePlaceholder": "Napiš svoji zprávu…",
+        "send": "Odeslat zprávu",
+        "sending": "Odesílám…",
+        "successTitle": "Zpráva odeslána!",
+        "success": "Díky, že ses ozval - brzy ti odpovíme e-mailem.",
+        "sendAnother": "Poslat další zprávu",
+        "error": "Něco se pokazilo. Zkus to prosím znovu, nebo nám napiš přímo na",
+        "emailAlt": "Radši e-mail? Napiš nám na",
+        "privacyNote": "Tvůj e-mail použijeme jen na odpověď. Viz naše",
+        "privacyLink": "zásady ochrany údajů webu"
     },
     "footer": {
         "tagline": "Nezávislé hry a aplikace od bratrů.",
@@ -189,14 +249,20 @@
             "name": "GitHub Pages",
             "desc": "Hostuje tento web. GitHub může pro doručení stránek zpracovávat technické údaje, jako je tvoje IP adresa a logy požadavků."
         },
+        "web3forms": {
+            "name": "Web3Forms",
+            "desc": "Doručuje zprávy z kontaktního formuláře na webu do naší schránky. Dostane jen jméno, e-mail a zprávu, kterou odešleš, a to jen ve chvíli, kdy formulář odešleš."
+        },
         "signInTitle": "Přihlášení",
         "signInDesc": "Abychom ti zobrazili postup, web tě přihlásí účtem Google přes Firebase Authentication. Při přihlášení získáme tvé jméno, e-mailovou adresu, profilový obrázek a ID účtu - slouží jen k tvé identifikaci a načtení uložených dat. Protože každá hra má vlastní projekt Firebase, přihlašuješ (i odhlašuješ) se ke každé hře zvlášť na její stránce.",
         "saveDataTitle": "Tvůj herní postup",
         "saveDataDesc": "Po přihlášení web načte kopii tvých uložených dat z Google Firebase (Cloud Firestore) a zobrazí ti je. Web tuto kopii pouze čte - tvůj postup zapisuje hra, ne web.",
         "noTrackingTitle": "Žádná analytika ani reklama",
         "noTrackingDesc": "Tento web nepoužívá žádnou analytiku, reklamu ani sledovací cookies. (Reklamy nebo nákupy uvnitř her pokrývají zásady ochrany údajů jednotlivých her.)",
+        "contactFormTitle": "Kontaktní formulář",
+        "contactFormDesc": "Na stránce Kontakt je formulář. Když ho odešleš, tvoje jméno, e-mailová adresa a zpráva se přes službu Web3Forms pošlou na náš e-mail, abychom ti mohli odpovědět. Použijeme je jen k odpovědi a dál je nesdílíme. Prosím neposílej přes formulář citlivé osobní údaje.",
         "deletionTitle": "Smazání tvých dat",
-        "deletionDesc": "Kopii postupu zobrazenou zde můžeš kdykoli smazat: přihlas se, otevři svou hru a klikni na „Smazat moje data“. Tím se odstraní kopie ve Firebase; pokud hraješ dál, hra ji může znovu synchronizovat. Pro cokoli dalšího nám napiš níže.",
+        "deletionDesc": "Kopii postupu zobrazenou zde můžeš kdykoli smazat: přihlas se, otevři svou hru a klikni na „Smazat moje data“. Tím se odstraní kopie ve Firebase; pokud hraješ dál, hra ji může znovu synchronizovat.",
         "gamesTitle": "Zásady ochrany údajů her",
         "gamesDesc": "Každá hra sbírá vlastní data v aplikaci (cloudové uložení, reklamy, nákupy). Viz zásady pro každou hru:",
         "appsTitle": "Zásady ochrany údajů aplikací",

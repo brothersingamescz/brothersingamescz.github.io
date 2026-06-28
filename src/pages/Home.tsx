@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { games } from '../data/games'
 import { apps } from '../data/apps'
 import GameCard from '../components/GameCard'
 import AppCard from '../components/AppCard'
-import { ArrowRight, Check, Sparkles } from '../components/icons'
+import { ArrowRight, Check, Coffee, Heart, Sparkles } from '../components/icons'
+import { KOFI_URL } from '../lib/links'
 
 export default function Home() {
     const { t } = useTranslation()
@@ -88,6 +90,44 @@ export default function Home() {
                     {apps.map((app) => (
                         <AppCard key={app.id} app={app} />
                     ))}
+                </div>
+            </section>
+
+            {/* ── Support ──────────────────────────────────────────────────── */}
+            <section id="support" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-12 sm:px-6">
+                <div className="relative overflow-hidden rounded-3xl border border-line bg-surface p-8 shadow-sm sm:p-12">
+                    <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+                        <div className="absolute -left-16 -top-20 size-64 rounded-full bg-brand/15 blur-3xl" />
+                        <div className="absolute -bottom-24 -right-10 size-64 rounded-full bg-fuchsia-500/15 blur-3xl" />
+                    </div>
+                    <div className="mx-auto max-w-xl text-center">
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-base/60 px-3.5 py-1.5 text-xs font-semibold text-muted backdrop-blur-sm">
+                            <Heart className="size-4 text-brand-text" />
+                            {t('home.support.kicker')}
+                        </span>
+                        <h2 className="mt-4 text-2xl text-ink sm:text-3xl">
+                            {t('home.support.heading')}
+                        </h2>
+                        <p className="mt-3 font-sans text-muted">{t('home.support.subtitle')}</p>
+                        <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+                            <Link
+                                to="/support"
+                                className="inline-flex items-center gap-2 rounded-xl bg-brand px-5 py-3 text-sm font-semibold text-brand-ink shadow-lg shadow-brand/25 transition-all hover:-translate-y-0.5 hover:brightness-110"
+                            >
+                                <Heart className="size-4" />
+                                {t('home.support.cta')}
+                            </Link>
+                            <a
+                                href={KOFI_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 rounded-xl border border-line bg-surface/60 px-5 py-3 text-sm font-semibold text-ink backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-brand/50"
+                            >
+                                <Coffee className="size-4 text-brand-text" />
+                                {t('home.support.kofiCta')}
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

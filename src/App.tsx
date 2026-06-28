@@ -8,6 +8,8 @@ import AppPrivacyPolicy from './pages/AppPrivacyPolicy'
 import PrivacyIndex from './pages/PrivacyIndex'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import WebsitePrivacy from './pages/WebsitePrivacy'
+import Support from './pages/Support'
+import Contact from './pages/Contact'
 
 // Lazy-loaded so the heavy `firebase/firestore` SDK only ships when a player
 // opens a game's progress detail. Auth ships globally (the header needs it).
@@ -20,6 +22,8 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route index element={<Home />} />
+                        <Route path="support" element={<Support />} />
+                        <Route path="contact" element={<Contact />} />
                         <Route path="privacy" element={<PrivacyIndex />} />
                         {/* Static routes rank above the dynamic :game one in React Router. */}
                         <Route path="privacy/web" element={<WebsitePrivacy />} />

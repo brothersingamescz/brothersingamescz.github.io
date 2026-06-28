@@ -28,7 +28,9 @@ Stack: React 19 + TypeScript + Vite 6 + Tailwind v4 + react-router-dom v7 + i18n
 
 Routes:
 
-- `/` — Home (studio landing; **Games** section + **Apps** section)
+- `/` — Home (studio landing; **Games** section + **Apps** section + **Support** band)
+- `/support` — donation page (`Support.tsx`); a Ko-fi call-to-action only, no Firebase. Links to `/contact` for help requests.
+- `/contact` — contact page (`Contact.tsx`); a bug/question/idea form (name, email, topic, message) posted to **Web3Forms** (hosted form-to-email relay, so the static site needs no backend) plus an email fallback, no Firebase. Reads a `?app=<id>` query param (set when an app/game deep-links its "Contact support" button) and tags the email subject + a hidden field with the source, resolved against `apps.ts`/`games.ts`.
 - `/games/:gameId` — per-game progress detail (lazy; Firestore + per-project sign-in only here)
 - `/apps/:appId` — per-app detail (`AppDetail.tsx`); non-game apps, no Firebase — just a marketing card + "coming soon" + link to the app's policy
 - `/privacy` — index linking the per-game **and** per-app policies (split into Games/Apps sections)
@@ -79,7 +81,7 @@ When a game gains web save-data support, add `hasWebProfile: true, firestoreColl
 
 Two deletion paths follow: the Google Play Games app (Saved Games, both games) and the website's "Delete my data" button (Firestore copy, web-profile games only), plus an email fallback. Keep this section, the `Game` entry, and `GAME_CONFIGS` in sync whenever a game's shipped SDKs change.
 
-**Website privacy policy.** Separate from the per-game policies above, `src/pages/WebsitePrivacy.tsx` (`/privacy/web`, linked from the footer) is the **site's own** policy — sign-in, the save-data copy the site reads/deletes, GitHub Pages hosting, no analytics/ads. Its i18n keys live under `privacyWeb.*` (kept apart from the per-game `privacy.*`). It's the URL to set as each Firebase project's OAuth-consent-screen privacy link.
+**Website privacy policy.** Separate from the per-game policies above, `src/pages/WebsitePrivacy.tsx` (`/privacy/web`, reached from the `/privacy` index — the footer links **Support · Contact · Privacy**, not the website policy directly) is the **site's own** policy — sign-in, the save-data copy the site reads/deletes, GitHub Pages hosting, the **Web3Forms** contact form on `/contact`, no analytics/ads. Its i18n keys live under `privacyWeb.*` (kept apart from the per-game `privacy.*`). It's the URL to set as each Firebase project's OAuth-consent-screen privacy link.
 
 **i18n** — All user-facing text is keyed and resolved with `useTranslation`/`t()`. Two locales (`en`, `cs`) in `src/locales/*/translation.json` that **must stay in sync** — add every new string to both files. Detection order is localStorage then navigator (`src/i18n.ts`). Taglines are under `games.taglines.*` (not nested under `games.<name>`) so that `t(game.nameKey)` keeps returning a plain string.
 

@@ -9,6 +9,8 @@ import { join } from 'node:path'
 // `:gameId` is dynamic, so list the concrete games (same as privacy/:game).
 // 'profile' stays for the client-side redirect to /dashboard.
 const spaRoutes = [
+    'support',
+    'contact',
     'privacy',
     'privacy/web',
     'privacy/def-the-base',
