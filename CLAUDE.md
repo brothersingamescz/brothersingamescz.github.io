@@ -39,6 +39,8 @@ Routes:
 - `/privacy/:game` — per-game privacy policy (`PrivacyPolicy.tsx`)
 - `/dashboard`, `/dashboard/:gameId`, `/account`, `/profile` — redirect to `/` (old bookmarks)
 
+**Contact form (Web3Forms).** `Contact.tsx` posts straight to `https://api.web3forms.com/submit` with a **public** `access_key` (safe to commit — it only routes to our inbox; current key `7cfc8611-…`). There is no backend: success/error is handled in-page. What lives in code: a hidden `botcheck` honeypot for spam, the email **subject** built as `[Topic] … (source)` where Topic is the locale-independent dropdown value (`Bug`/`Question`/`Idea`/`Other`) and source is the `?app=` deep-link, plus a hidden `from_app` field. The **name** field is optional; email + message are required. What lives only in the **Web3Forms dashboard** (not in this repo, so set it there): the **recipient inbox** (defaults to the account's email — currently `petran3297@gmail.com`; switch to `brothersingamescz@gmail.com` there if wanted), sender-email **verification**, the **domain allowlist** (add `localhost` to test a real submit from `pnpm dev`), and optional captcha/autoresponder. After deploying, send a real test submission to confirm delivery.
+
 **GitHub Pages deep-linking (three coordinated pieces — read all three before touching any).** GitHub Pages has no server-side SPA rewrite, so:
 
 1. `public/404.html` encodes the requested path into a `?/...` query and redirects to the index (the classic spa-github-pages trick).

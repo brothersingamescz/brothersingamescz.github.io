@@ -4,15 +4,17 @@ import LangSwitcher from './LangSwitcher'
 import ThemeToggle from './ThemeToggle'
 import Logo from './Logo'
 import Footer from './Footer'
+import ScrollToTop from './ScrollToTop'
 
 export default function Layout() {
     const { t } = useTranslation()
 
     return (
         <div className="flex min-h-dvh flex-col bg-base text-ink">
+            <ScrollToTop />
             <header className="sticky top-0 z-40 border-b border-line bg-base/70 backdrop-blur-xl">
                 <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
-                    <NavLink to="/" aria-label="BrothersInGames - home" className="shrink-0">
+                    <NavLink to="/" aria-label="BrothersInGames" className="shrink-0">
                         <Logo />
                     </NavLink>
                     <nav className="flex items-center gap-1 sm:gap-2">

@@ -1,12 +1,13 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { Shot } from '../data/games'
 import { ChevronLeft, ChevronRight } from './icons'
 
-// Horizontal scroll-snap screenshot strip with a click-to-zoom lightbox.
-// `orientation` switches tile shape so phone (portrait) and gameplay (landscape)
-// captures both look right. Images lazy-load and reserve their aspect ratio to
-// avoid layout shift.
+// Horizontal scroll-snap screenshot strip with arrow buttons (the strip scrolls
+// horizontally, which on desktop otherwise needs shift+wheel) and a click-to-zoom
+// lightbox. `orientation` switches tile shape so phone (portrait) and gameplay
+// (landscape) captures both look right. Images lazy-load and reserve their aspect
+// ratio to avoid layout shift.
 export default function ScreenshotGallery({
     shots,
     orientation,
@@ -18,6 +19,9 @@ export default function ScreenshotGallery({
 }) {
     const { t } = useTranslation()
     const [open, setOpen] = useState<number | null>(null)
+    const stripRef = useRef<HTMLDivElement>(null)
+    const [canPrev, setCanPrev] = useState(false)
+    const [canNext, setCanNext] = useState(false)
 
     const tile =
         orientation === 'portrait'
@@ -29,6 +33,27 @@ export default function ScreenshotGallery({
         (dir: number) => setOpen((i) => (i === null ? i : (i + dir + shots.length) % shots.length)),
         [shots.length]
     )
+
+    // Track whether the strip can scroll further in each direction so the arrows
+    // only show when they'd do something.
+    const updateArrows = useCallback(() => {
+        const el = stripRef.current
+        if (!el) return
+        setCanPrev(el.scrollLeft > 1)
+        setCanNext(el.scrollLeft < el.scrollWidth - el.clientWidth - 1)
+    }, [])
+
+    useEffect(() => {
+        updateArrows()
+        window.addEventListener('resize', updateArrows)
+        return () => window.removeEventListener('resize', updateArrows)
+    }, [updateArrows, shots.length])
+
+    const scrollStrip = useCallback((dir: number) => {
+        const el = stripRef.current
+        if (!el) return
+        el.scrollBy({ left: dir * el.clientWidth * 0.8, behavior: 'smooth' })
+    }, [])
 
     useEffect(() => {
         if (open === null) return
@@ -48,26 +73,54 @@ export default function ScreenshotGallery({
 
     return (
         <>
-            <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:px-0">
-                {shots.map((shot, i) => (
+            <div className="relative">
+                <div
+                    ref={stripRef}
+                    onScroll={updateArrows}
+                    className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:px-0"
+                >
+                    {shots.map((shot, i) => (
+                        <button
+                            key={shot.src}
+                            type="button"
+                            onClick={() => setOpen(i)}
+                            className={`group relative shrink-0 cursor-zoom-in snap-start overflow-hidden rounded-2xl border border-line bg-raised ${tile}`}
+                            aria-label={t(shot.captionKey)}
+                        >
+                            <img
+                                src={shot.src}
+                                alt={`${name}: ${t(shot.captionKey)}`}
+                                loading="lazy"
+                                className="size-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+                            />
+                            <span className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 to-transparent px-3 pb-2 pt-6 text-left text-xs font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
+                                {t(shot.captionKey)}
+                            </span>
+                        </button>
+                    ))}
+                </div>
+
+                {/* Strip nav arrows (desktop / pointer; touch users just swipe). */}
+                {canPrev && (
                     <button
-                        key={shot.src}
                         type="button"
-                        onClick={() => setOpen(i)}
-                        className={`group relative shrink-0 cursor-zoom-in snap-start overflow-hidden rounded-2xl border border-line bg-raised ${tile}`}
-                        aria-label={t(shot.captionKey)}
+                        onClick={() => scrollStrip(-1)}
+                        aria-label={t('gallery.prev')}
+                        className="absolute left-2 top-1/2 hidden size-10 -translate-y-1/2 place-items-center rounded-full border border-line bg-surface/90 text-ink shadow-md backdrop-blur transition-colors hover:bg-raised sm:grid"
                     >
-                        <img
-                            src={shot.src}
-                            alt={`${name} - ${t(shot.captionKey)}`}
-                            loading="lazy"
-                            className="size-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
-                        />
-                        <span className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 to-transparent px-3 pb-2 pt-6 text-left text-xs font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
-                            {t(shot.captionKey)}
-                        </span>
+                        <ChevronLeft className="size-5" />
                     </button>
-                ))}
+                )}
+                {canNext && (
+                    <button
+                        type="button"
+                        onClick={() => scrollStrip(1)}
+                        aria-label={t('gallery.next')}
+                        className="absolute right-2 top-1/2 hidden size-10 -translate-y-1/2 place-items-center rounded-full border border-line bg-surface/90 text-ink shadow-md backdrop-blur transition-colors hover:bg-raised sm:grid"
+                    >
+                        <ChevronRight className="size-5" />
+                    </button>
+                )}
             </div>
 
             {open !== null && (
@@ -80,7 +133,7 @@ export default function ScreenshotGallery({
                 >
                     <img
                         src={shots[open]!.src}
-                        alt={`${name} - ${t(shots[open]!.captionKey)}`}
+                        alt={`${name}: ${t(shots[open]!.captionKey)}`}
                         onClick={(e) => e.stopPropagation()}
                         className="max-h-[80vh] max-w-full rounded-2xl object-contain shadow-2xl"
                     />

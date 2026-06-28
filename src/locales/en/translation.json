@@ -20,7 +20,7 @@
             "eyebrow": "Independent game studio",
             "titleLead": "Level up your",
             "titleAccent": "downtime",
-            "description": "An indie studio of two brothers creating fun, addictive mobile games - plus a few handy everyday apps. Play, enjoy, have fun.",
+            "description": "An indie studio of two brothers creating fun, addictive mobile games, plus a few handy everyday apps. Play, enjoy, have fun.",
             "ctaGames": "Explore games",
             "ctaApps": "Our apps",
             "badges": {
@@ -47,7 +47,7 @@
         "intro": "We're two brothers building games and apps in our spare time. If something we made put a smile on your face, you can help us keep going. Every little bit means a lot.",
         "kofi": {
             "title": "Buy us a coffee",
-            "desc": "A small tip helps cover the cost of building, running and improving our games - and fuels the late-night coding sessions.",
+            "desc": "A small tip helps cover the cost of building, running and improving our games. It also fuels our late-night coding sessions.",
             "cta": "Support us on Ko-fi",
             "note": "Secure checkout on Ko-fi via card or PayPal. One-time tip, no account needed."
         },
@@ -85,7 +85,7 @@
         "send": "Send message",
         "sending": "Sending…",
         "successTitle": "Message sent!",
-        "success": "Thanks for reaching out - we'll get back to you by email soon.",
+        "success": "Thanks for reaching out. We'll get back to you by email soon.",
         "sendAnother": "Send another message",
         "error": "Something went wrong. Please try again, or email us directly at",
         "emailAlt": "Prefer email? Write to us at",
@@ -131,15 +131,16 @@
             "jumpingJello": "Arcade"
         },
         "descriptions": {
-            "defTheBase": "Hold the line. Def the Base is a fast, hand-drawn tower-defense where you build turrets, upgrade your arsenal and defend your base against relentless waves of tanks and troops. Earn gold, unlock mass upgrades across five tower types, and push through escalating difficulty - with your progress synced to the cloud.",
-            "jumpingJello": "A bouncy arcade hopper in the making. Guide a wobbly blob of jello through tricky, physics-driven levels, collect stars and unlock playful skins. Jumping Jello is still in development - wishlist it and check back soon."
+            "defTheBase": "Hold the line. Def the Base is a fast, hand-drawn tower defense where you build and upgrade turrets to defend your main hall against relentless waves of tanks, troops and powerful bosses. Mine metal from quarries to fund your defense and gradually unlock mass upgrades across five tower types, from miniguns and rocket launchers to shield generators, walls and quarries. Place your towers wisely, manage your resources and pick from multiple difficulty tiers, because every wave hits harder than the last. Your progress stays synced to the cloud via Google Play Games.",
+            "jumpingJello": "A bouncy arcade hopper in the making. Guide a wobbly blob of jello through tricky, physics-driven levels, collect stars and unlock playful skins. Jumping Jello is still in development, so wishlist it and check back soon."
         },
         "features": {
             "defTheBase": {
-                "towers": "Five tower types with deep upgrade trees",
-                "waves": "Relentless, escalating enemy waves",
-                "upgrades": "Mass-upgrade system & difficulty tiers",
-                "cloud": "Cloud save - pick up on any device"
+                "towers": "Five tower types: miniguns, rockets, shields, walls and quarries",
+                "waves": "Relentless, escalating waves and powerful bosses",
+                "resources": "Mine metal from quarries to fund your defense",
+                "upgrades": "Mass-upgrade system and multiple difficulty tiers",
+                "cloud": "Cloud save via Google Play Games on any device"
             },
             "jumpingJello": {
                 "hop": "Bouncy, physics-based platforming",
@@ -152,17 +153,22 @@
     "apps": {
         "birthdayReminder": "Birthday and Name Day Reminder",
         "taglines": {
-            "birthdayReminder": "Reminders"
+            "birthdayReminder": "Lifestyle"
         },
         "descriptions": {
-            "birthdayReminder": "Never forget a birthday, name day or anniversary again. A clean, offline-first reminder app with smart countdowns, automatic age calculation, name-day calendars and optional Google Drive backup. Your data stays on your device - no account required, no clutter, just timely reminders."
+            "birthdayReminder": "Never miss a birthday, name day or anniversary again. Birthday and Name Day Reminder keeps every important date in one clean, easy app, whether it's birthdays with live countdowns and automatic age, name days from official calendars, anniversaries, memorials or even your pets, and shows you exactly what's coming up. Get notified on the day or up to two weeks ahead, reach out with a one-tap call, SMS or WhatsApp greeting, and plan ahead with a gift history and ideas list so you never give the same present twice. It works fully offline and your data stays on your device, with an optional Google Drive backup and no account required."
         },
         "features": {
             "birthdayReminder": {
-                "events": "Birthdays, name days & anniversaries",
-                "countdowns": "Smart countdowns & age calculation",
+                "events": "Birthdays, name days, anniversaries, memorials & pets",
+                "nameDays": "Built-in name-day calendars for 6 countries",
+                "reminders": "Advance reminders from 1 to 14 days at your chosen time",
+                "countdowns": "Live countdowns & automatic age calculation",
+                "contact": "One-tap call, SMS or WhatsApp with greeting templates",
+                "gifts": "Gift history, ideas list & budget tracking",
+                "import": "Import from contacts or a file (CSV, XLSX, JSON)",
                 "offline": "Offline-first & private by default",
-                "backup": "Optional Google Drive backup"
+                "backup": "Optional Google Drive backup & sync"
             }
         }
     },
@@ -182,7 +188,7 @@
         "screenshots": "Screenshots",
         "yourProgress": "Your progress",
         "privacyLink": "Privacy policy",
-        "wipNote": "This game is still in development - screenshots and the store link are on the way.",
+        "wipNote": "This game is still in development. Screenshots and the store link are on the way.",
         "spec": {
             "version": "Version",
             "updated": "Updated",
@@ -238,7 +244,7 @@
         "title": "Privacy Policy",
         "heading": "This website",
         "lastUpdated": "Last updated: June 2026",
-        "intro": "This policy explains how the BrothersInGames website handles your data. The site lets you view and delete your game progress - it doesn't sell or share your data, and uses no analytics or advertising. Each game collects its own data in-app; see the game-specific policies at the bottom of this page.",
+        "intro": "This policy explains how the BrothersInGames website handles your data. The site lets you view and delete your game progress. It doesn't sell or share your data, and uses no analytics or advertising. Each game collects its own data in-app; see the game-specific policies at the bottom of this page.",
         "servicesTitle": "Services this website uses",
         "policyLink": "Privacy policy",
         "firebase": {
@@ -256,7 +262,7 @@
         "signInTitle": "Signing in",
         "signInDesc": "To show your progress, the site signs you in with your Google account via Firebase Authentication. When you sign in, we receive your name, email address, profile picture and account ID, used only to identify you and load your save data. Because each game has its own Firebase project, you sign in (and out) separately for each game on its page.",
         "saveDataTitle": "Your game progress",
-        "saveDataDesc": "After you sign in, the site reads a copy of your save data from Google Firebase (Cloud Firestore) and shows it to you. The site only reads this copy - your progress is written by the game, not by the website.",
+        "saveDataDesc": "After you sign in, the site reads a copy of your save data from Google Firebase (Cloud Firestore) and shows it to you. The site only reads this copy. Your progress is written by the game, not by the website.",
         "noTrackingTitle": "No analytics or advertising",
         "noTrackingDesc": "This website uses no analytics, no advertising, and no tracking cookies. (Ads or purchases that appear inside the games are covered by each game's own privacy policy.)",
         "contactFormTitle": "Contact form",
@@ -297,7 +303,7 @@
             }
         },
         "driveTitle": "Optional backup and sync via Google Drive",
-        "driveDesc": "You actively enable backup and sync by signing in with Google (OAuth 2.0 with PKCE). On sign-in the app obtains your Google account identity (email address and basic profile) solely for authentication. Only your text records are backed up - attached photos are not backed up and stay on the device - into the app's hidden folder in your own Google Drive (the drive.appdata scope). This data is stored in your Google account, not on the developer's servers; it is accessible only to this app and is not visible among your regular Drive files. Sync transfers data between the device and your Drive; conflicts are resolved with a last-write-wins rule. You can turn the feature off at any time, sign out, and delete the backup in your Google account. This data is subject to the Google API Services User Data Policy, including the Limited Use requirements: we use the data solely to provide the backup and sync feature to you and do not share or sell it for any other purpose.",
+        "driveDesc": "You actively enable backup and sync by signing in with Google (OAuth 2.0 with PKCE). On sign-in the app obtains your Google account identity (email address and basic profile) solely for authentication. Only your text records are backed up, into the app's hidden folder in your own Google Drive (the drive.appdata scope). Attached photos are not backed up and stay on the device. This data is stored in your Google account, not on the developer's servers; it is accessible only to this app and is not visible among your regular Drive files. Sync transfers data between the device and your Drive; conflicts are resolved with a last-write-wins rule. You can turn the feature off at any time, sign out, and delete the backup in your Google account. This data is subject to the Google API Services User Data Policy, including the Limited Use requirements: we use the data solely to provide the backup and sync feature to you and do not share or sell it for any other purpose.",
         "adsTitle": "Google AdMob advertising",
         "adsDesc": "The app shows ads through Google AdMob (including an interstitial ad on launch). AdMob is a Google service that may collect and process data to serve and measure ads, in particular the device advertising identifier (Android Advertising ID), IP address and information about your device and usage. This is sharing data with a third party (Google). For users in the EU/EEA, the app requests consent before showing personalized ads via a consent dialog (Google User Messaging Platform), in line with GDPR and ePrivacy; without consent only non-personalized ads are shown, or as you choose. You can reset your advertising ID or limit personalization under Settings → Google → Ads on your Android device.",
         "thirdPartyTitle": "Sharing data with third parties",

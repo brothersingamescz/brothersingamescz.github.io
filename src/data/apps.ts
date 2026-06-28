@@ -32,7 +32,12 @@ export const apps: App[] = [
         descriptionKey: 'apps.descriptions.birthdayReminder',
         featureKeys: [
             'apps.features.birthdayReminder.events',
+            'apps.features.birthdayReminder.nameDays',
+            'apps.features.birthdayReminder.reminders',
             'apps.features.birthdayReminder.countdowns',
+            'apps.features.birthdayReminder.contact',
+            'apps.features.birthdayReminder.gifts',
+            'apps.features.birthdayReminder.import',
             'apps.features.birthdayReminder.offline',
             'apps.features.birthdayReminder.backup',
         ],

@@ -20,7 +20,7 @@
             "eyebrow": "Nezávislé herní studio",
             "titleLead": "Vylepši svůj",
             "titleAccent": "volný čas",
-            "description": "Nezávislé studio dvou bratrů, které tvoří zábavné a návykové mobilní hry - a pár praktických každodenních aplikací. Hraj, užívej si, bav se.",
+            "description": "Nezávislé studio dvou bratrů, které tvoří zábavné a návykové mobilní hry a pár praktických každodenních aplikací. Hraj, užívej si, bav se.",
             "ctaGames": "Prozkoumat hry",
             "ctaApps": "Naše aplikace",
             "badges": {
@@ -47,7 +47,7 @@
         "intro": "Jsme dva bráchové a děláme hry a aplikace ve volném čase. Jestli tě něco od nás potěšilo, můžeš nám pomoct pokračovat. Každá maličkost pro nás hodně znamená.",
         "kofi": {
             "title": "Kup nám kafe",
-            "desc": "Malý příspěvek pomáhá pokrýt náklady na vývoj, provoz a vylepšování her - a pohání noční programování.",
+            "desc": "Malý příspěvek pomáhá pokrýt náklady na vývoj, provoz a vylepšování her. Navíc pohání naše noční programování.",
             "cta": "Podpoř nás na Ko-fi",
             "note": "Bezpečná platba na Ko-fi kartou nebo přes PayPal. Jednorázový příspěvek, bez registrace."
         },
@@ -85,7 +85,7 @@
         "send": "Odeslat zprávu",
         "sending": "Odesílám…",
         "successTitle": "Zpráva odeslána!",
-        "success": "Díky, že ses ozval - brzy ti odpovíme e-mailem.",
+        "success": "Díky, že ses ozval. Brzy ti odpovíme e-mailem.",
         "sendAnother": "Poslat další zprávu",
         "error": "Něco se pokazilo. Zkus to prosím znovu, nebo nám napiš přímo na",
         "emailAlt": "Radši e-mail? Napiš nám na",
@@ -131,15 +131,16 @@
             "jumpingJello": "Arkáda"
         },
         "descriptions": {
-            "defTheBase": "Udrž obranu. Def the Base je svižná, ručně kreslená tower defense, ve které stavíš věže, vylepšuješ svůj arzenál a bráníš základnu proti nekonečným vlnám tanků a vojáků. Vydělávej zlato, odemykej hromadná vylepšení pěti typů věží a posouvej se rostoucí obtížností - s postupem uloženým v cloudu.",
-            "jumpingJello": "Skákací arkáda ve vývoji. Provázej rosolovitého panáčka záludnými, fyzikálně laděnými levely, sbírej hvězdy a odemykej hravé skiny. Jumping Jello je stále ve vývoji - přidej si ho do seznamu přání a brzy se vrať."
+            "defTheBase": "Udrž obranu. Def the Base je svižná, ručně kreslená tower defense, ve které stavíš a vylepšuješ věže, abys ubránil svou hlavní halu před nekonečnými vlnami tanků, vojáků a silných bossů. V lomech těžíš kov a financuješ tím svou obranu a postupně odemykáš hromadná vylepšení pěti typů věží od minigunů a raketometů přes generátory štítů a zdi až po lomy. Umisťuj věže moudře, spravuj zdroje a vyber si z více úrovní obtížnosti, protože každá vlna je těžší než ta předchozí. Tvůj postup se přitom ukládá v cloudu přes Google Play Games.",
+            "jumpingJello": "Skákací arkáda ve vývoji. Provázej rosolovitého panáčka záludnými, fyzikálně laděnými levely, sbírej hvězdy a odemykej hravé skiny. Jumping Jello je stále ve vývoji, tak si ho přidej do seznamu přání a brzy se vrať."
         },
         "features": {
             "defTheBase": {
-                "towers": "Pět typů věží s hlubokými stromy vylepšení",
-                "waves": "Nekonečné, stupňující se vlny nepřátel",
-                "upgrades": "Systém hromadných vylepšení a obtížností",
-                "cloud": "Uložení v cloudu - pokračuj na jakémkoli zařízení"
+                "towers": "Pět typů věží: miniguny, rakety, štíty, zdi a lomy",
+                "waves": "Nekonečné, stupňující se vlny a silní bossové",
+                "resources": "Těžba kovu v lomech pro financování obrany",
+                "upgrades": "Systém hromadných vylepšení a úrovně obtížnosti",
+                "cloud": "Uložení v cloudu přes Google Play Games na všech zařízeních"
             },
             "jumpingJello": {
                 "hop": "Skákání založené na fyzice",
@@ -152,17 +153,22 @@
     "apps": {
         "birthdayReminder": "Připomínka narozenin a svátků",
         "taglines": {
-            "birthdayReminder": "Připomínky"
+            "birthdayReminder": "Životní styl"
         },
         "descriptions": {
-            "birthdayReminder": "Už nikdy nezapomeneš na narozeniny, svátek ani výročí. Přehledná aplikace fungující offline s chytrými odpočty, automatickým výpočtem věku, kalendářem jmenin a volitelnou zálohou na Google Drive. Tvá data zůstávají v zařízení - bez účtu, bez balastu, jen včasné připomínky."
+            "birthdayReminder": "Už nikdy nezapomeneš na narozeniny, svátek ani výročí. Aplikace Připomínka narozenin a svátků uchová v jedné přehledné aplikaci každé důležité datum, ať jde o narozeniny s živým odpočtem a automatickým věkem, svátky podle oficiálního kalendáře jmenin, výročí, vzpomínky nebo narozeniny mazlíčků, a přesně ti ukáže, co se blíží. Upozorní tě v den události i s předstihem až dvou týdnů, popřát můžeš hovorem, SMS nebo přes WhatsApp na jedno klepnutí a dárky naplánuješ díky historii i seznamu nápadů, takže stejný dárek nedáš dvakrát. Funguje plně offline a tvá data zůstávají v zařízení, navíc nabízí volitelnou zálohu na Google Drive a nevyžaduje žádný účet."
         },
         "features": {
             "birthdayReminder": {
-                "events": "Narozeniny, svátky a výročí",
-                "countdowns": "Chytré odpočty a výpočet věku",
+                "events": "Narozeniny, svátky, výročí, vzpomínky i mazlíčci",
+                "nameDays": "Vestavěné kalendáře jmenin pro 6 zemí",
+                "reminders": "Připomínky předem od 1 do 14 dní ve zvolený čas",
+                "countdowns": "Živé odpočty a automatický výpočet věku",
+                "contact": "Hovor, SMS nebo WhatsApp na klik se šablonami přání",
+                "gifts": "Historie dárků, seznam nápadů a rozpočet",
+                "import": "Import z kontaktů nebo souboru (CSV, XLSX, JSON)",
                 "offline": "Funguje offline a soukromě",
-                "backup": "Volitelná záloha na Google Drive"
+                "backup": "Volitelná záloha a synchronizace přes Google Drive"
             }
         }
     },
@@ -182,7 +188,7 @@
         "screenshots": "Snímky obrazovky",
         "yourProgress": "Tvůj postup",
         "privacyLink": "Zásady ochrany osobních údajů",
-        "wipNote": "Hra je stále ve vývoji - snímky obrazovky a odkaz do obchodu brzy doplníme.",
+        "wipNote": "Hra je stále ve vývoji. Snímky obrazovky a odkaz do obchodu brzy doplníme.",
         "spec": {
             "version": "Verze",
             "updated": "Aktualizováno",
@@ -238,7 +244,7 @@
         "title": "Zásady ochrany osobních údajů",
         "heading": "Tento web",
         "lastUpdated": "Poslední aktualizace: červen 2026",
-        "intro": "Tyto zásady popisují, jak web BrothersInGames nakládá s tvými údaji. Web ti umožňuje zobrazit a smazat tvůj herní postup - neprodává ani nesdílí tvoje data a nepoužívá žádnou analytiku ani reklamu. Každá hra sbírá vlastní data přímo v aplikaci; viz zásady jednotlivých her na konci stránky.",
+        "intro": "Tyto zásady popisují, jak web BrothersInGames nakládá s tvými údaji. Web ti umožňuje zobrazit a smazat tvůj herní postup. Neprodává ani nesdílí tvoje data a nepoužívá žádnou analytiku ani reklamu. Každá hra sbírá vlastní data přímo v aplikaci; viz zásady jednotlivých her na konci stránky.",
         "servicesTitle": "Služby, které tento web používá",
         "policyLink": "Zásady ochrany údajů",
         "firebase": {
@@ -254,9 +260,9 @@
             "desc": "Doručuje zprávy z kontaktního formuláře na webu do naší schránky. Dostane jen jméno, e-mail a zprávu, kterou odešleš, a to jen ve chvíli, kdy formulář odešleš."
         },
         "signInTitle": "Přihlášení",
-        "signInDesc": "Abychom ti zobrazili postup, web tě přihlásí účtem Google přes Firebase Authentication. Při přihlášení získáme tvé jméno, e-mailovou adresu, profilový obrázek a ID účtu - slouží jen k tvé identifikaci a načtení uložených dat. Protože každá hra má vlastní projekt Firebase, přihlašuješ (i odhlašuješ) se ke každé hře zvlášť na její stránce.",
+        "signInDesc": "Abychom ti zobrazili postup, web tě přihlásí účtem Google přes Firebase Authentication. Při přihlášení získáme tvé jméno, e-mailovou adresu, profilový obrázek a ID účtu. Slouží jen k tvé identifikaci a načtení uložených dat. Protože každá hra má vlastní projekt Firebase, přihlašuješ (i odhlašuješ) se ke každé hře zvlášť na její stránce.",
         "saveDataTitle": "Tvůj herní postup",
-        "saveDataDesc": "Po přihlášení web načte kopii tvých uložených dat z Google Firebase (Cloud Firestore) a zobrazí ti je. Web tuto kopii pouze čte - tvůj postup zapisuje hra, ne web.",
+        "saveDataDesc": "Po přihlášení web načte kopii tvých uložených dat z Google Firebase (Cloud Firestore) a zobrazí ti je. Web tuto kopii pouze čte. Tvůj postup zapisuje hra, ne web.",
         "noTrackingTitle": "Žádná analytika ani reklama",
         "noTrackingDesc": "Tento web nepoužívá žádnou analytiku, reklamu ani sledovací cookies. (Reklamy nebo nákupy uvnitř her pokrývají zásady ochrany údajů jednotlivých her.)",
         "contactFormTitle": "Kontaktní formulář",
@@ -297,7 +303,7 @@
             }
         },
         "driveTitle": "Volitelná záloha a synchronizace přes Google Drive",
-        "driveDesc": "Zálohu a synchronizaci si aktivně zapnete přihlášením přes Google (OAuth 2.0 s PKCE). Při přihlášení aplikace získá identitu vašeho účtu Google (e-mailovou adresu a základní profil) výhradně kvůli autentizaci. Zálohují se pouze vaše textové záznamy - přiložené fotky se nezálohují a zůstávají v zařízení - a to do skryté složky aplikace ve vašem vlastním Google Drive (oprávnění drive.appdata). Tato data jsou uložena na vašem účtu Google, nikoli na serverech vývojáře; jsou přístupná jen této aplikaci a nejsou vidět mezi běžnými soubory na Drive. Synchronizace přenáší data mezi zařízením a vaším Drive; konflikty se řeší pravidlem „poslední zápis vyhrává“. Funkci můžete kdykoli vypnout, odhlásit se a zálohu ve svém účtu Google smazat. Na tato data se vztahuje Google API Services User Data Policy včetně požadavků Limited Use: data používáme výhradně k poskytnutí funkce zálohy a synchronizace a nesdílíme ani neprodáváme je k jiným účelům.",
+        "driveDesc": "Zálohu a synchronizaci si aktivně zapnete přihlášením přes Google (OAuth 2.0 s PKCE). Při přihlášení aplikace získá identitu vašeho účtu Google (e-mailovou adresu a základní profil) výhradně kvůli autentizaci. Zálohují se pouze vaše textové záznamy, a to do skryté složky aplikace ve vašem vlastním Google Drive (oprávnění drive.appdata). Přiložené fotky se nezálohují a zůstávají v zařízení. Tato data jsou uložena na vašem účtu Google, nikoli na serverech vývojáře; jsou přístupná jen této aplikaci a nejsou vidět mezi běžnými soubory na Drive. Synchronizace přenáší data mezi zařízením a vaším Drive; konflikty se řeší pravidlem „poslední zápis vyhrává“. Funkci můžete kdykoli vypnout, odhlásit se a zálohu ve svém účtu Google smazat. Na tato data se vztahuje Google API Services User Data Policy včetně požadavků Limited Use: data používáme výhradně k poskytnutí funkce zálohy a synchronizace a nesdílíme ani neprodáváme je k jiným účelům.",
         "adsTitle": "Reklamy Google AdMob",
         "adsDesc": "Aplikace zobrazuje reklamy prostřednictvím Google AdMob (mj. celoobrazovkovou reklamu při spuštění). AdMob je služba Google, která může shromažďovat a zpracovávat údaje pro zobrazování a měření reklam, zejména reklamní identifikátor zařízení (Android Advertising ID), IP adresu a informace o zařízení a používání. Jde o sdílení dat se třetí stranou (Google). Pro uživatele v EU/EHP aplikace před zobrazením personalizovaných reklam vyžádá souhlas prostřednictvím consent dialogu (Google User Messaging Platform), v souladu s GDPR a ePrivacy; bez souhlasu se zobrazují pouze nepersonalizované reklamy, případně podle vaší volby. Reklamní ID můžete resetovat nebo personalizaci omezit v Nastavení → Google → Reklamy ve svém zařízení Android.",
         "thirdPartyTitle": "Sdílení dat se třetími stranami",

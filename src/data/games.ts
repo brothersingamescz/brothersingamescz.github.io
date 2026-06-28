@@ -63,6 +63,7 @@ export const games: Game[] = [
         featureKeys: [
             'games.features.defTheBase.towers',
             'games.features.defTheBase.waves',
+            'games.features.defTheBase.resources',
             'games.features.defTheBase.upgrades',
             'games.features.defTheBase.cloud',
         ],
