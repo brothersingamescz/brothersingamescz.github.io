@@ -39,6 +39,27 @@ function resolveSource(id: string | null, t: TFunction): SourceInfo | null {
     return { id, name: id, known: false }
 }
 
+type SourceOption = { value: string; label: string; source: SourceInfo | null }
+
+// Options for the picker shown when there is no `?app=` deep-link. Built from the
+// same registries as resolveSource so a manual choice produces the exact same
+// subject `(Name)` suffix and `from_app` field as arriving via /contact?app=<id>.
+// Order matches the visitor-facing list: games, apps, the website, then a neutral
+// default that carries no source (identical to the old no-param behaviour).
+function sourceOptions(t: TFunction): SourceOption[] {
+    const product = (id: string, name: string): SourceOption => ({
+        value: id,
+        label: name,
+        source: { id, name, known: true },
+    })
+    return [
+        ...games.map((g) => product(g.id, t(g.nameKey))),
+        ...apps.map((a) => product(a.id, t(a.nameKey))),
+        product('website', t('contact.sources.website')),
+        { value: '', label: t('contact.sources.general'), source: null },
+    ]
+}
+
 export default function Contact() {
     const { t } = useTranslation()
     const [searchParams] = useSearchParams()
@@ -64,7 +85,7 @@ export default function Contact() {
                 )}
             </header>
 
-            <ContactForm source={source} />
+            <ContactForm lockedSource={source} />
 
             <p className="mt-6 font-sans text-sm text-muted">
                 {t('contact.emailAlt')}{' '}
@@ -82,10 +103,15 @@ export default function Contact() {
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
 
-function ContactForm({ source }: { source: SourceInfo | null }) {
+function ContactForm({ lockedSource }: { lockedSource: SourceInfo | null }) {
     const { t } = useTranslation()
     const [status, setStatus] = useState<FormStatus>('idle')
     const [topic, setTopic] = useState<string>(TOPICS[0].value)
+    const [sourceValue, setSourceValue] = useState('')
+    const options = sourceOptions(t)
+    // Deep-linked via ?app= -> the source is fixed (its badge shows in the header).
+    // Otherwise the visitor picks it below so every report still names a product.
+    const source = lockedSource ?? options.find((o) => o.value === sourceValue)?.source ?? null
 
     async function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault()
@@ -100,6 +126,7 @@ function ContactForm({ source }: { source: SourceInfo | null }) {
             if (data.success) {
                 form.reset()
                 setTopic(TOPICS[0].value)
+                setSourceValue('')
                 setStatus('success')
             } else {
                 setStatus('error')
@@ -164,6 +191,32 @@ function ContactForm({ source }: { source: SourceInfo | null }) {
                 placeholder={t('contact.emailPlaceholder')}
                 autoComplete="email"
             />
+
+            {!lockedSource && (
+                <div>
+                    <label
+                        htmlFor="contact-source"
+                        className="mb-1.5 block font-sans text-sm font-medium text-ink"
+                    >
+                        {t('contact.sourceLabel')}
+                    </label>
+                    <div className="relative">
+                        <select
+                            id="contact-source"
+                            value={sourceValue}
+                            onChange={(e) => setSourceValue(e.target.value)}
+                            className="w-full appearance-none rounded-xl border border-line bg-surface px-4 py-3 pr-10 font-sans text-[1rem] text-ink transition-colors hover:border-faint/50 focus:border-brand"
+                        >
+                            {options.map((o) => (
+                                <option key={o.value} value={o.value}>
+                                    {o.label}
+                                </option>
+                            ))}
+                        </select>
+                        <ChevronDown className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-faint" />
+                    </div>
+                </div>
+            )}
 
             <div>
                 <label

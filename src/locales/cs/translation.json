@@ -51,6 +51,11 @@
             "cta": "Podpoř nás na Ko-fi",
             "note": "Bezpečná platba na Ko-fi kartou nebo přes PayPal. Jednorázový příspěvek, bez registrace."
         },
+        "qr": {
+            "or": "nebo",
+            "caption": "Naskenuj telefonem",
+            "alt": "QR kód pro podporu BrothersInGames"
+        },
         "funds": {
             "title": "S čím tvoje podpora pomáhá",
             "items": {
@@ -69,6 +74,11 @@
         "intro": "Něco nefunguje, máš dotaz nebo nápad na vylepšení? Pošli nám zprávu a ozveme se ti e-mailem.",
         "fromApp": "K aplikaci {{app}}",
         "optional": "nepovinné",
+        "sourceLabel": "Čeho se to týká",
+        "sources": {
+            "general": "Obecné",
+            "website": "Tento web"
+        },
         "topicLabel": "Téma",
         "topics": {
             "bug": "Něco nefunguje",

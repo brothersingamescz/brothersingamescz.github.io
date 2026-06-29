@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { BackLink } from '../components/productUi'
-import { ArrowRight, Check, Coffee, ExternalLink, Heart } from '../components/icons'
+import { ArrowRight, Check, Coffee, ExternalLink, Heart, Smartphone } from '../components/icons'
 import { KOFI_URL } from '../lib/links'
 
 // Static donation page: a Ko-fi call-to-action (financial support only). The
@@ -55,17 +55,51 @@ export default function Support() {
                         ))}
                     </ul>
 
-                    <a
-                        href={KOFI_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-7 inline-flex items-center gap-2 rounded-xl bg-brand px-5 py-3 text-sm font-semibold text-brand-ink shadow-lg shadow-brand/25 transition-all hover:-translate-y-0.5 hover:brightness-110"
-                    >
-                        <Coffee className="size-4" />
-                        {t('support.kofi.cta')}
-                        <ExternalLink className="size-4" />
-                    </a>
-                    <p className="mt-3 font-sans text-xs text-faint">{t('support.kofi.note')}</p>
+                    {/* Two ways to give: tap the button (same device) or scan the
+                        QR with a phone (e.g. reading on a desktop). */}
+                    <div className="mt-7 flex flex-col gap-6 sm:flex-row sm:items-center">
+                        <div className="flex flex-col items-start gap-3">
+                            <a
+                                href={KOFI_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 rounded-xl bg-brand px-5 py-3 text-sm font-semibold text-brand-ink shadow-lg shadow-brand/25 transition-all hover:-translate-y-0.5 hover:brightness-110"
+                            >
+                                <Coffee className="size-4" />
+                                {t('support.kofi.cta')}
+                                <ExternalLink className="size-4" />
+                            </a>
+                            <p className="font-sans text-xs text-faint">{t('support.kofi.note')}</p>
+                        </div>
+
+                        <div
+                            aria-hidden
+                            className="flex items-center gap-3 sm:flex-col sm:self-stretch"
+                        >
+                            <span className="h-px flex-1 bg-line sm:h-auto sm:w-px" />
+                            <span className="text-xs font-semibold uppercase tracking-wider text-faint">
+                                {t('support.qr.or')}
+                            </span>
+                            <span className="h-px flex-1 bg-line sm:h-auto sm:w-px" />
+                        </div>
+
+                        <div className="flex shrink-0 flex-col items-center gap-2.5">
+                            <div className="rounded-2xl bg-white p-3 shadow-md ring-1 ring-black/5">
+                                <img
+                                    src="/images/buy-us-a-coffe-QR.jpg"
+                                    alt={t('support.qr.alt')}
+                                    width={176}
+                                    height={176}
+                                    loading="lazy"
+                                    className="size-40 sm:size-44"
+                                />
+                            </div>
+                            <p className="inline-flex items-center gap-1.5 font-sans text-xs font-medium text-muted">
+                                <Smartphone className="size-3.5" />
+                                {t('support.qr.caption')}
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </section>
 

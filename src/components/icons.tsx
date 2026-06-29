@@ -170,6 +170,15 @@ export function Coffee({ className, label }: IconProps) {
     )
 }
 
+export function Smartphone({ className, label }: IconProps) {
+    return (
+        <svg className={className} {...base(label)}>
+            <rect x="5" y="2" width="14" height="20" rx="2.5" />
+            <path d="M12 18h.01" />
+        </svg>
+    )
+}
+
 export function Send({ className, label }: IconProps) {
     return (
         <svg className={className} {...base(label)}>

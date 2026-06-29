@@ -51,6 +51,11 @@
             "cta": "Support us on Ko-fi",
             "note": "Secure checkout on Ko-fi via card or PayPal. One-time tip, no account needed."
         },
+        "qr": {
+            "or": "or",
+            "caption": "Scan with your phone",
+            "alt": "QR code to support BrothersInGames"
+        },
         "funds": {
             "title": "What your support helps with",
             "items": {
@@ -69,6 +74,11 @@
         "intro": "Something not working, got a question, or have an idea for a new feature? Send us a message and we'll reply by email.",
         "fromApp": "About {{app}}",
         "optional": "optional",
+        "sourceLabel": "What's this about",
+        "sources": {
+            "general": "General",
+            "website": "This website"
+        },
         "topicLabel": "Topic",
         "topics": {
             "bug": "Something's broken",
