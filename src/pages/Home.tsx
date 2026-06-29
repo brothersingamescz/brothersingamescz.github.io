@@ -13,15 +13,30 @@ export default function Home() {
     return (
         <div>
             {/* ── Hero ─────────────────────────────────────────────────────── */}
-            <section className="relative overflow-hidden">
-                <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-                    <div className="absolute inset-0 bg-grid opacity-70 mask-[radial-gradient(ellipse_at_center,black,transparent_72%)]" />
-                    <div className="absolute -left-24 top-8 size-72 rounded-full bg-violet-500/25 blur-3xl animate-float" />
-                    <div className="absolute -right-10 top-32 size-80 rounded-full bg-fuchsia-500/20 blur-3xl animate-float-slow" />
-                    <div className="absolute bottom-0 left-1/3 size-72 rounded-full bg-emerald-500/15 blur-3xl animate-float" />
+            <section className="relative">
+                {/* Full-width studio banner. The 3:1 artwork has soft blurred side
+                   extensions baked in, so wide displays show the blur instead of
+                   hard-cropping the scenes; the centre composition (Def the Base
+                   tower defence, the BiG logo, the Jumping Jello jungle and a
+                   birthday candle for the Reminder app) stays intact at every width.
+                   Decorative only: the brand is also in the header and the h1 below. */}
+                <div className="relative overflow-hidden">
+                    <img
+                        src="/images/main-background-org.jpg"
+                        alt=""
+                        aria-hidden
+                        fetchPriority="high"
+                        decoding="async"
+                        className="h-56 w-full object-cover object-center sm:h-72 md:h-96 lg:h-112"
+                    />
+                    {/* Melt the banner into the page below. */}
+                    <div
+                        aria-hidden
+                        className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-base to-transparent"
+                    />
                 </div>
 
-                <div className="mx-auto flex max-w-6xl flex-col items-center px-4 pb-16 pt-20 text-center sm:px-6 sm:pt-28">
+                <div className="mx-auto flex max-w-6xl flex-col items-center px-4 pb-12 pt-8 text-center sm:px-6 sm:pb-16 sm:pt-10">
                     <span className="inline-flex animate-fade-up items-center gap-2 rounded-full border border-line bg-surface/60 px-3.5 py-1.5 text-xs font-semibold text-muted backdrop-blur-sm">
                         <Sparkles className="size-4 text-brand-text" />
                         {t('home.hero.eyebrow')}
